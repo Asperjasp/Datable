@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Launch Debate — Debat-Zero</title>
 <style>
-  :root { --bg: #0f172a; --surface: #1e293b; --text: #e2e8f0; --accent: #38bdf8; --green: #4ade80; }
+  :root { --bg: #0f172a; --surface: #1e293b; --text: #e2e8f0; --accent: #38bdf8; --green: #4ade80; --muted: #94a3b8; --red: #f87171; --amber: #fbbf24; --border: #334155; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; max-width: 900px; }
   nav a { color: var(--accent); text-decoration: none; }
@@ -15,11 +15,74 @@
   .section { background: var(--surface); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; border: 1px solid #334155; }
   .section h3 { margin-bottom: 0.8rem; color: var(--accent); }
   pre { background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto; margin-top: 1rem; font-size: 0.85rem; white-space: pre-wrap; }
+  .sim-header { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+  .sim-vs { font-weight: 700; font-size: 1.1rem; color: var(--amber); }
+  .sim-turn { background: #070f1c; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; border-left: 3px solid var(--border); }
+  .sim-turn.cand-a { border-color: var(--accent); }
+  .sim-turn.cand-b { border-color: var(--green); }
+  .sim-turn.judge { border-color: var(--amber); }
+  .sim-turn .speaker { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .sim-turn.cand-a .speaker { color: var(--accent); }
+  .sim-turn.cand-b .speaker { color: var(--green); }
+  .sim-turn.judge .speaker { color: var(--amber); }
+  .sim-turn .body { font-size: 0.9rem; line-height: 1.5; color: var(--text); white-space: pre-wrap; }
+  .disclaimer { font-size: 0.7rem; color: var(--muted); margin-top: 0.3rem; }
+  .preset-btn { background: #1e3a5f; color: var(--accent); border: 1px solid var(--accent); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.82rem; cursor: pointer; margin: 0.2rem; }
+  .preset-btn:hover { background: #2a4a70; }
+  .spin { display: inline-block; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
 <body>
-<nav><a href="/">← Dashboard</a> | <strong>New Debate</strong></nav>
-<h1>⚔️ Launch a Presidential Election Debate</h1>
+<nav style="background:#1e293b;padding:0.9rem 2rem;margin:-2rem -2rem 2rem;border-bottom:1px solid #334155;display:flex;gap:2rem;align-items:center;">
+  <span style="font-weight:700;color:var(--accent)">Debat-Zero</span>
+  <a href="/" style="color:var(--muted);text-decoration:none">Dashboard</a>
+  <a href="/models" style="color:var(--muted);text-decoration:none">Models</a>
+  <strong style="color:var(--text)">Debate</strong>
+</nav>
+<h1 style="margin-bottom:0.3rem">⚔️ AI Presidential Debate Simulator</h1>
+<p style="color:var(--muted);margin-bottom:2rem">LLMs argue as candidates using their government plans. An independent judge scores the exchange.</p>
+
+<!-- ── SIMULATION SECTION ── -->
+<div class="section" id="sim-section">
+  <h3>⚡ Run AI Debate Simulation</h3>
+  <p style="color:var(--muted);font-size:0.87rem;margin-bottom:1rem">Pre-configured debate matchups (each with a different judge model):</p>
+  <div id="preset-btns" style="margin-bottom:1rem"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+    <div class="form-group">
+      <label>Candidate A</label>
+      <select id="simCandA"></select>
+    </div>
+    <div class="form-group">
+      <label>Candidate B</label>
+      <select id="simCandB"></select>
+    </div>
+    <div class="form-group">
+      <label>Actor Model (argues as each candidate)</label>
+      <select id="simActorModel"></select>
+    </div>
+    <div class="form-group">
+      <label>Judge Model (scores the debate)</label>
+      <select id="simJudgeModel"></select>
+    </div>
+  </div>
+  <div class="form-group" style="margin-bottom:1rem">
+    <label>Debate Topic</label>
+    <input type="text" id="simTopic" value="economía y modelo de Estado" style="max-width:500px">
+  </div>
+  <div class="form-group" style="margin-bottom:1rem">
+    <label>Rounds (1–4)</label>
+    <input type="number" id="simRounds" value="2" min="1" max="4" style="max-width:80px">
+  </div>
+  <button id="simBtn" onclick="runSim()">▶ Run Simulation</button>
+  <span id="simSpinner" style="display:none;margin-left:1rem;color:var(--muted)"><span class="spin">⟳</span> Running…</span>
+
+  <div id="sim-output" style="margin-top:1.5rem"></div>
+</div>
+
+<hr style="border-color:#334155;margin:2rem 0">
+<h2 style="font-size:1rem;color:var(--muted);margin-bottom:1rem">Manual Debate Management</h2>
 
 <div class="section">
   <h3>Step 1: Create Debate</h3>
@@ -111,30 +174,165 @@
 <script>
 const API = '/api';
 let debateLoaded = false;
+let ALL_CANDIDATES = [];
+let ALL_MODELS = [];
 
-// Populate participant dropdown after loading candidates
 (async () => {
-  const candRes = await fetch('/api/candidates');
+  const [candRes, modRes, presetRes] = await Promise.all([
+    fetch('/api/candidates'),
+    fetch('/api/models'),
+    fetch('/api/debates/presets'),
+  ]);
   const { candidates } = await candRes.json();
-  const sel = document.getElementById('planParticipant');
-  candidates.forEach(c => {
-    const opt = document.createElement('option');
-    opt.value = c.display_name;
-    opt.textContent = `${c.display_name} (${c.coalition})`;
-    sel.appendChild(opt);
-  });
-
-  // Populate model dropdown
-  const modRes = await fetch('/api/models');
   const { models } = await modRes.json();
-  const modSel = document.getElementById('turnModel');
-  models.filter(m => m.available).forEach(m => {
-    const opt = document.createElement('option');
-    opt.value = m.key;
-    opt.textContent = `${m.display_name} (${m.provider})`;
-    modSel.appendChild(opt);
+  const { presets } = await presetRes.json();
+  ALL_CANDIDATES = candidates;
+  ALL_MODELS = models;
+
+  // Simulation candidate dropdowns
+  ['simCandA', 'simCandB', 'planParticipant'].forEach(id => {
+    const sel = document.getElementById(id);
+    if (!sel) return;
+    candidates.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = id === 'planParticipant' ? c.display_name : c.key;
+      opt.textContent = `${c.display_name} (${c.coalition})`;
+      sel.appendChild(opt);
+    });
   });
+  // Default: A=fajardo, B=de_la_espriella
+  const ca = document.getElementById('simCandA');
+  const cb = document.getElementById('simCandB');
+  if (ca) ca.value = 'fajardo';
+  if (cb) cb.value = 'de_la_espriella';
+
+  // Model dropdowns
+  ['simActorModel', 'simJudgeModel', 'turnModel'].forEach(id => {
+    const sel = document.getElementById(id);
+    if (!sel) return;
+    models.forEach(m => {
+      const opt = document.createElement('option');
+      opt.value = m.key;
+      opt.textContent = `${m.display_name}${m.available ? '' : ' (no key)'}`;
+      opt.disabled = !m.available;
+      sel.appendChild(opt);
+    });
+  });
+  // Default actor=claude, judge=mistral_large
+  const actorSel = document.getElementById('simActorModel');
+  const judgeSel = document.getElementById('simJudgeModel');
+  if (actorSel) {
+    const claudeOpt = [...actorSel.options].find(o => o.value === 'claude' && !o.disabled);
+    if (claudeOpt) actorSel.value = 'claude';
+  }
+  if (judgeSel) {
+    const mistralOpt = [...judgeSel.options].find(o => o.value === 'mistral_large' && !o.disabled);
+    if (mistralOpt) judgeSel.value = 'mistral_large';
+    else {
+      const anyAvail = [...judgeSel.options].find(o => !o.disabled);
+      if (anyAvail) judgeSel.value = anyAvail.value;
+    }
+  }
+
+  // Preset buttons
+  const presetContainer = document.getElementById('preset-btns');
+  if (presetContainer && presets) {
+    presets.forEach(p => {
+      const btn = document.createElement('button');
+      btn.className = 'preset-btn';
+      btn.textContent = p.label;
+      btn.onclick = () => loadPreset(p);
+      presetContainer.appendChild(btn);
+    });
+  }
 })();
+
+function loadPreset(p) {
+  document.getElementById('simCandA').value = p.candidate_a;
+  document.getElementById('simCandB').value = p.candidate_b;
+  document.getElementById('simTopic').value = p.topic;
+  const js = document.getElementById('simJudgeModel');
+  const opt = [...js.options].find(o => o.value === p.judge && !o.disabled);
+  if (opt) js.value = p.judge;
+}
+
+async function runSim() {
+  const btn = document.getElementById('simBtn');
+  const spinner = document.getElementById('simSpinner');
+  const out = document.getElementById('sim-output');
+  const body = {
+    candidate_a_key: document.getElementById('simCandA').value,
+    candidate_b_key: document.getElementById('simCandB').value,
+    actor_model_key: document.getElementById('simActorModel').value,
+    judge_model_key: document.getElementById('simJudgeModel').value,
+    topic: document.getElementById('simTopic').value,
+    num_rounds: parseInt(document.getElementById('simRounds').value) || 2,
+  };
+  if (!body.candidate_a_key || !body.candidate_b_key) { alert('Select both candidates.'); return; }
+  if (body.candidate_a_key === body.candidate_b_key) { alert('Candidates must be different.'); return; }
+  if (!body.actor_model_key) { alert('Select an actor model.'); return; }
+
+  btn.disabled = true;
+  spinner.style.display = 'inline';
+  out.innerHTML = '';
+
+  try {
+    const res = await fetch(`${API}/simulate`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (!res.ok) { out.innerHTML = `<div style="color:var(--red)">Error: ${JSON.stringify(data)}</div>`; return; }
+    renderSim(data);
+  } catch(e) {
+    out.innerHTML = `<div style="color:var(--red)">Error: ${e.message}</div>`;
+  } finally {
+    btn.disabled = false;
+    spinner.style.display = 'none';
+  }
+}
+
+function renderSim(data) {
+  const out = document.getElementById('sim-output');
+  if (data.error) {
+    out.innerHTML = `<div style="color:var(--red);padding:1rem">Error: ${data.error}</div>`;
+    return;
+  }
+  let html = `<div style="margin-bottom:1rem">
+    <span class="sim-vs">${data.candidate_a} vs ${data.candidate_b}</span>
+    <span style="color:var(--muted);font-size:0.85rem;margin-left:1rem">Tema: ${data.topic}</span>
+    <span style="color:var(--muted);font-size:0.85rem;margin-left:1rem">Actores: ${data.actor_model} | Juez: ${data.judge_model}</span>
+    <span style="color:var(--muted);font-size:0.85rem;margin-left:1rem">${data.total_tokens} tokens</span>
+  </div>`;
+
+  const classMap = {};
+  if (data.turns.length > 0) classMap[data.turns[0].speaker_key] = 'cand-a';
+  if (data.turns.length > 1) classMap[data.turns[1].speaker_key] = 'cand-b';
+
+  for (const t of data.turns) {
+    const cls = classMap[t.speaker_key] || 'cand-a';
+    const errHtml = t.error ? `<div style="color:var(--red);font-size:0.75rem">${t.error}</div>` : '';
+    html += `<div class="sim-turn ${cls}">
+      <div class="speaker">${t.speaker_display} — Ronda ${t.round + 1}</div>
+      <div class="body">${escHtml(t.text)}</div>
+      ${errHtml}
+    </div>`;
+  }
+
+  if (data.judgment) {
+    html += `<div class="sim-turn judge">
+      <div class="speaker">⚖️ Veredicto del Juez (${data.judge_model})</div>
+      <div class="body">${escHtml(data.judgment)}</div>
+    </div>`;
+  }
+  html += `<div class="disclaimer">${data.disclaimer}</div>`;
+  out.innerHTML = html;
+}
+
+function escHtml(str) {
+  return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
 
 async function createDebate() {
   const out = document.getElementById('create-output');

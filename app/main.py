@@ -68,7 +68,11 @@ from app.schemas import (
     QueryRequest,
     QueryResponse,
     RunRequest,
+    SimulateRequest,
+    SimulationResultOut,
+    SimulationTurnOut,
 )
+from tracker.debate_simulator import PRESET_DEBATES, SimulationConfig, run_simulation
 
 load_dotenv()
 logging.basicConfig(
@@ -364,6 +368,55 @@ async def save_debate_endpoint(debate_id: str):
     today = date.today().isoformat()
     path = save_debate(_debates[debate_id], BASE_PATH, today)
     return {"status": "saved", "path": str(path)}
+
+
+# ── Simulation ─────────────────────────────────────────────────────────
+
+@app.get("/api/debates/presets")
+async def list_presets():
+    """Return the four pre-configured debate matchups."""
+    return {"presets": PRESET_DEBATES}
+
+
+@app.post("/api/simulate", response_model=SimulationResultOut)
+async def simulate_debate_endpoint(req: SimulateRequest):
+    """
+    Run a full AI debate simulation between two candidates.
+    Actor model argues as each candidate using their platform.
+    Judge model scores the exchange.
+    """
+    cfg = SimulationConfig(
+        candidate_a_key=req.candidate_a_key,
+        candidate_b_key=req.candidate_b_key,
+        judge_model_key=req.judge_model_key,
+        actor_model_key=req.actor_model_key,
+        topic=req.topic,
+        num_rounds=req.num_rounds,
+    )
+    result = await run_simulation(cfg)
+    turns_out = [
+        SimulationTurnOut(
+            round=t.round,
+            speaker_key=t.speaker_key,
+            speaker_display=t.speaker_display,
+            text=t.text,
+            model_used=t.model_used,
+            tokens_used=t.tokens_used,
+            error=t.error,
+        )
+        for t in result.turns
+    ]
+    return SimulationResultOut(
+        topic=cfg.topic,
+        candidate_a=result.candidate_a_display,
+        candidate_b=result.candidate_b_display,
+        actor_model=cfg.actor_model_key,
+        judge_model=result.judgment_model,
+        turns=turns_out,
+        judgment=result.judgment,
+        total_tokens=result.total_tokens,
+        error=result.error,
+    )
 
 
 # ── Static HTML pages ──────────────────────────────────────────────────

@@ -157,6 +157,40 @@ class MultiDaySummary(BaseModel):
     total_refusals: int
 
 
+# ── Debate Simulation ─────────────────────────────────────────────────────────
+
+class SimulateRequest(BaseModel):
+    candidate_a_key: str
+    candidate_b_key: str
+    judge_model_key: str = "claude"
+    actor_model_key: str = "claude"
+    topic: str
+    num_rounds: int = Field(default=2, ge=1, le=4)
+
+
+class SimulationTurnOut(BaseModel):
+    round: int
+    speaker_key: str
+    speaker_display: str
+    text: str
+    model_used: str
+    tokens_used: int
+    error: Optional[str] = None
+
+
+class SimulationResultOut(BaseModel):
+    topic: str
+    candidate_a: str
+    candidate_b: str
+    actor_model: str
+    judge_model: str
+    turns: List["SimulationTurnOut"]
+    judgment: str
+    total_tokens: int
+    error: Optional[str] = None
+    disclaimer: str = "[SIMULACIÓN ACADÉMICA — no representa posiciones reales]"
+
+
 # ── Candidate ────────────────────────────────────────────────────────────────
 
 class CandidateInfo(BaseModel):
