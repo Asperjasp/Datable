@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "debat-zero"
+version = "0.2.0"
+description = "LLM Bias Tracker for Colombian Elections 2026 + AI Debate Platform — regional model comparison across US, China, Europe, Latin America"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = ["llm", "bias", "colombia", "elections", "debat", "weird", "cultural-bias"]
+authors = [
+  { name = "SIMG-UN", email = "alejandro.sanchezp@gmail.com" }
+]
+
+dependencies = [
+  # LLM clients
+  "anthropic>=0.30.0",
+  "openai>=1.35.0",
+  "google-generativeai>=0.7.0",
+  "ollama>=0.3.0",
+  "httpx>=0.27.0",
+  
+  # Core
+  "pydantic>=2.7.0",
+  "python-dotenv>=1.0.0",
+  
+  # Web
+  "fastapi>=0.111.0",
+  "uvicorn[standard]>=0.30.0",
+]
+
+[project.optional-dependencies]
+analysis = [
+  "pandas>=2.2.0",
+  "jupyter>=1.0.0",
+  "matplotlib>=3.9.0",
+  "seaborn>=0.13.0",
+  "scipy>=1.13.0",
+  "datasets>=2.19.0",
+]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-asyncio>=0.23.0",
+  "fastapi>=0.111.0",
+  "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/asperjasp/Datable"
+Repository = "https://github.com/asperjasp/Datable"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tracker", "app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+# ── Regional Model Classification ─────────────────────────────────────────
+#
+# For analysis and paper reporting, models are grouped by region:
+#
+# - US: anthropic (claude), openai (gpt4o), google (gemini)
+# - China: dashscope (qwen_direct), openrouter (qwen_or, deepseek, ling, baichuan)
+# - Europe: mistral (mistral_large, mistral_small)
+# - Latin America: huggingface (llama_8b) + future LATAM GPT
+# - Local: ollama (gemma2_local, gemma4_local)
+#
+# Cross-Provider Consistency:
+# - qwen_direct (native) vs qwen_or (OpenRouter proxy)
+# - Same model, different API path — measure provider-level bias

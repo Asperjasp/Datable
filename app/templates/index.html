@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debat-Zero — LLM Bias Tracker</title>
+<style>
+  :root {
+    --bg: #0f172a; --surface: #1e293b; --surface2: #243047;
+    --text: #e2e8f0; --muted: #94a3b8; --border: #334155;
+    --accent: #38bdf8; --green: #4ade80; --red: #f87171; --amber: #fbbf24;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  nav { background: var(--surface); padding: 0.9rem 2rem; display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+  nav .logo { font-weight: 700; font-size: 1.1rem; color: var(--accent); }
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+  nav a:hover { color: var(--text); }
+  main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+  h1 { font-size: 1.7rem; margin-bottom: 0.3rem; }
+  .subtitle { color: var(--muted); margin-bottom: 2rem; }
+  h2 { font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .stat-card { background: var(--surface); border-radius: 12px; padding: 1.25rem; border: 1px solid var(--border); }
+  .stat-card .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .stat-card .value { font-size: 2rem; font-weight: 700; }
+  .value.green { color: var(--green); }
+  .value.red { color: var(--red); }
+  .value.amber { color: var(--amber); }
+  .layout { display: grid; grid-template-columns: 340px 1fr; gap: 1.5rem; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border); }
+  .card + .card { margin-top: 1.5rem; }
+
+  /* Model selector */
+  .model-group { margin-bottom: 1rem; }
+  .model-group-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; }
+  .region-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .region-us { background: #3b82f6; }
+  .region-china { background: #ef4444; }
+  .region-europe { background: #8b5cf6; }
+  .region-latam { background: #f59e0b; }
+  .region-local { background: var(--green); }
+  .model-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0; }
+  .model-row label { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.9rem; flex: 1; }
+  .model-row input[type=checkbox] { accent-color: var(--accent); width: 15px; height: 15px; flex-shrink: 0; }
+  .model-row label.disabled { color: var(--muted); cursor: not-allowed; }
+  .no-key { font-size: 0.72rem; color: var(--red); margin-left: auto; }
+
+  /* Quick-select buttons */
+  .quick-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .btn-sm { background: var(--surface2); color: var(--text); border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; }
+  .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Run controls */
+  .run-row { display: flex; gap: 0.75rem; align-items: flex-end; flex-wrap: wrap; margin: 1rem 0; }
+  .field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .field label { font-size: 0.8rem; color: var(--muted); }
+  .field input, .field select { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.45rem 0.7rem; border-radius: 7px; font-size: 0.9rem; }
+  .btn-primary { background: var(--accent); color: var(--bg); border: none; padding: 0.55rem 1.4rem; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.95rem; white-space: nowrap; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* Output console */
+  .console { background: #070f1c; border-radius: 8px; padding: 1rem; margin-top: 1rem; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.82rem; max-height: 340px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; color: #94a3b8; border: 1px solid var(--border); min-height: 60px; }
+  .console .ok { color: var(--green); }
+  .console .err { color: var(--red); }
+  .console .info { color: var(--accent); }
+
+  /* Multi-day section */
+  .multiday-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  @media (max-width: 600px) { .multiday-grid { grid-template-columns: 1fr; } }
+
+  /* Dates table */
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 0.65rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+  th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+  .badge.ok { background: #064e3b; color: var(--green); }
+  .badge.err { background: #7f1d1d; color: var(--red); }
+  .badge.warn { background: #78350f; color: var(--amber); }
+</style>
+</head>
+<body>
+<nav>
+  <span class="logo">🗳️ Debat-Zero</span>
+  <a href="/">Dashboard</a>
+  <a href="/models">Models</a>
+  <a href="/debate/new">Debate</a>
+</nav>
+<main>
+  <h1>📊 LLM Bias Tracker</h1>
+  <p class="subtitle">Colombian Presidential Elections 2026 · Regional comparison: US · China · Europe · LATAM · Local</p>
+
+  <!-- Stats row -->
+  <div class="grid-3">
+    <div class="stat-card">
+      <div class="label">📅 Today</div>
+      <div class="value" id="today" style="font-size:1.4rem">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">✅ Total Records</div>
+      <div class="value green" id="total-records">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">⚠️ Refusals</div>
+      <div class="value amber" id="total-refusals">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">❌ Errors</div>
+      <div class="value red" id="total-errors">—</div>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <!-- LEFT: Model selector panel -->
+    <div>
+      <div class="card">
+        <h2>🧠 Select Models</h2>
+        <div class="quick-btns">
+          <button class="btn-sm" onclick="selectSet('daily')">Daily Set</button>
+          <button class="btn-sm" onclick="selectSet('all')">All Available</button>
+          <button class="btn-sm" onclick="selectSet('none')">None</button>
+          <button class="btn-sm" onclick="selectSet('us')">US Only</button>
+          <button class="btn-sm" onclick="selectSet('china')">China Only</button>
+        </div>
+        <div id="model-groups">
+          <div style="color:var(--muted);font-size:0.85rem">Loading models…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Run controls + output + dates -->
+    <div>
+      <div class="card">
+        <h2>▶ Run Batch</h2>
+        <div class="run-row">
+          <div class="field">
+            <label>Date (leave blank = today)</label>
+            <input type="date" id="runDate">
+          </div>
+          <div class="field">
+            <label>Prompt set</label>
+            <select id="promptSet">
+              <option value="daily">Daily (15 core)</option>
+              <option value="all">All (30 prompts)</option>
+            </select>
+          </div>
+          <button class="btn-primary" id="runBtn" onclick="runBatch()">▶ Run</button>
+        </div>
+        <div class="console" id="output">Ready. Select models and click Run.</div>
+      </div>
+
+      <div class="card">
+        <h2>📅 Multi-Day Run</h2>
+        <div class="multiday-grid">
+          <div class="field">
+            <label>Start date</label>
+            <input type="date" id="mdStart">
+          </div>
+          <div class="field">
+            <label>Number of days</label>
+            <input type="number" id="mdDays" value="3" min="1" max="30">
+          </div>
+          <div class="field">
+            <label>Delay between days (s)</label>
+            <input type="number" id="mdDelay" value="0" min="0" step="1">
+          </div>
+          <div class="field" style="justify-content:flex-end">
+            <label>&nbsp;</label>
+            <button class="btn-primary" onclick="runMultiDay()">▶ Run Multi-Day</button>
+          </div>
+        </div>
+        <div class="console" id="md-output" style="display:none"></div>
+      </div>
+
+      <div class="card">
+        <h2>🔌 Quick Test</h2>
+        <div class="run-row">
+          <button class="btn-primary" onclick="testOpenRouter()">Test OpenRouter (Qwen)</button>
+        </div>
+        <div class="console" id="or-output" style="display:none"></div>
+      </div>
+
+      <div class="card">
+        <h2>📋 Collected Data</h2>
+        <table>
+          <thead><tr><th>Date</th><th>Models</th><th>Records</th><th>Status</th></tr></thead>
+          <tbody id="dates-body"><tr><td colspan="4" style="color:var(--muted)">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+const API = '/api';
+const TODAY = new Date().toISOString().slice(0, 10);
+document.getElementById('today').textContent = TODAY;
+document.getElementById('runDate').value = TODAY;
+document.getElementById('mdStart').value = TODAY;
+
+// ── Model registry loaded from API ────────────────────────────────────────────
+
+let ALL_MODELS = [];
+
+const DAILY_SET = ["qwen_direct", "qwen_or", "mistral_large", "llama_8b", "deepseek", "gemma2_local"];
+
+const REGION_META = {
+  us:           { label: 'US Cloud',              dotClass: 'region-us'     },
+  china_proxy:  { label: 'China (via OpenRouter)', dotClass: 'region-china'  },
+  china_direct: { label: 'China (Native API)',     dotClass: 'region-china'  },
+  europe:       { label: 'Europe',                 dotClass: 'region-europe' },
+  latam:        { label: 'Latin America',          dotClass: 'region-latam'  },
+  local:        { label: 'Local (Ollama)',          dotClass: 'region-local'  },
+};
+
+async function loadModels() {
+  try {
+    const res = await fetch(`${API}/models`);
+    const { models } = await res.json();
+    ALL_MODELS = models;
+    renderModelSelector(models);
+  } catch (e) {
+    document.getElementById('model-groups').innerHTML =
+      `<div style="color:var(--red)">Could not load models: ${e.message}</div>`;
+  }
+}
+
+function renderModelSelector(models) {
+  // Group by region order
+  const regionOrder = ['us', 'china_proxy', 'china_direct', 'europe', 'latam', 'local'];
+  const grouped = {};
+  regionOrder.forEach(r => { grouped[r] = []; });
+  models.forEach(m => {
+    const r = m.region || 'local';
+    if (!grouped[r]) grouped[r] = [];
+    grouped[r].push(m);
+  });
+
+  const container = document.getElementById('model-groups');
+  container.innerHTML = '';
+
+  regionOrder.forEach(region => {
+    const mods = grouped[region];
+    if (!mods || !mods.length) return;
+    const meta = REGION_META[region] || { label: region, dotClass: '' };
+
+    const groupDiv = document.createElement('div');
+    groupDiv.className = 'model-group';
+
+    const groupLabel = document.createElement('div');
+    groupLabel.className = 'model-group-label';
+    groupLabel.innerHTML = `<span class="region-dot ${meta.dotClass}"></span>${meta.label}`;
+    groupDiv.appendChild(groupLabel);
+
+    mods.forEach(m => {
+      const row = document.createElement('div');
+      row.className = 'model-row';
+
+      const label = document.createElement('label');
+      if (!m.available) label.className = 'disabled';
+
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.id = `model-${m.key}`;
+      cb.value = m.key;
+      cb.checked = DAILY_SET.includes(m.key) && m.available;
+      cb.disabled = !m.available;
+
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(` ${m.display_name}`));
+
+      if (!m.available) {
+        const badge = document.createElement('span');
+        badge.className = 'no-key';
+        badge.textContent = 'no key';
+        label.appendChild(badge);
+      }
+
+      row.appendChild(label);
+      groupDiv.appendChild(row);
+    });
+
+    container.appendChild(groupDiv);
+  });
+}
+
+function getSelectedKeys() {
+  return ALL_MODELS
+    .filter(m => {
+      const cb = document.getElementById(`model-${m.key}`);
+      return cb && cb.checked;
+    })
+    .map(m => m.key);
+}
+
+function selectSet(set) {
+  ALL_MODELS.forEach(m => {
+    const cb = document.getElementById(`model-${m.key}`);
+    if (!cb || cb.disabled) return;
+    if (set === 'daily')  cb.checked = DAILY_SET.includes(m.key);
+    if (set === 'all')    cb.checked = true;
+    if (set === 'none')   cb.checked = false;
+    if (set === 'us')     cb.checked = (m.region === 'us');
+    if (set === 'china')  cb.checked = (m.region === 'china_proxy' || m.region === 'china_direct');
+  });
+}
+
+// ── Console helper ─────────────────────────────────────────────────────────────
+
+function log(elId, msg, cls = '') {
+  const el = document.getElementById(elId);
+  el.style.display = '';
+  const span = document.createElement('span');
+  span.className = cls;
+  span.textContent = msg + '\n';
+  el.appendChild(span);
+  el.scrollTop = el.scrollHeight;
+}
+
+function clearConsole(elId) {
+  const el = document.getElementById(elId);
+  el.innerHTML = '';
+  el.style.display = 'none';
+}
+
+// ── Run batch ──────────────────────────────────────────────────────────────────
+
+async function runBatch() {
+  const keys = getSelectedKeys();
+  if (!keys.length) { alert('Select at least one model.'); return; }
+
+  clearConsole('output');
+  const btn = document.getElementById('runBtn');
+  btn.disabled = true;
+
+  const dateVal = document.getElementById('runDate').value;
+  const promptSet = document.getElementById('promptSet').value;
+
+  log('output', `▶ Starting run — ${keys.length} models, date: ${dateVal || 'today'}`, 'info');
+  log('output', `Models: ${keys.join(', ')}`);
+
+  const body = { model_keys: keys, date: dateVal || null, prompt_set: promptSet };
+
+  try {
+    const res = await fetch(`${API}/run`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      log('output', `\n✅ Done!`, 'ok');
+      log('output', `Total records: ${data.total_records}`, 'ok');
+      log('output', `Successes: ${data.total_successes}`, 'ok');
+      if (data.total_errors)   log('output', `Errors: ${data.total_errors}`, 'err');
+      if (data.total_refusals) log('output', `Refusals: ${data.total_refusals}`, 'warn');
+      log('output', '\n' + JSON.stringify(data, null, 2));
+      loadStats();
+    } else {
+      log('output', `❌ API error: ${JSON.stringify(data)}`, 'err');
+    }
+  } catch (e) {
+    log('output', `❌ ${e.message}`, 'err');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ── Multi-day run ──────────────────────────────────────────────────────────────
+
+async function runMultiDay() {
+  const keys = getSelectedKeys();
+  if (!keys.length) { alert('Select at least one model.'); return; }
+  const startDate = document.getElementById('mdStart').value;
+  if (!startDate) { alert('Select a start date.'); return; }
+  const numDays = parseInt(document.getElementById('mdDays').value);
+  const delay = parseFloat(document.getElementById('mdDelay').value || '0');
+
+  clearConsole('md-output');
+  log('md-output', `▶ Multi-day run — ${numDays} days from ${startDate}, ${keys.length} models`, 'info');
+
+  const body = {
+    start_date: startDate,
+    num_days: numDays,
+    delay_seconds: delay,
+    model_keys: keys,
+    prompt_set: document.getElementById('promptSet').value,
+  };
+
+  try {
+    const res = await fetch(`${API}/run/multi-day`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      log('md-output', `\n✅ Done! Total: ${data.total_records} records`, 'ok');
+      data.days.forEach(d => {
+        log('md-output', `  ${d.date}: ${d.records} records, ${d.errors} errors, ${d.refusals} refusals`);
+      });
+      loadStats();
+    } else {
+      log('md-output', `❌ ${JSON.stringify(data)}`, 'err');
+    }
+  } catch (e) {
+    log('md-output', `❌ ${e.message}`, 'err');
+  }
+}
+
+// ── OpenRouter test ────────────────────────────────────────────────────────────
+
+async function testOpenRouter() {
+  clearConsole('or-output');
+  log('or-output', 'Testing OpenRouter (Qwen 2.5 72B)…', 'info');
+  try {
+    const res = await fetch(`${API}/openrouter/test`, { method: 'POST' });
+    const data = await res.json();
+    if (res.ok) {
+      log('or-output', `✅ ${data.response}`, 'ok');
+    } else {
+      log('or-output', `❌ ${data.detail}`, 'err');
+    }
+  } catch (e) {
+    log('or-output', `❌ ${e.message}`, 'err');
+  }
+}
+
+// ── Stats table ────────────────────────────────────────────────────────────────
+
+async function loadStats() {
+  try {
+    const datesRes = await fetch(`${API}/dates`);
+    const { dates } = await datesRes.json();
+    const tbody = document.getElementById('dates-body');
+    tbody.innerHTML = '';
+    let totalRecs = 0, totalErr = 0, totalRef = 0;
+
+    for (const d of dates.slice(0, 15)) {
+      try {
+        const dataRes = await fetch(`${API}/data/${d}`);
+        const { records } = await dataRes.json();
+        const modelSet = [...new Set(records.map(r => r.model_provider))];
+        const errs = records.filter(r => r.error).length;
+        const refs = records.filter(r => r.refused_to_answer).length;
+        totalRecs += records.length;
+        totalErr += errs;
+        totalRef += refs;
+
+        const statusBadge = errs > 0
+          ? `<span class="badge err">${errs} err</span>`
+          : refs > 0
+            ? `<span class="badge warn">${refs} ref</span>`
+            : `<span class="badge ok">ok</span>`;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${d}</td><td>${modelSet.length}</td><td>${records.length}</td><td>${statusBadge}</td>`;
+        tbody.appendChild(tr);
+      } catch {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${d}</td><td colspan="3" style="color:var(--muted)">error loading</td>`;
+        tbody.appendChild(tr);
+      }
+    }
+
+    if (!dates.length) {
+      tbody.innerHTML = `<tr><td colspan="4" style="color:var(--muted)">No data yet — run a batch to get started.</td></tr>`;
+    }
+
+    document.getElementById('total-records').textContent = totalRecs || '0';
+    document.getElementById('total-errors').textContent = totalErr || '0';
+    document.getElementById('total-refusals').textContent = totalRef || '0';
+  } catch (e) {
+    console.error('Stats error:', e);
+  }
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────────
+
+loadModels();
+loadStats();
+</script>
+</body>
+</html>

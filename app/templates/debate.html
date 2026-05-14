@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Launch Debate — Debat-Zero</title>
+<style>
+  :root { --bg: #0f172a; --surface: #1e293b; --text: #e2e8f0; --accent: #38bdf8; --green: #4ade80; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; max-width: 900px; }
+  nav a { color: var(--accent); text-decoration: none; }
+  .form-group { margin-bottom: 1rem; }
+  label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+  input, textarea, select { width: 100%; padding: 0.5rem; border-radius: 6px; border: 1px solid #334155; background: var(--surface); color: var(--text); font-size: 0.95rem; }
+  button { background: var(--accent); color: var(--bg); border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 0.5rem; }
+  .section { background: var(--surface); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; border: 1px solid #334155; }
+  .section h3 { margin-bottom: 0.8rem; color: var(--accent); }
+  pre { background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto; margin-top: 1rem; font-size: 0.85rem; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<nav><a href="/">← Dashboard</a> | <strong>New Debate</strong></nav>
+<h1>⚔️ Launch a Presidential Election Debate</h1>
+
+<div class="section">
+  <h3>Step 1: Create Debate</h3>
+  <div class="form-group">
+    <label>Debate ID</label>
+    <input type="text" id="debateId" value="colombia-2026-presidential">
+  </div>
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" id="debateTitle" value="Colombian Presidential Election 2026">
+  </div>
+  <button onclick="createDebate()">Create Debate</button>
+  <pre id="create-output"></pre>
+</div>
+
+<div class="section">
+  <h3>Step 2: Upload Government Plans</h3>
+  <p style="color:#94a3b8;margin-bottom:0.5rem">Each candidate must submit their government plan covering the required topics.</p>
+  <div class="form-group">
+    <label>Participant Name</label>
+    <select id="planParticipant"></select>
+  </div>
+  <div class="form-group">
+    <label>Plan Title</label>
+    <input type="text" id="planTitle" value="Government Plan 2026-2030">
+  </div>
+  <div class="form-group">
+    <label>Topic: Health</label>
+    <textarea id="health-summary" rows="2" placeholder="Summary of health proposals..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Topic: Education</label>
+    <textarea id="education-summary" rows="2" placeholder="Summary of education proposals..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Topic: Economy</label>
+    <textarea id="economy-summary" rows="2" placeholder="Summary of economic proposals..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Topic: Security</label>
+    <textarea id="security-summary" rows="2" placeholder="Summary of security proposals..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Topic: Environment</label>
+    <textarea id="environment-summary" rows="2" placeholder="Summary of environmental proposals..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Topic: Social Welfare</label>
+    <textarea id="welfare-summary" rows="2" placeholder="Summary of social welfare proposals..."></textarea>
+  </div>
+  <button onclick="uploadPlan()">Upload Government Plan</button>
+  <pre id="plan-output"></pre>
+</div>
+
+<div class="section">
+  <h3>Step 3: Simulate Debate Turn</h3>
+  <div class="form-group">
+    <label>Speaker</label>
+    <input type="text" id="speaker" value="Moderator">
+  </div>
+  <div class="form-group">
+    <label>Phase</label>
+    <select id="turnPhase">
+      <option value="opening">Opening</option>
+      <option value="rebuttal">Rebuttal</option>
+      <option value="q_and_de">Q&A</option>
+      <option value="closing">Closing</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Text</label>
+    <textarea id="turnText" rows="4" placeholder="Debate turn content..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>LLM Model (optional)</label>
+    <select id="turnModel"><option value="">None</option></select>
+  </div>
+  <button onclick="addTurn()">Add Turn</button>
+  <pre id="turn-output"></pre>
+</div>
+
+<div class="section">
+  <h3>Step 4: Advance Phase & Save</h3>
+  <button onclick="advancePhase()">⏭ Advance Phase</button>
+  <button onclick="saveDebate()">💾 Save to Disk</button>
+  <pre id="save-output"></pre>
+</div>
+
+<script>
+const API = '/api';
+let debateLoaded = false;
+
+// Populate participant dropdown after loading candidates
+(async () => {
+  const candRes = await fetch('/api/candidates');
+  const { candidates } = await candRes.json();
+  const sel = document.getElementById('planParticipant');
+  candidates.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.display_name;
+    opt.textContent = `${c.display_name} (${c.coalition})`;
+    sel.appendChild(opt);
+  });
+
+  // Populate model dropdown
+  const modRes = await fetch('/api/models');
+  const { models } = await modRes.json();
+  const modSel = document.getElementById('turnModel');
+  models.filter(m => m.available).forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m.key;
+    opt.textContent = `${m.display_name} (${m.provider})`;
+    modSel.appendChild(opt);
+  });
+})();
+
+async function createDebate() {
+  const out = document.getElementById('create-output');
+  out.textContent = 'Creating...';
+  const body = {
+    debate_id: document.getElementById('debateId').value,
+    title: document.getElementById('debateTitle').value,
+  };
+  try {
+    const res = await fetch(`${API}/debates`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    debateLoaded = true;
+    out.textContent = JSON.stringify(data, null, 2);
+  } catch(e) { out.textContent = 'Error: ' + e.message; }
+}
+
+async function uploadPlan() {
+  if (!debateLoaded) { alert('Create a debate first!'); return; }
+  const out = document.getElementById('plan-output');
+  out.textContent = 'Uploading...';
+
+  const sections = [
+    { topic: 'health', summary: document.getElementById('health-summary').value },
+    { topic: 'education', summary: document.getElementById('education-summary').value },
+    { topic: 'economy', summary: document.getElementById('economy-summary').value },
+    { topic: 'security', summary: document.getElementById('security-summary').value },
+    { topic: 'environment', summary: document.getElementById('environment-summary').value },
+    { topic: 'social_welfare', summary: document.getElementById('welfare-summary').value },
+  ].filter(s => s.summary.trim());
+
+  const body = {
+    participant_name: document.getElementById('planParticipant').value,
+    plan_title: document.getElementById('planTitle').value,
+    sections: sections,
+  };
+
+  try {
+    const debateId = document.getElementById('debateId').value;
+    const res = await fetch(`${API}/debates/${debateId}/upload`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    out.textContent = JSON.stringify(data, null, 2);
+  } catch(e) { out.textContent = 'Error: ' + e.message; }
+}
+
+async function addTurn() {
+  if (!debateLoaded) { alert('Create a debate first!'); return; }
+  const out = document.getElementById('turn-output');
+  out.textContent = 'Adding turn...';
+
+  const body = {
+    phase: document.getElementById('turnPhase').value,
+    speaker: document.getElementById('speaker').value,
+    text: document.getElementById('turnText').value,
+    llm_model: document.getElementById('turnModel').value || null,
+  };
+
+  try {
+    const debateId = document.getElementById('debateId').value;
+    const res = await fetch(`${API}/debates/${debateId}/turn`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    out.textContent = JSON.stringify(data, null, 2);
+  } catch(e) { out.textContent = 'Error: ' + e.message; }
+}
+
+async function advancePhase() {
+  if (!debateLoaded) { alert('Create a debate first!'); return; }
+  const out = document.getElementById('save-output');
+  out.textContent = 'Advancing...';
+  try {
+    const debateId = document.getElementById('debateId').value;
+    const res = await fetch(`${API}/debates/${debateId}/advance`, { method: 'POST' });
+    const data = await res.json();
+    out.textContent = JSON.stringify(data, null, 2);
+  } catch(e) { out.textContent = 'Error: ' + e.message; }
+}
+
+async function saveDebate() {
+  if (!debateLoaded) { alert('Create a debate first!'); return; }
+  const out = document.getElementById('save-output');
+  out.textContent = 'Saving...';
+  try {
+    const debateId = document.getElementById('debateId').value;
+    const res = await fetch(`${API}/debates/${debateId}/save`, { method: 'POST' });
+    const data = await res.json();
+    out.textContent = JSON.stringify(data, null, 2);
+  } catch(e) { out.textContent = 'Error: ' + e.message; }
+}
+</script>
+</body>
+</html>

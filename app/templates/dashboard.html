@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard — Debat-Zero</title>
+<style>
+  :root { --bg: #0f172a; --surface: #1e293b; --text: #e2e8f0; --muted: #94a3b8; --border: #334155; --accent: #38bdf8; --green: #4ade80; --red: #f87171; --amber: #fbbf24; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 0; }
+  nav { background: var(--surface); padding: 0.9rem 2rem; display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid var(--border); }
+  nav .logo { font-weight: 700; color: var(--accent); }
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+  nav a:hover { color: var(--text); }
+  main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+  h1 { font-size: 1.7rem; margin-bottom: 0.3rem; }
+  .subtitle { color: var(--muted); margin-bottom: 2rem; }
+  h2 { font-size: 1rem; color: var(--accent); margin-bottom: 0.8rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .stat-card { background: var(--surface); border-radius: 12px; padding: 1.25rem; border: 1px solid var(--border); }
+  .stat-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .stat-card .value { font-size: 2rem; font-weight: 700; }
+  .value.green { color: var(--green); }
+  .value.red { color: var(--red); }
+  .value.amber { color: var(--amber); }
+  .card { background: var(--surface); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border); margin-bottom: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 0.65rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+  th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; }
+  .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+  .badge.ok { background: #064e3b; color: var(--green); }
+  .badge.err { background: #7f1d1d; color: var(--red); }
+  .badge.warn { background: #78350f; color: var(--amber); }
+
+  /* Model selection */
+  .models-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.4rem; margin-bottom: 1rem; }
+  .model-cb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; }
+  .model-cb input { accent-color: var(--accent); }
+  .model-cb.dim { color: var(--muted); }
+  .quick-btns { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .btn-sm { background: #243047; color: var(--text); border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; }
+  .btn-sm:hover { border-color: var(--accent); }
+  .run-row { display: flex; gap: 0.75rem; align-items: flex-end; flex-wrap: wrap; margin: 1rem 0; }
+  .field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .field label { font-size: 0.8rem; color: var(--muted); }
+  .field input { background: #243047; border: 1px solid var(--border); color: var(--text); padding: 0.45rem 0.7rem; border-radius: 7px; font-size: 0.9rem; }
+  .btn-primary { background: var(--accent); color: var(--bg); border: none; padding: 0.55rem 1.4rem; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .console { background: #070f1c; border-radius: 8px; padding: 1rem; margin-top: 1rem; font-family: monospace; font-size: 0.82rem; max-height: 300px; overflow-y: auto; white-space: pre-wrap; color: var(--muted); border: 1px solid var(--border); }
+  .console .ok { color: var(--green); }
+  .console .err { color: var(--red); }
+  .console .info { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <span class="logo">🗳️ Debat-Zero</span>
+  <a href="/">Dashboard</a>
+  <a href="/models">Models</a>
+  <a href="/debate/new">Debate</a>
+</nav>
+<main>
+  <h1>📊 Debat-Zero Dashboard</h1>
+  <p class="subtitle">LLM Bias Tracker — Colombian Presidential Elections 2026</p>
+
+  <div class="grid">
+    <div class="stat-card"><div class="label">📅 Today</div><div class="value" id="today" style="font-size:1.3rem">—</div></div>
+    <div class="stat-card"><div class="label">✅ Total Records</div><div class="value green" id="total-records">—</div></div>
+    <div class="stat-card"><div class="label">⚠️ Refusals</div><div class="value amber" id="total-refusals">—</div></div>
+    <div class="stat-card"><div class="label">❌ Errors</div><div class="value red" id="total-errors">—</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Model Selection</h2>
+    <div class="quick-btns">
+      <button class="btn-sm" onclick="sel('daily')">Daily Set</button>
+      <button class="btn-sm" onclick="sel('all')">All Available</button>
+      <button class="btn-sm" onclick="sel('none')">None</button>
+    </div>
+    <div class="models-grid" id="model-cbs"><span style="color:var(--muted);font-size:0.85rem">Loading…</span></div>
+    <div class="run-row">
+      <div class="field">
+        <label>Date (blank = today)</label>
+        <input type="date" id="runDate">
+      </div>
+      <button class="btn-primary" id="runBtn" onclick="runBatch()">▶ Run Batch</button>
+    </div>
+    <div class="console" id="output">Ready.</div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Collected Data</h2>
+    <table>
+      <thead><tr><th>Date</th><th>Providers</th><th>Records</th><th>Status</th></tr></thead>
+      <tbody id="dates-body"><tr><td colspan="4" style="color:var(--muted)">Loading…</td></tr></tbody>
+    </table>
+  </div>
+</main>
+
+<script>
+const API = '/api';
+const TODAY = new Date().toISOString().slice(0,10);
+document.getElementById('today').textContent = TODAY;
+document.getElementById('runDate').value = TODAY;
+
+const DAILY_SET = ["qwen_direct","qwen_or","mistral_large","llama_8b","deepseek","gemma2_local"];
+let ALL_MODELS = [];
+
+(async () => {
+  try {
+    const res = await fetch(`${API}/models`);
+    const { models } = await res.json();
+    ALL_MODELS = models;
+    const container = document.getElementById('model-cbs');
+    container.innerHTML = '';
+    models.forEach(m => {
+      const div = document.createElement('div');
+      div.className = 'model-cb' + (m.available ? '' : ' dim');
+      div.innerHTML = `<input type="checkbox" id="m-${m.key}" value="${m.key}"
+        ${DAILY_SET.includes(m.key) && m.available ? 'checked' : ''}
+        ${m.available ? '' : 'disabled'}>
+        <label for="m-${m.key}">${m.display_name}${m.available ? '' : ' <span style="font-size:0.7rem;color:var(--red)">(no key)</span>'}</label>`;
+      container.appendChild(div);
+    });
+  } catch(e) {
+    document.getElementById('model-cbs').textContent = 'Error loading models: ' + e.message;
+  }
+  loadStats();
+})();
+
+function sel(set) {
+  ALL_MODELS.forEach(m => {
+    const cb = document.getElementById(`m-${m.key}`);
+    if (!cb || cb.disabled) return;
+    cb.checked = set === 'all' ? true : set === 'none' ? false : DAILY_SET.includes(m.key);
+  });
+}
+
+function getKeys() {
+  return ALL_MODELS.filter(m => { const cb = document.getElementById(`m-${m.key}`); return cb && cb.checked; }).map(m => m.key);
+}
+
+function clog(msg, cls='') {
+  const el = document.getElementById('output');
+  const sp = document.createElement('span');
+  sp.className = cls;
+  sp.textContent = msg + '\n';
+  el.appendChild(sp);
+  el.scrollTop = el.scrollHeight;
+}
+
+async function runBatch() {
+  const keys = getKeys();
+  if (!keys.length) { alert('Select at least one model.'); return; }
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('runBtn').disabled = true;
+  clog(`▶ Running ${keys.length} models…`, 'info');
+  try {
+    const res = await fetch(`${API}/run`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ model_keys: keys, date: document.getElementById('runDate').value || null, prompt_set: 'daily' }),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      clog(`✅ Done — ${data.total_records} records, ${data.total_errors} errors`, 'ok');
+      loadStats();
+    } else {
+      clog(`❌ ${JSON.stringify(data)}`, 'err');
+    }
+  } catch(e) { clog(`❌ ${e.message}`, 'err'); }
+  finally { document.getElementById('runBtn').disabled = false; }
+}
+
+async function loadStats() {
+  try {
+    const { dates } = await (await fetch(`${API}/dates`)).json();
+    const tbody = document.getElementById('dates-body');
+    tbody.innerHTML = '';
+    let tr=0, te=0, tf=0;
+    for (const d of dates.slice(0,15)) {
+      try {
+        const { records } = await (await fetch(`${API}/data/${d}`)).json();
+        const providers = [...new Set(records.map(r => r.model_provider))];
+        const errs = records.filter(r => r.error).length;
+        const refs = records.filter(r => r.refused_to_answer).length;
+        tr += records.length; te += errs; tf += refs;
+        const badge = errs > 0 ? `<span class="badge err">${errs} err</span>` : refs > 0 ? `<span class="badge warn">${refs} ref</span>` : `<span class="badge ok">ok</span>`;
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${d}</td><td>${providers.length}</td><td>${records.length}</td><td>${badge}</td>`;
+        tbody.appendChild(row);
+      } catch {}
+    }
+    if (!dates.length) tbody.innerHTML = `<tr><td colspan="4" style="color:var(--muted)">No data yet — run a batch to start.</td></tr>`;
+    document.getElementById('total-records').textContent = tr || '0';
+    document.getElementById('total-errors').textContent = te || '0';
+    document.getElementById('total-refusals').textContent = tf || '0';
+  } catch {}
+}
+</script>
+</body>
+</html>
