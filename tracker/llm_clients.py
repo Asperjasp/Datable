@@ -26,7 +26,7 @@ class BaseLLMClient(ABC):
     model_id: str
 
     @abstractmethod
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         pass
 
 
@@ -42,15 +42,18 @@ class AnthropicClient(BaseLLMClient):
         self.model_id = model
         self._client = anthropic.AsyncAnthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
-            msg = await self._client.messages.create(
+            kwargs: dict = dict(
                 model=self.model_id,
                 max_tokens=max_tokens,
                 temperature=temperature,
                 messages=[{"role": "user", "content": prompt}],
             )
+            if system_prompt:
+                kwargs["system"] = system_prompt
+            msg = await self._client.messages.create(**kwargs)
             ms = (time.monotonic() - t0) * 1000
             return LLMResponse(
                 raw_text=msg.content[0].text,
@@ -72,14 +75,18 @@ class OpenAIClient(BaseLLMClient):
         self.model_id = model
         self._client = openai.AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
+            messages = []
+            if system_prompt:
+                messages.append({"role": "system", "content": system_prompt})
+            messages.append({"role": "user", "content": prompt})
             resp = await self._client.chat.completions.create(
                 model=self.model_id,
                 temperature=temperature,
                 max_tokens=max_tokens,
-                messages=[{"role": "user", "content": prompt}],
+                messages=messages,
             )
             ms = (time.monotonic() - t0) * 1000
             return LLMResponse(
@@ -104,11 +111,12 @@ class GeminiClient(BaseLLMClient):
         self._model = genai.GenerativeModel(model)
         self._genai = genai
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
+            full_prompt = f"{system_prompt}\n\n{prompt}" if system_prompt else prompt
             config = self._genai.GenerationConfig(temperature=temperature, max_output_tokens=max_tokens)
-            response = await self._model.generate_content_async(prompt, generation_config=config)
+            response = await self._model.generate_content_async(full_prompt, generation_config=config)
             ms = (time.monotonic() - t0) * 1000
             usage = response.usage_metadata
             return LLMResponse(
@@ -143,14 +151,18 @@ class OpenRouterClient(BaseLLMClient):
             },
         )
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
+            messages = []
+            if system_prompt:
+                messages.append({"role": "system", "content": system_prompt})
+            messages.append({"role": "user", "content": prompt})
             resp = await self._client.chat.completions.create(
                 model=self.model_id,
                 temperature=temperature,
                 max_tokens=max_tokens,
-                messages=[{"role": "user", "content": prompt}],
+                messages=messages,
             )
             ms = (time.monotonic() - t0) * 1000
             usage = resp.usage
@@ -180,9 +192,13 @@ class MistralClient(BaseLLMClient):
         self._base_url = "https://api.mistral.ai/v1"
         self._client_lib = httpx
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
+            messages = []
+            if system_prompt:
+                messages.append({"role": "system", "content": system_prompt})
+            messages.append({"role": "user", "content": prompt})
             async with self._client_lib.AsyncClient(timeout=60.0) as client:
                 resp = await client.post(
                     f"{self._base_url}/chat/completions",
@@ -192,7 +208,7 @@ class MistralClient(BaseLLMClient):
                     },
                     json={
                         "model": self.model_id,
-                        "messages": [{"role": "user", "content": prompt}],
+                        "messages": messages,
                         "temperature": temperature,
                         "max_tokens": max_tokens,
                     },
@@ -238,9 +254,13 @@ class QwenClient(BaseLLMClient):
         self._base_url = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
         self._client_lib = httpx
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
+            messages = []
+            if system_prompt:
+                messages.append({"role": "system", "content": system_prompt})
+            messages.append({"role": "user", "content": prompt})
             async with self._client_lib.AsyncClient(timeout=60.0) as client:
                 resp = await client.post(
                     self._base_url,
@@ -251,7 +271,7 @@ class QwenClient(BaseLLMClient):
                     json={
                         "model": self.model_id,
                         "input": {
-                            "messages": [{"role": "user", "content": prompt}]
+                            "messages": messages
                         },
                         "parameters": {
                             "temperature": temperature,
@@ -302,9 +322,10 @@ class HuggingFaceClient(BaseLLMClient):
         self._base_url = f"https://api-inference.huggingface.co/models/{model}"
         self._client_lib = httpx
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
+            full_input = f"<|system|>\n{system_prompt}\n<|user|>\n{prompt}\n<|assistant|>" if system_prompt else prompt
             async with self._client_lib.AsyncClient(timeout=120.0) as client:
                 resp = await client.post(
                     self._base_url,
@@ -313,7 +334,7 @@ class HuggingFaceClient(BaseLLMClient):
                         "Content-Type": "application/json",
                     },
                     json={
-                        "inputs": prompt,
+                        "inputs": full_input,
                         "parameters": {
                             "max_new_tokens": max_tokens,
                             "temperature": temperature,
@@ -373,12 +394,16 @@ class OllamaClient(BaseLLMClient):
         self.model_id = model
         self._client = ollama.AsyncClient(host=host)
 
-    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000) -> LLMResponse:
+    async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
         try:
+            messages = []
+            if system_prompt:
+                messages.append({"role": "system", "content": system_prompt})
+            messages.append({"role": "user", "content": prompt})
             response = await self._client.chat(
                 model=self.model_id,
-                messages=[{"role": "user", "content": prompt}],
+                messages=messages,
                 options={"temperature": temperature, "num_predict": max_tokens},
             )
             ms = (time.monotonic() - t0) * 1000
