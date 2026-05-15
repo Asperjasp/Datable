@@ -181,7 +181,7 @@ let ALL_MODELS = [];
   const [candRes, modRes, presetRes] = await Promise.all([
     fetch('/api/candidates'),
     fetch('/api/models'),
-    fetch('/api/debates/presets'),
+    fetch('/api/simulate/presets'),
   ]);
   const { candidates } = await candRes.json();
   const { models } = await modRes.json();

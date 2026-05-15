@@ -41,7 +41,7 @@ REQUIRED_KEYS = {
         "label": "OpenRouter API Key",
         "provider": "openrouter",
         "test_prompt": "Say 'ok' and nothing else.",
-        "test_model": "qwen/qwen-2.5-72b-instruct",
+        "test_model": "meta-llama/llama-3.1-8b-instruct:free",
         "optional": False,
     },
     "MISTRAL_API_KEY": {
@@ -55,7 +55,7 @@ REQUIRED_KEYS = {
         "label": "HuggingFace API Key",
         "provider": "huggingface",
         "test_prompt": "Hello",
-        "test_model": "meta-llama/Llama-3.1-8B-Instruct",
+        "test_model": "whoami",
         "optional": False,
     },
     "DASHSCOPE_API_KEY": {
@@ -83,7 +83,7 @@ REQUIRED_KEYS = {
         "label": "Google API Key (Gemini) — OPTIONAL",
         "provider": "google",
         "test_prompt": "Say 'ok' and nothing else.",
-        "test_model": "gemini-1.5-flash",
+        "test_model": "gemini-1.5-flash-latest",
         "optional": True,
     },
 }
@@ -173,7 +173,7 @@ def save_status(status: Dict) -> None:
 
 
 async def test_openrouter(key: str, model: str, prompt: str) -> tuple[bool, Optional[str]]:
-    """Test an OpenRouter API key."""
+    """Test an OpenRouter API key. 402 means valid key but no paid credits."""
     import httpx
     async with httpx.AsyncClient(timeout=30.0) as client:
         try:
@@ -190,7 +190,10 @@ async def test_openrouter(key: str, model: str, prompt: str) -> tuple[bool, Opti
                     "max_tokens": 10,
                 },
             )
-            return resp.status_code == 200, f"HTTP {resp.status_code}"
+            # 402 = valid key but insufficient credits for this model
+            if resp.status_code in (200, 402):
+                return True, f"HTTP {resp.status_code} (key valid)"
+            return False, f"HTTP {resp.status_code}"
         except Exception as e:
             return False, str(e)
 
@@ -218,17 +221,13 @@ async def test_mistral(key: str, model: str, prompt: str) -> tuple[bool, Optiona
 
 
 async def test_huggingface(key: str, model: str, prompt: str) -> tuple[bool, Optional[str]]:
-    """Test a HuggingFace Inference API key."""
+    """Test a HuggingFace key via the whoami endpoint (no model call needed)."""
     import httpx
-    async with httpx.AsyncClient(timeout=60.0) as client:
+    async with httpx.AsyncClient(timeout=30.0) as client:
         try:
-            resp = await client.post(
-                f"https://api-inference.huggingface.co/models/{model}",
-                headers={
-                    "Authorization": f"Bearer {key}",
-                    "Content-Type": "application/json",
-                },
-                json={"inputs": prompt, "parameters": {"max_new_tokens": 10}},
+            resp = await client.get(
+                "https://huggingface.co/api/whoami-v2",
+                headers={"Authorization": f"Bearer {key}"},
             )
             return resp.status_code == 200, f"HTTP {resp.status_code}"
         except Exception as e:
@@ -383,8 +382,12 @@ async def run_bootstrap():
                     save_status(status)
                     continue
             
-            # Secure input with getpass (no echo)
-            key_value = getpass.getpass(f"  Paste your {config['label']}: ").strip()
+            print(f"  Paste your {config['label']}: ", end="", flush=True)
+            try:
+                with open("/dev/tty") as tty:
+                    key_value = tty.readline().strip()
+            except OSError:
+                key_value = input().strip()
             if not key_value:
                 print(f"  Empty input, skipping...")
                 continue

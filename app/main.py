@@ -372,7 +372,7 @@ async def save_debate_endpoint(debate_id: str):
 
 # ── Simulation ─────────────────────────────────────────────────────────
 
-@app.get("/api/debates/presets")
+@app.get("/api/simulate/presets")
 async def list_presets():
     """Return the four pre-configured debate matchups."""
     return {"presets": PRESET_DEBATES}
