@@ -1,0 +1,44 @@
+{
+  "OPENROUTER_API_KEY": {
+    "verified": false,
+    "fingerprint": "3269e982f0e02618",
+    "error": "HTTP 402",
+    "date": "2026-05-15T11:31:50.656150"
+  },
+  "MISTRAL_API_KEY": {
+    "verified": true,
+    "fingerprint": "041f1a6c9773becc",
+    "model_tested": "mistral-tiny-latest",
+    "date": "2026-05-15T11:08:19.207096"
+  },
+  "HUGGINGFACE_API_KEY": {
+    "verified": false,
+    "fingerprint": "c08707b873fe89b4",
+    "error": "HTTP 404",
+    "date": "2026-05-15T11:32:09.595468"
+  },
+  "DASHSCOPE_API_KEY": {
+    "verified": false,
+    "fingerprint": "a266faf4c586fe87",
+    "error": "HTTP 401",
+    "date": "2026-05-15T11:32:22.438680"
+  },
+  "ANTHROPIC_API_KEY": {
+    "verified": true,
+    "fingerprint": "944bf1bfd9f76633",
+    "model_tested": "claude-opus-4-7",
+    "date": "2026-05-15T11:32:47.573306"
+  },
+  "OPENAI_API_KEY": {
+    "verified": true,
+    "fingerprint": "8ba0b5746d366b4e",
+    "model_tested": "gpt-4o-mini",
+    "date": "2026-05-15T11:33:01.846629"
+  },
+  "GOOGLE_API_KEY": {
+    "verified": false,
+    "fingerprint": "415b4434ce9d8211",
+    "error": "HTTP 404",
+    "date": "2026-05-15T11:33:39.345650"
+  }
+}
