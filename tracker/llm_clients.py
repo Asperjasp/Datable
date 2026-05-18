@@ -41,6 +41,7 @@ class AnthropicClient(BaseLLMClient):
         import anthropic
         self.model_id = model
         self._client = anthropic.AsyncAnthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        self._supports_temperature = "opus-4" not in model and "sonnet-4" not in model
 
     async def query(self, prompt: str, temperature: float = 0.7, max_tokens: int = 1000, system_prompt: Optional[str] = None) -> LLMResponse:
         t0 = time.monotonic()
@@ -48,9 +49,10 @@ class AnthropicClient(BaseLLMClient):
             kwargs: dict = dict(
                 model=self.model_id,
                 max_tokens=max_tokens,
-                temperature=temperature,
                 messages=[{"role": "user", "content": prompt}],
             )
+            if self._supports_temperature:
+                kwargs["temperature"] = temperature
             if system_prompt:
                 kwargs["system"] = system_prompt
             msg = await self._client.messages.create(**kwargs)
@@ -104,7 +106,7 @@ class OpenAIClient(BaseLLMClient):
 class GeminiClient(BaseLLMClient):
     provider = "google"
 
-    def __init__(self, model: str = "gemini-1.5-pro"):
+    def __init__(self, model: str = "gemini-2.0-flash"):
         import google.generativeai as genai
         self.model_id = model
         genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
@@ -463,7 +465,7 @@ AVAILABLE_MODELS: dict[str, ModelConfig] = {
     ),
     "gemini": ModelConfig(
         key="gemini",
-        display_name="Gemini 1.5 Pro",
+        display_name="Gemini 2.0 Flash",
         provider="google",
         group="Google",
         region="us",

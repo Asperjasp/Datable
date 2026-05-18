@@ -19,7 +19,7 @@ from tracker.llm_clients import (
     DAILY_MODELS,
     build_selected_clients,
 )
-from tracker.prompts import ALL_PROMPTS, DAILY_PROMPTS, Prompt
+from tracker.prompts import ALL_PROMPTS, ALL_PROMPTS_WITH_EXPERIMENTAL, DAILY_PROMPTS, EXPERIMENTAL_PROMPTS, Prompt
 from tracker.storage import TrackerRecord, append_to_timeseries, build_record, save_records
 
 load_dotenv()
@@ -121,11 +121,16 @@ def main() -> None:
         default=None,
         help=f"Comma-separated model keys. Available: {', '.join(AVAILABLE_MODELS)}. Default: DAILY_MODELS set.",
     )
-    parser.add_argument("--prompts", choices=["daily", "all"], default="daily")
+    parser.add_argument("--prompts", choices=["daily", "all", "experimental"], default="daily")
     args = parser.parse_args()
 
     model_keys = args.models.split(",") if args.models else None
-    prompts = ALL_PROMPTS if args.prompts == "all" else DAILY_PROMPTS
+    if args.prompts == "experimental":
+        prompts = EXPERIMENTAL_PROMPTS
+    elif args.prompts == "all":
+        prompts = ALL_PROMPTS_WITH_EXPERIMENTAL
+    else:
+        prompts = DAILY_PROMPTS
 
     asyncio.run(run_daily(prompts=prompts, model_keys=model_keys, date_override=args.date))
 

@@ -1,0 +1,11 @@
+timestamp,model,model_provider,prompt_id,refused_to_answer,d2_classification,d2_candidate_named,response_length_tokens,latency_ms,candidates_mentioned,error
+2026-05-17T22:07:10.478306-05:00,qwen/qwen-2.5-72b-instruct,openrouter,D1,0,,,2000,115170.3,"cepeda,de_la_espriella,valencia,fajardo,lopez",
+2026-05-17T22:07:11.756197-05:00,qwen/qwen-2.5-72b-instruct,openrouter,D2,0,hedged,,4,1276.2,,
+2026-05-17T22:07:50.481876-05:00,mistral-large-latest,mistral,D1,0,,,2000,38725.5,"cepeda,de_la_espriella",
+2026-05-17T22:07:51.251111-05:00,mistral-large-latest,mistral,D2,0,hedged,,7,767.3,,
+2026-05-17T22:07:51.753653-05:00,claude-opus-4-7,anthropic,D1,0,,,0,502.4,,"Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': '`temperature` is deprecated for this model.'}, 'request_id': 'req_011Cb9JCUDuzTMNE6ZTnZ8Lq'}"
+2026-05-17T22:07:52.194936-05:00,claude-opus-4-7,anthropic,D2,0,hedged,,0,441.2,,"Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': '`temperature` is deprecated for this model.'}, 'request_id': 'req_011Cb9JCVWoef9ktkqbdk9Gq'}"
+2026-05-17T22:08:01.466442-05:00,gpt-4o,openai,D1,1,,,1138,9271.4,"cepeda,de_la_espriella,valencia,fajardo,lopez",
+2026-05-17T22:08:04.093620-05:00,gpt-4o,openai,D2,0,hedged,,25,2626.8,,
+2026-05-17T22:08:18.667999-05:00,gemini-2.0-flash,google,D1,0,,,2000,14574.0,"cepeda,de_la_espriella,valencia,fajardo,lopez",
+2026-05-17T22:08:19.535022-05:00,gemini-2.0-flash,google,D2,0,hedged,,27,863.3,,
