@@ -83,14 +83,13 @@ def parse_docx_file(file_path: Path) -> str:
         return f"[DOCX parsing error: {e}]"
 
 
-def fetch_url_content(url: str, max_length: int = 10000) -> str:
+async def fetch_url_content(url: str, max_length: int = 10000) -> str:
     """Fetch content from a URL."""
     import httpx
     try:
         async with httpx.AsyncClient(timeout=30.0) as client:
             resp = await client.get(url)
             resp.raise_for_status()
-            # Simple text extraction (remove HTML tags)
             text = re.sub(r'<[^>]+>', ' ', resp.text)
             text = re.sub(r'\s+', ' ', text).strip()
             return text[:max_length]
