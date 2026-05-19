@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debat-Zero — Debate en Vivo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+        .nav { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .nav a { color: #94a3b8; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; }
+        .nav a:hover { background: #1e293b; color: #e2e8f0; }
+        .nav a.active { background: #1e293b; color: #e2e8f0; }
+        .debate-header { background: #1e293b; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #334155; }
+        .candidates { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .candidate { text-align: center; flex: 1; }
+        .candidate-name { font-size: 1.25rem; font-weight: 600; }
+        .candidate-coalition { color: #94a3b8; font-size: 0.875rem; }
+        .vs-badge { background: linear-gradient(135deg, #ef4444, #f59e0b); color: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 700; font-size: 0.875rem; }
+        .topic-badge { background: #334155; color: #e2e8f0; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; display: inline-block; margin-top: 0.5rem; }
+        .turns { margin-bottom: 2rem; }
+        .turn { background: #1e293b; border-radius: 0.75rem; padding: 1rem; margin-bottom: 1rem; border-left: 4px solid #3b82f6; }
+        .turn.b { border-left-color: #ef4444; }
+        .turn-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+        .turn-speaker { font-weight: 600; }
+        .turn-phase { color: #94a3b8; font-size: 0.75rem; background: #334155; padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
+        .turn-text { color: #cbd5e1; line-height: 1.6; }
+        .judgment { background: #1e293b; border-radius: 1rem; padding: 1.5rem; border: 1px solid #334155; }
+        .judgment h2 { font-size: 1.25rem; margin-bottom: 1rem; color: #f1f5f9; }
+        .scores { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .score-card { background: #0f172a; border-radius: 0.5rem; padding: 1rem; }
+        .score-card h3 { font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+        .score-value { font-size: 1.5rem; font-weight: 700; }
+        .score-value.winner { color: #10b981; }
+        .score-value.loser { color: #ef4444; }
+        .summary { background: #0f172a; border-radius: 0.5rem; padding: 1rem; margin-top: 1rem; }
+        .summary p { color: #cbd5e1; line-height: 1.6; }
+        .key-moments { margin-top: 1rem; }
+        .key-moment { background: #0f172a; border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0.5rem; color: #cbd5e1; }
+        .loading { text-align: center; padding: 2rem; }
+        .spinner { display: inline-block; width: 2rem; height: 2rem; border: 3px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .error { background: #7f1d1d; border: 1px solid #ef4444; color: #fca5a5; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
+        .disclaimer { background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 1rem; color: #94a3b8; font-size: 0.875rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">🏠 Dashboard</a>
+            <a href="/models">🤖 Models</a>
+            <a href="/debate/new">⚔️ Simular Debate</a>
+            <a href="/dashboard" class="active">📊 Resultados</a>
+        </div>
+
+        <div class="disclaimer">
+            ⚠️ SIMULACIÓN ACADÉMICA — Los debates son generados por IA y no representan posiciones reales de los candidatos.
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 1rem;">Cargando debate...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="debate-content" style="display: none;">
+            <div class="debate-header">
+                <div class="candidates">
+                    <div class="candidate">
+                        <div class="candidate-name" id="candidate-a-name"></div>
+                        <div class="candidate-coalition" id="candidate-a-coalition"></div>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="candidate">
+                        <div class="candidate-name" id="candidate-b-name"></div>
+                        <div class="candidate-coalition" id="candidate-b-coalition"></div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="topic-badge" id="topic-badge"></div>
+                </div>
+            </div>
+
+            <div class="turns" id="turns"></div>
+
+            <div class="judgment" id="judgment" style="display: none;">
+                <h2>🏆 Decisión del Juez</h2>
+                <div class="scores" id="scores"></div>
+                <div class="summary">
+                    <h3 style="margin-bottom: 0.5rem; color: #f1f5f9;">Resumen</h3>
+                    <p id="summary-text"></p>
+                </div>
+                <div class="key-moments" id="key-moments" style="display: none;">
+                    <h3 style="margin-bottom: 0.5rem; color: #f1f5f9;">Momentos Clave</h3>
+                    <div id="moments-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadDebate() {
+            const debateId = window.location.pathname.split('/').pop();
+            
+            try {
+                const response = await fetch(`/api/debates/${debateId}`);
+                const debate = await response.json();
+
+                if (!response.ok) {
+                    document.getElementById('error').textContent = debate.detail || 'Debate no encontrado';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('loading').style.display = 'none';
+                    return;
+                }
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('debate-content').style.display = 'block';
+
+                document.getElementById('candidate-a-name').textContent = debate.candidate_a;
+                document.getElementById('candidate-b-name').textContent = debate.candidate_b;
+                document.getElementById('topic-badge').textContent = `Tema: ${debate.topic}`;
+
+                const turnsContainer = document.getElementById('turns');
+                debate.turns.forEach(turn => {
+                    const isB = turn.speaker === debate.candidate_b;
+                    turnsContainer.innerHTML += `
+                        <div class="turn ${isB ? 'b' : ''}">
+                            <div class="turn-header">
+                                <span class="turn-speaker">${turn.speaker}</span>
+                                <span class="turn-phase">${turn.phase.replace('_', ' ')}</span>
+                            </div>
+                            <div class="turn-text">${turn.text}</div>
+                        </div>
+                    `;
+                });
+
+                if (debate.judgment && debate.judgment.winner) {
+                    document.getElementById('judgment').style.display = 'block';
+                    
+                    const scoresContainer = document.getElementById('scores');
+                    const scores = debate.judgment.scores;
+                    
+                    if (scores.candidate_a || scores.candidate_b) {
+                        ['candidate_a', 'candidate_b'].forEach(key => {
+                            const name = key === 'candidate_a' ? debate.candidate_a : debate.candidate_b;
+                            const score = scores[key];
+                            const isWinner = debate.judgment.winner === key;
+                            
+                            scoresContainer.innerHTML += `
+                                <div class="score-card">
+                                    <h3>${name}</h3>
+                                    <div class="score-value ${isWinner ? 'winner' : 'loser'}">
+                                        ${Object.values(score).reduce((a, b) => a + b, 0) / Object.keys(score).length} / 10
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+
+                    document.getElementById('summary-text').textContent = debate.judgment.summary;
+
+                    if (debate.judgment.key_moments && debate.judgment.key_moments.length > 0) {
+                        document.getElementById('key-moments').style.display = 'block';
+                        const momentsList = document.getElementById('moments-list');
+                        debate.judgment.key_moments.forEach(moment => {
+                            momentsList.innerHTML += `<div class="key-moment">• ${moment}</div>`;
+                        });
+                    }
+                }
+            } catch (error) {
+                document.getElementById('error').textContent = `Error cargando debate: ${error.message}`;
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        loadDebate();
+    </script>
+</body>
+</html>

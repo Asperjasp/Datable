@@ -1,6 +1,6 @@
 # Claude Code ↔ OpenCode Intercalation Protocol
 
-> Version 1.0 — for use across all projects
+> Version 2.0 — Updated 2026-05-18
 
 ## Purpose
 
@@ -11,7 +11,7 @@ Maximize quality and cost-efficiency by assigning tasks to the right tool, while
 | Tool | Strength | Use When |
 |------|----------|----------|
 | **Claude Code** | High-complexity reasoning, security, architecture | Planning, security reviews, complex logic, paper writing |
-| **OpenCode** | Mechanical implementation, speed, cost | Wiring, config, tests, scripts, data pipelines |
+| **OpenCode** | Mechanical implementation, speed, cost | Wiring, config, tests, scripts, data pipelines, UI |
 
 ---
 
@@ -39,6 +39,8 @@ Maximize quality and cost-efficiency by assigning tasks to the right tool, while
 | Scripts and utilities | OpenCode | - | `[OPENCODE-WIRED]` |
 | CSS/UI components | OpenCode | - | `[OPENCODE-WIRED]` |
 | CI/CD pipeline | OpenCode | Security review | `[OPENCODE-WIRED]` |
+| HTML templates | OpenCode | - | `[OPENCODE-WIRED]` |
+| FastAPI endpoints | OpenCode | Claude Code (security review) | `[OPENCODE-WIRED]` |
 
 ### Phase: Security Review
 
@@ -53,6 +55,8 @@ Maximize quality and cost-efficiency by assigning tasks to the right tool, while
 | API key storage | Secure configuration patterns |
 | Database query construction | SQL injection risks |
 | RAG pipeline with sensitive data | Data leakage prevention |
+| Google SSO integration | OAuth security, token handling |
+| Whisper API key handling | Audio data privacy |
 
 ### Phase: Research & Writing
 
@@ -153,6 +157,8 @@ Every file should have ownership markers. Add these as comments:
 | `llm_clients.py` | OpenCode updated | Claude Code reviews security |
 | Bootstrap script | OpenCode created | Claude Code reviews key handling |
 | Paper structure | OpenCode created | Claude Code expands methodology |
+| Debate simulator | OpenCode created | Claude Code reviews prompt injection |
+| UI templates | OpenCode created | Ready for use |
 | Intercalation protocol | This document | Both use |
 
 ### Next Actions
@@ -180,6 +186,10 @@ Every file should have ownership markers. Add these as comments:
 | Moderator agent | Claude Code | Complex multi-agent logic |
 | Bootstrap script | OpenCode (done) | Mechanical key handling |
 | Config files | OpenCode (done) | Mechanical |
+| UI templates | OpenCode (done) | HTML/CSS/JS |
+| FastAPI endpoints | OpenCode (done) | REST API wiring |
+| Document ingestion | OpenCode (done) | File parsing |
+| Cron automation | OpenCode (done) | Shell scripts |
 
 ### Security Items for Claude Code Review
 
@@ -188,6 +198,9 @@ Every file should have ownership markers. Add these as comments:
 | `llm_clients.py` | API key exposure, model_id validation (HuggingFaceClient) |
 | `scripts/bootstrap_keys.py` | Secure key handling, .env permissions, fingerprinting |
 | `tracker/storage.py` | Data persistence, CSV injection prevention |
+| `tracker/debate_simulator.py` | Prompt injection via uploaded documents |
+| `tracker/document_ingestion.py` | File upload validation, PDF parsing security |
+| `app/main.py` | Input validation, file upload limits |
 
 ---
 
@@ -204,10 +217,17 @@ When switching tools, leave:
 # - Updated AVAILABLE_MODELS with regional classification
 # - Created bootstrap script
 # - Created paper/ structure
+# - Created debate simulator with actor/judge system
+# - Created UI templates (debate_setup.html, debate_live.html)
+# - Created document ingestion pipeline
+# - Created cron automation scripts
+# - Created deployment configs (Railway, Render)
 #
 # Claude Code should:
 # - Review security of llm_clients.py (especially HuggingFaceClient model_id)
 # - Review key handling in bootstrap_keys.py
+# - Review prompt injection risks in debate_simulator.py
+# - Review file upload security in document_ingestion.py
 # - Expand paper/methodology.md with stats methodology
 ```
 

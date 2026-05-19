@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debat-Zero — Simular Debate</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+        .nav { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .nav a { color: #94a3b8; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; }
+        .nav a:hover { background: #1e293b; color: #e2e8f0; }
+        .nav a.active { background: #1e293b; color: #e2e8f0; }
+        .card { background: #1e293b; border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #334155; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; color: #94a3b8; font-size: 0.875rem; }
+        select, input, textarea { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #e2e8f0; font-size: 1rem; margin-bottom: 1rem; }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: #60a5fa; }
+        button { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-size: 1rem; cursor: pointer; font-weight: 600; }
+        button:hover { opacity: 0.9; }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .preset { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s; }
+        .preset:hover { border-color: #60a5fa; background: #1e3a5f; }
+        .preset.selected { border-color: #3b82f6; background: #1e3a5f; }
+        .preset-title { font-weight: 600; color: #f1f5f9; }
+        .preset-desc { color: #94a3b8; font-size: 0.875rem; margin-top: 0.25rem; }
+        .status { padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; }
+        .status.success { background: #064e3b; border: 1px solid #10b981; color: #6ee7b7; }
+        .status.error { background: #7f1d1d; border: 1px solid #ef4444; color: #fca5a5; }
+        .status.loading { background: #1e3a5f; border: 1px solid #3b82f6; color: #93c5fd; }
+        .upload-area { border: 2px dashed #334155; border-radius: 0.5rem; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.2s; }
+        .upload-area:hover { border-color: #60a5fa; background: #1e293b; }
+        .doc-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #0f172a; border-radius: 0.5rem; margin-bottom: 0.5rem; }
+        .doc-item button { padding: 0.25rem 0.5rem; font-size: 0.75rem; background: #ef4444; }
+        .spinner { display: inline-block; width: 1rem; height: 1rem; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-right: 0.5rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .vs-badge { background: linear-gradient(135deg, #ef4444, #f59e0b); color: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 700; font-size: 0.875rem; display: inline-block; margin: 0.5rem 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">🏠 Dashboard</a>
+            <a href="/models">🤖 Models</a>
+            <a href="/debate/new" class="active">⚔️ Simular Debate</a>
+            <a href="/dashboard">📊 Resultados</a>
+        </div>
+
+        <h1>⚔️ Simular Debate</h1>
+        <p class="subtitle">Simula debates entre candidatos presidenciales colombianos usando IA con documentos oficiales</p>
+
+        <div class="card">
+            <h2 style="margin-bottom: 1rem;">Matchups Predefinidos</h2>
+            <div id="preset-list"></div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>🔵 Candidato A</h2>
+                <label for="candidate-a">Seleccionar Candidato</label>
+                <select id="candidate-a"><option value="">Elige un candidato...</option></select>
+                <label>Subir Documentos (TXT, PDF, DOCX)</label>
+                <div class="upload-area" id="upload-a" onclick="document.getElementById('file-a').click()">
+                    <p>📄 Click o arrastra archivos aquí</p>
+                    <input type="file" id="file-a" multiple accept=".txt,.pdf,.doc,.docx" style="display: none;">
+                </div>
+                <div id="docs-a"></div>
+            </div>
+
+            <div class="card">
+                <h2>🔴 Candidato B</h2>
+                <label for="candidate-b">Seleccionar Candidato</label>
+                <select id="candidate-b"><option value="">Elige un candidato...</option></select>
+                <label>Subir Documentos (TXT, PDF, DOCX)</label>
+                <div class="upload-area" id="upload-b" onclick="document.getElementById('file-b').click()">
+                    <p>📄 Click o arrastra archivos aquí</p>
+                    <input type="file" id="file-b" multiple accept=".txt,.pdf,.doc,.docx" style="display: none;">
+                </div>
+                <div id="docs-b"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom: 1rem;">⚙️ Configuración del Debate</h2>
+            <div class="grid">
+                <div>
+                    <label for="topic">Tema del Debate</label>
+                    <select id="topic">
+                        <option value="salud">Salud</option>
+                        <option value="educación">Educación</option>
+                        <option value="economía">Economía</option>
+                        <option value="seguridad">Seguridad</option>
+                        <option value="medio ambiente">Medio Ambiente</option>
+                        <option value="bienestar social">Bienestar Social</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="actor-model">Modelo Actor (quien debate)</label>
+                    <select id="actor-model"></select>
+                </div>
+                <div>
+                    <label for="judge-model">Modelo Juez (quien evalúa)</label>
+                    <select id="judge-model"></select>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <button id="start-btn" onclick="startDebate()">🚀 Iniciar Debate</button>
+        </div>
+
+        <div id="status"></div>
+    </div>
+
+    <script>
+        let candidates = [];
+        let models = [];
+        let presets = [];
+        let documentsA = [];
+        let documentsB = [];
+
+        async function init() {
+            const candRes = await fetch('/api/candidates');
+            const candData = await candRes.json();
+            candidates = candData.candidates;
+            
+            const selectA = document.getElementById('candidate-a');
+            const selectB = document.getElementById('candidate-b');
+            
+            candidates.forEach(c => {
+                selectA.innerHTML += `<option value="${c.key}">${c.display_name} (${c.coalition})</option>`;
+                selectB.innerHTML += `<option value="${c.key}">${c.display_name} (${c.coalition})</option>`;
+            });
+
+            const modelRes = await fetch('/api/models');
+            const modelData = await modelRes.json();
+            models = modelData.models.filter(m => m.available);
+            
+            const actorSelect = document.getElementById('actor-model');
+            const judgeSelect = document.getElementById('judge-model');
+            
+            models.forEach(m => {
+                actorSelect.innerHTML += `<option value="${m.key}">${m.display_name} (${m.group})</option>`;
+                judgeSelect.innerHTML += `<option value="${m.key}">${m.display_name} (${m.group})</option>`;
+            });
+
+            const presetRes = await fetch('/api/simulate/presets');
+            const presetData = await presetRes.json();
+            presets = presetData.presets;
+            
+            const presetList = document.getElementById('preset-list');
+            presets.forEach(p => {
+                presetList.innerHTML += `
+                    <div class="preset" onclick="selectPreset('${p.id}')">
+                        <div class="preset-title">${p.title}</div>
+                        <div class="preset-desc">${p.description}</div>
+                    </div>
+                `;
+            });
+
+            ['a', 'b'].forEach(side => {
+                const input = document.getElementById(`file-${side}`);
+                const area = document.getElementById(`upload-${side}`);
+                
+                input.addEventListener('change', (e) => handleFiles(e.target.files, side));
+                
+                area.addEventListener('dragover', (e) => { e.preventDefault(); area.classList.add('dragover'); });
+                area.addEventListener('dragleave', () => { area.classList.remove('dragover'); });
+                area.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    area.classList.remove('dragover');
+                    handleFiles(e.dataTransfer.files, side);
+                });
+            });
+        }
+
+        function selectPreset(id) {
+            const preset = presets.find(p => p.id === id);
+            if (!preset) return;
+            
+            document.getElementById('candidate-a').value = preset.candidate_a;
+            document.getElementById('candidate-b').value = preset.candidate_b;
+            
+            document.querySelectorAll('.preset').forEach(card => card.classList.remove('selected'));
+            event.target.closest('.preset').classList.add('selected');
+        }
+
+        async function handleFiles(files, side) {
+            const docsList = document.getElementById(`docs-${side}`);
+            const candidateKey = side === 'a' ? document.getElementById('candidate-a').value : document.getElementById('candidate-b').value;
+            
+            if (!candidateKey) {
+                showStatus('⚠️ Selecciona un candidato primero', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            for (const file of files) {
+                formData.append('files', file);
+            }
+
+            const response = await fetch(`/api/documents/${candidateKey}`, {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+            
+            if (response.ok) {
+                docsList.innerHTML = '';
+                result.documents.forEach((doc, i) => {
+                    docsList.innerHTML += `
+                        <div class="doc-item">
+                            <span>📄 ${doc.name} (${(doc.size / 1024).toFixed(1)} KB)</span>
+                            <button onclick="removeDoc('${candidateKey}', ${i}, '${side}')">✕</button>
+                        </div>
+                    `;
+                });
+                showStatus(`✅ ${result.uploaded.length} documento(s) subido(s)`, 'success');
+            } else {
+                showStatus(`❌ Error: ${result.detail}`, 'error');
+            }
+        }
+
+        async function removeDoc(candidateKey, docIndex, side) {
+            const response = await fetch(`/api/documents/${candidateKey}/${docIndex}`, { method: 'DELETE' });
+            const result = await response.json();
+            
+            const docsList = document.getElementById(`docs-${side}`);
+            docsList.innerHTML = '';
+            result.documents.forEach((doc, i) => {
+                docsList.innerHTML += `
+                    <div class="doc-item">
+                        <span>📄 ${doc.name} (${(doc.size / 1024).toFixed(1)} KB)</span>
+                        <button onclick="removeDoc('${candidateKey}', ${i}, '${side}')">✕</button>
+                    </div>
+                `;
+            });
+        }
+
+        async function startDebate() {
+            const candidateA = document.getElementById('candidate-a').value;
+            const candidateB = document.getElementById('candidate-b').value;
+            const topic = document.getElementById('topic').value;
+            const actorModel = document.getElementById('actor-model').value;
+            const judgeModel = document.getElementById('judge-model').value;
+
+            if (!candidateA || !candidateB) {
+                showStatus('⚠️ Selecciona ambos candidatos', 'error');
+                return;
+            }
+
+            if (candidateA === candidateB) {
+                showStatus('⚠️ Selecciona candidatos diferentes', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('start-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Iniciando Debate...';
+
+            showStatus('🚀 Iniciando simulación de debate...', 'loading');
+
+            try {
+                const response = await fetch('/api/simulate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        candidate_a_key: candidateA,
+                        candidate_b_key: candidateB,
+                        actor_model_key: actorModel,
+                        judge_model_key: judgeModel,
+                        topic: topic,
+                    }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showStatus(`✅ Debate completado! Juez: ${result.judge_model}`, 'success');
+                    setTimeout(() => {
+                        window.location.href = `/debate/${result.debate_id || 'latest'}`;
+                    }, 1500);
+                } else {
+                    showStatus(`❌ Error: ${result.detail || 'Error desconocido'}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Error de red: ${error.message}`, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '🚀 Iniciar Debate';
+            }
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.className = `status ${type}`;
+            status.textContent = message;
+        }
+
+        init();
+    </script>
+</body>
+</html>

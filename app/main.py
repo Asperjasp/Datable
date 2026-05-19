@@ -17,6 +17,16 @@ Endpoints:
   POST /api/debates/{id}/advance → Advance debate phase
   POST /api/debates/{id}/save    → Save debate to disk
 
+  # Simulation endpoints
+  GET  /api/simulate/presets     → List preset debates
+  POST /api/simulate             → Run a full AI debate simulation
+  GET  /api/simulate/results     → List all simulation results
+
+  # Document upload
+  POST /api/documents/{candidate_key}  → Upload documents for a candidate
+  GET  /api/documents/{candidate_key}  → List documents for a candidate
+  DELETE /api/documents/{candidate_key}/{doc_id} → Delete a document
+
   # Batch / multi-day
   POST /api/run                  → Run single-day batch
   POST /api/run/multi-day        → Run multi-day batch
@@ -25,6 +35,7 @@ Endpoints:
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 import sys
@@ -33,7 +44,7 @@ from pathlib import Path
 from typing import List
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.responses import HTMLResponse
 
 from tracker.debate import (
@@ -54,6 +65,19 @@ from tracker.llm_clients import (
 from tracker.multi_day import run_multi_day
 from tracker.prompts import ALL_PROMPTS, DAILY_PROMPTS
 from tracker.storage import append_to_timeseries, build_record, save_records
+from tracker.debate_simulator import (
+    PRESET_DEBATES,
+    run_debate,
+    save_debate_result,
+    load_candidate_documents,
+    save_candidate_documents,
+)
+from tracker.document_ingestion import (
+    process_uploaded_file,
+    add_document_to_candidate,
+    remove_document_from_candidate,
+    get_candidate_documents_summary,
+)
 
 from app.schemas import (
     CandidateInfo,
@@ -72,7 +96,6 @@ from app.schemas import (
     SimulationResultOut,
     SimulationTurnOut,
 )
-from tracker.debate_simulator import PRESET_DEBATES, SimulationConfig, run_simulation
 
 load_dotenv()
 logging.basicConfig(
@@ -95,6 +118,7 @@ app = FastAPI(
 
 # In-memory debate store (persisted to disk on save)
 _debates: dict[str, Debate] = {}
+_simulation_results: dict[str, dict] = {}
 
 
 # ── Helpers ──────────────────────────────────────────────────────────────
@@ -385,15 +409,24 @@ async def simulate_debate_endpoint(req: SimulateRequest):
     Actor model argues as each candidate using their platform.
     Judge model scores the exchange.
     """
-    cfg = SimulationConfig(
+    # Load documents for each candidate
+    docs_a = [d.get("content", "") for d in load_candidate_documents(req.candidate_a_key)]
+    docs_b = [d.get("content", "") for d in load_candidate_documents(req.candidate_b_key)]
+    
+    result = await run_debate(
         candidate_a_key=req.candidate_a_key,
         candidate_b_key=req.candidate_b_key,
-        judge_model_key=req.judge_model_key,
         actor_model_key=req.actor_model_key,
+        judge_model_key=req.judge_model_key,
         topic=req.topic,
-        num_rounds=req.num_rounds,
+        documents_a=docs_a,
+        documents_b=docs_b,
     )
-    result = await run_simulation(cfg)
+    
+    # Save result
+    save_debate_result(result)
+    _simulation_results[result.debate_id] = result.to_dict()
+    
     turns_out = [
         SimulationTurnOut(
             round=t.round,
@@ -406,17 +439,96 @@ async def simulate_debate_endpoint(req: SimulateRequest):
         )
         for t in result.turns
     ]
+    
+    judgment_str = ""
+    if result.judgment:
+        judgment_str = f"Winner: {result.judgment.winner}\n{result.judgment.summary}"
+    
     return SimulationResultOut(
-        topic=cfg.topic,
+        topic=req.topic,
         candidate_a=result.candidate_a_display,
         candidate_b=result.candidate_b_display,
-        actor_model=cfg.actor_model_key,
-        judge_model=result.judgment_model,
+        actor_model=req.actor_model_key,
+        judge_model=req.judge_model_key,
         turns=turns_out,
-        judgment=result.judgment,
+        judgment=judgment_str,
         total_tokens=result.total_tokens,
         error=result.error,
     )
+
+
+@app.get("/api/simulate/results")
+async def list_simulation_results():
+    """List all simulation results."""
+    # Load from disk
+    results = []
+    debates_dir = BASE_PATH / "data" / "debates"
+    if debates_dir.exists():
+        for date_dir in sorted(debates_dir.iterdir(), reverse=True):
+            if date_dir.is_dir():
+                for f in date_dir.glob("*.json"):
+                    with open(f, encoding="utf-8") as fh:
+                        results.append(json.load(fh))
+    return {"results": results}
+
+
+# ── Document Upload ────────────────────────────────────────────────────
+
+@app.post("/api/documents/{candidate_key}")
+async def upload_documents(candidate_key: str, files: List[UploadFile] = File(...)):
+    """
+    Upload documents for a candidate's knowledge base.
+    Supports: .txt, .pdf, .doc, .docx
+    """
+    valid_candidates = ["cepeda", "de_la_espriella", "valencia", "fajardo", "lopez"]
+    if candidate_key not in valid_candidates:
+        raise HTTPException(status_code=400, detail=f"Unknown candidate: {candidate_key}. Valid: {valid_candidates}")
+    
+    saved_files = []
+    
+    for file in files:
+        # Save to temp file for processing
+        temp_path = BASE_PATH / "data" / "documents" / f"temp_{file.filename}"
+        content = await file.read()
+        with open(temp_path, "wb") as f:
+            f.write(content)
+        
+        # Process the file
+        doc = process_uploaded_file(temp_path, file.filename)
+        add_document_to_candidate(candidate_key, doc)
+        saved_files.append(file.filename)
+        
+        # Clean up temp file
+        temp_path.unlink()
+    
+    summary = get_candidate_documents_summary(candidate_key)
+    
+    return {
+        "candidate": candidate_key,
+        "uploaded": saved_files,
+        "total_documents": summary["total_documents"],
+    }
+
+
+@app.get("/api/documents/{candidate_key}")
+async def list_documents(candidate_key: str):
+    """List all documents for a candidate."""
+    valid_candidates = ["cepeda", "de_la_espriella", "valencia", "fajardo", "lopez"]
+    if candidate_key not in valid_candidates:
+        raise HTTPException(status_code=400, detail=f"Unknown candidate: {candidate_key}. Valid: {valid_candidates}")
+    
+    return get_candidate_documents_summary(candidate_key)
+
+
+@app.delete("/api/documents/{candidate_key}/{doc_index}")
+async def delete_document(candidate_key: str, doc_index: int):
+    """Delete a document from a candidate's knowledge base."""
+    valid_candidates = ["cepeda", "de_la_espriella", "valencia", "fajardo", "lopez"]
+    if candidate_key not in valid_candidates:
+        raise HTTPException(status_code=400, detail=f"Unknown candidate: {candidate_key}. Valid: {valid_candidates}")
+    
+    remove_document_from_candidate(candidate_key, doc_index)
+    return get_candidate_documents_summary(candidate_key)
 
 
 # ── Static HTML pages ──────────────────────────────────────────────────
@@ -428,4 +540,9 @@ async def dashboard_page():
 
 @app.get("/debate/new", response_class=HTMLResponse)
 async def debate_page():
-    return _get_html("debate.html")
+    return _get_html("debate_setup.html")
+
+
+@app.get("/debate/{debate_id}", response_class=HTMLResponse)
+async def debate_live_page(debate_id: str):
+    return _get_html("debate_live.html")
