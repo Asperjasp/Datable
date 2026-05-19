@@ -1,0 +1,10 @@
+.venv/
+data/raw/
+logs/
+__pycache__/
+.env
+.key_status.json
+*.pyc
+analysis/
+evaluation/
+tests/
