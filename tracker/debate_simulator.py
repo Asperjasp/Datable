@@ -476,7 +476,13 @@ PRESET_DEBATES = [
 
 # ── Document Management ────────────────────────────────────────────────
 
-DOCUMENTS_DIR = Path(__file__).parent.parent / "data" / "documents"
+_DS_BASE = Path(__file__).parent.parent
+DOCUMENTS_DIR = Path("/tmp/debat-zero/documents") if not (_DS_BASE / "data").exists() else _DS_BASE / "data" / "documents"
+try:
+    DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
+except OSError:
+    DOCUMENTS_DIR = Path("/tmp/debat-zero/documents")
+    DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
 
 def save_candidate_documents(candidate_key: str, documents: List[str]) -> Path:
     """Save documents for a candidate."""
@@ -501,7 +507,8 @@ def load_candidate_documents(candidate_key: str) -> List[str]:
 
 def save_debate_result(result: DebateResult) -> Path:
     """Save a debate result to disk."""
-    results_dir = Path(__file__).parent.parent / "data" / "debates" / datetime.now().strftime("%Y-%m-%d")
+    base = Path(__file__).parent.parent
+    results_dir = (base / "data" / "debates" if (base / "data").exists() else Path("/tmp/debat-zero/debates")) / datetime.now().strftime("%Y-%m-%d")
     results_dir.mkdir(parents=True, exist_ok=True)
     
     result_path = results_dir / f"{result.debate_id}.json"

@@ -20,8 +20,14 @@ from typing import List, Optional, Dict
 
 log = logging.getLogger("document_ingestion")
 
-DOCUMENTS_DIR = Path(__file__).parent.parent / "data" / "documents"
-DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
+_BASE = Path(__file__).parent.parent
+# Use /tmp on read-only filesystems (Vercel), local data/ otherwise
+DOCUMENTS_DIR = Path("/tmp/debat-zero/documents") if not (_BASE / "data").exists() else _BASE / "data" / "documents"
+try:
+    DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
+except OSError:
+    DOCUMENTS_DIR = Path("/tmp/debat-zero/documents")
+    DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def save_candidate_documents(candidate_key: str, documents: List[Dict]) -> Path:
