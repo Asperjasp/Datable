@@ -1,0 +1,142 @@
+{
+  "debate_id": "2026-05-20-forced-cepeda-vs-de_la_espriella",
+  "topic": "Salud y sistema de salud en Colombia",
+  "participant_a": "cepeda",
+  "participant_b": "de_la_espriella",
+  "mode_a": "ai",
+  "mode_b": "ai",
+  "actor_a": "qwen_or",
+  "actor_b": "claude",
+  "judge_model": "claude",
+  "max_questions": 5,
+  "status": "complete",
+  "current_question_idx": 4,
+  "awaiting_human": null,
+  "questions": [
+    "¿Cuál es su propuesta concreta para Salud y sistema de salud en Colombia y cuál es el presupuesto estimado?",
+    "¿Qué mecanismos de implementación usaría y en qué plazo?",
+    "¿Quiénes se benefician y quiénes asumen los costos de su propuesta?",
+    "¿Qué evidencia respalda que su enfoque funcionaría en el contexto colombiano?",
+    "¿Cómo difiere su propuesta de la del candidato oponente y por qué es superior?"
+  ],
+  "answers": [
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "error": "'NoneType' object is not subscriptable",
+      "timestamp": "2026-05-20T14:02:51.172008"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Colombianos, el sistema de salud colombiano no necesita ser destruido, necesita ser rescatado. Mientras Petro y Cepeda quieren liquidar las EPS y estatizar todo —el camino directo a Venezuela—, yo propongo lo contrario: **fortalecerlas, regularlas mejor y salvar lo que funciona**.\n\n**Mi propuesta concreta:**\n\n1. **Plan de choque de 10 billones de pesos** para atender la emergencia hospitalaria: deudas con clínicas, desabastecimiento de medicamentos y atención a pacientes de alto costo. Hoy hay más de 30 EPS intervenidas y deudas superiores a 23 billones según ACEMI.\n\n2. **Reforzar las EPS, no liquidarlas.** Colombia tenía uno de los mejores sistemas de cobertura de América Latina (99%",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1417,
+      "error": null,
+      "timestamp": "2026-05-20T14:02:57.747865"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "error": "'NoneType' object is not subscriptable",
+      "timestamp": "2026-05-20T14:03:04.322799"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "**Plan de choque en salud: ejecución inmediata desde el día uno.**\n\nColombia tiene un sistema en cuidados intensivos: 24 EPS intervenidas, deuda hospitalaria superior a 23 billones de pesos y ciudadanos muriendo en pasillos. No hay tiempo para experimentos ideológicos como los de Petro y Cepeda, que quieren estatizar lo que medio funciona.\n\n**Mis mecanismos concretos:**\n\n1. **Primeros 100 días:** giro directo de 10 billones de pesos a hospitales públicos y EPS solventes para pagar deuda crítica con clínicas y proveedores. Auditoría forense paralela a la ADRES.\n\n2. **Primer año:** concesiones de gestión privada en hospitales públicos quebrados —modelo que ya funcionó en Bogotá con Méderi y en Ant",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1396,
+      "error": null,
+      "timestamp": "2026-05-20T14:03:12.459516"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Mi propuesta de salud beneficia a la población colombiana en su conjunto, especialmente a los más vulnerables. Al avanzar hacia un sistema de salud universal sin intermediación de EPS, eliminamos las barreras de acceso y aseguramos que todos, sin excepción, reciban atención médica de calidad. La gratuidad en la atención primaria y la ampliación de la red hospitalaria pública repercuten directamente en la reducción de la pobreza y la desigualdad, ya que los hogares de menores ingresos no tendrán que destinar una parte significativa de su presupuesto a gastos médicos.\n\nLos costos de este sistema serán asumidos principalmente por el Estado, a través de una reforma tributaria progresiva que aumente los impuestos a grandes patrimonios, dividendos y rentas financieras. Estos recursos, calculados en alrededor del 1% del PIB, serán destinados a fortalecer la infraestructura y la capacidad de respuesta del sistema de salud pública. Según el Banco Mundial, un sistema de salud universal puede reducir la pobreza en un 5% y aumentar la productividad laboral en un 10%.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 981,
+      "error": null,
+      "timestamp": "2026-05-20T14:03:56.319488"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "**Moderador, colombianos:**\n\nMi propuesta de salud beneficia a TODOS los colombianos, y se lo voy a demostrar con datos.\n\n**¿Quién se beneficia?**\n\nPrimero, los **22 millones de afiliados a EPS** que hoy ven cómo el Gobierno Petro quebró el sistema. Mi plan de choque inyecta **10 billones de pesos** para destrabar urgencias, medicamentos y cirugías represadas. Segundo, los **pacientes de hospitales públicos**, que tendrán gestión privada eficiente —el modelo demostró en Bogotá reducir tiempos de espera hasta 40%. Tercero, la **clase media**, que podrá optar por seguros privados complementarios sin perder cobertura básica.\n\n**¿Quién asume los costos?**\n\nLa **burocracia parasitaria** que se come el 30% de",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1400,
+      "error": null,
+      "timestamp": "2026-05-20T14:04:03.690998"
+    },
+    {
+      "question_idx": 3,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "error": "'NoneType' object is not subscriptable",
+      "timestamp": "2026-05-20T14:04:09.793694"
+    },
+    {
+      "question_idx": 3,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Mire, la evidencia es contundente y está aquí mismo, en Colombia y en el mundo.\n\n**Primero, lo que funciona en Colombia:** El sistema de aseguramiento con EPS llevó la cobertura del 23% en 1993 a más del 99% hoy (Minsalud, 2023). Colombia tiene de los mejores indicadores de protección financiera en salud de América Latina según la OCDE. Destruir eso, como pretende Petro, es una locura. Por eso propongo **reforzar y regular las EPS, no liquidarlas**.\n\n**Segundo, gestión privada de hospitales públicos:** El Hospital Pablo Tobón Uribe en Medellín, sin ánimo de lucro con gestión autónoma, es referente nacional. La Fundación Santa Fe, Valle del Lili: gestión eficiente salva vidas. En contraste,",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1404,
+      "error": null,
+      "timestamp": "2026-05-20T14:04:18.096379"
+    },
+    {
+      "question_idx": 4,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Mi propuesta de salud se fundamenta en la construcción de un sistema universal y público, sin intermediación de EPS, que garantice el acceso a la atención primaria sin copagos y fortalezca la red hospitalaria estatal. Este enfoque difiere del candidato oponente, quien propone mantener la actual estructura mixta con un mayor papel del sector privado.\n\nLa evidencia internacional muestra que sistemas de salud basados en el Estado, como el del Reino Unido, tienen mejores resultados en términos de cobertura, equidad y eficiencia. En Colombia, la fragmentación del sistema y la intermediación privada han llevado a altos costos y desigualdades. Según la OCDE, Colombia gasta alrededor del 7.5% del PIB en salud, pero el gasto público solo representa el 55%, lo que deja un vacío que debe ser cubierto por los ciudadanos a través de copagos y seguros privados.\n\nMi propuesta busca eliminar estas barreras financieras y garantizar un acceso universal a la salud, priorizando la prevención y la atención primaria. Esto no solo mejorará la calidad de vida de los colombianos, sino que también fortalecerá nuestra economía al reducir la carga de enfermedades y aumentar la productividad. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1003,
+      "error": null,
+      "timestamp": "2026-05-20T14:04:46.058777"
+    },
+    {
+      "question_idx": 4,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Mire, la diferencia con el señor Cepeda es abismal y se la explico con claridad meridiana.\n\nCepeda y el petrismo quieren **liquidar las EPS** y entregarle todo el sistema al Estado, ese mismo Estado que tiene a la Nueva EPS quebrada, con un hueco de más de 10 billones de pesos según la Contraloría. ¿Ustedes le entregarían su salud al mismo gobierno que no puede ni entregar medicamentos a tiempo? Yo no.\n\nMi propuesta es radicalmente distinta y superior por tres razones:\n\n**Primero**, un plan de choque inmediato de **10 billones de pesos** para resolver las urgencias críticas: medicamentos, cirugías represadas y deudas con hospitales.\n\n**Segundo**, **fortalecemos y regulamos las EPS**, no las destruimos.",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1402,
+      "error": null,
+      "timestamp": "2026-05-20T14:04:53.933677"
+    }
+  ],
+  "analytics": {
+    "summary": "{\n  \"how\": {\n    \"cepeda\": \"Transición hacia un sistema universal y público sin intermediación de EPS, con gratuidad en atención primaria, fortalecimiento de la red hospitalaria estatal y financiamiento vía reforma tributaria progresiva (impuestos a grandes patrimonios, dividendos y rentas financieras) equivalente a aproximadamente 1% del PIB. No detalló cronograma ni mecanismos operativos de transición.\",\n    \"de_la_espriella\": \"Plan de choque de 10 billones de pesos en los primeros 100 días mediante giro directo a hospitales públicos y EPS solventes, auditoría forense paralela a la ADRES, y en el primer año concesiones de gestión privada en hospitales públicos quebrados (modelo Méderi). Mantiene y refuerza las EPS con mayor regulación.\"\n  },\n  \"why\": {\n    \"cepeda\": \"Considera que la intermediación de las EPS y la fragmentación público-privada generan barreras de acceso, altos costos de bolsillo y desigualdad. Cita la experiencia del NHS británico y datos de la OCDE sobre gasto en salud para justificar un modelo estatal centrado en prevención y atención primaria.\",\n    \"de_la_espriella\": \"Argumenta que el sistema actual logró cobertura del 99% (vs 23% en 1993) y que destruirlo sería retroceder. Prioriza rescatar lo existente, atacar la crisis hospitalaria inmediata (deuda de 23 billones según ACEMI, 24-30 EPS intervenidas) y replicar modelos de gestión privada eficiente.\"\n  },\n  \"who\": {\n    \"cepeda\": \"Beneficiarios: población general, especialmente hogares de bajos ingresos que hoy enfrentan gastos de bolsillo. Costos: grandes patrimonios, dividendos y rentas financieras vía reforma tributaria progresiva.\",\n    \"de_la_espriella\": \"Beneficiarios: 22 millones de afiliados a EPS, pacientes de hospitales públicos, clase media con acceso a seguros complementarios. Costos: 'burocracia parasitaria' (respuesta cortada antes de detallar fuente fiscal de los 10 billones).\"\n  },\n  \"key_tensions\": [\n    \"Rol de las EPS: Cepeda propone eliminarlas como intermediarias; De la Espriella propone fortalecerlas y regularlas.\",\n    \"Rol del Estado vs. sector privado en la prestación y aseguramiento.\",\n    \"Financiamiento: reforma tributaria progresiva (Cepeda) vs. reasignación y auditoría del gasto existente más inyección de 10 billones (De la Espriella, sin fuente clara).\"\n  ],\n  \"unanswered\": [\n    \"Cepeda no respondió preguntas 1, 2 y 4: faltan presupuesto detallado, cronograma de transición, mecanismos operativos y evidencia específica para el contexto colombiano.\",\n    \"De la Espriella no especificó de dónde saldrían los 10 billones del plan de choque ni cómo evitaría replicar fallas regulatorias previas de las EPS.\",\n    \"Ninguno detalló cómo manejaría el talento humano en salud ni la deuda acumulada con clínicas durante la transición.\"\n  ],\n  \"evidence_quality\": { \"cepeda\": 4, \"de_la_espriella\": 6 },\n  \"specificity\": { \"cepeda\": 3, \"de_la_espriella\": 6 },\n  \"summary\": \"Cepeda plantea un sistema universal público sin EPS, financiado con reforma tributaria progresiva (~1% del PIB), citando el NHS y datos OCDE, pero dejó sin responder cuatro de cinco preguntas, limitando la concreción de su propuesta. De la Espriella propone un plan de choque de 10 billones, fortalecimiento regulado de EPS y concesiones privadas en hospitales públicos, con cronograma a 100 días y primer año, aunque varias respuestas quedaron truncadas y no precisó la f",
+    "raw": true
+  },
+  "total_tokens": 9003,
+  "started_at": "2026-05-20T14:02:25.878176",
+  "completed_at": "2026-05-20T14:05:14.046584",
+  "error": null
+}

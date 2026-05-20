@@ -31,7 +31,7 @@ KB_DIR = Path(__file__).parent.parent / "data" / "knowledge_bases"
 
 MAX_TOKENS_QUESTIONS = 900
 MAX_TOKENS_ANSWER = 300   # ~1 minute of debate speaking
-MAX_TOKENS_ANALYTICS = 1400
+MAX_TOKENS_ANALYTICS = 3000
 TEMP_JUDGE = 0.3
 TEMP_ACTOR = 0.75
 
@@ -137,6 +137,20 @@ def _short(text: str, n: int = 800) -> str:
     return text[:n] + "..." if len(text) > n else text
 
 
+def _extract_json(text: str) -> str:
+    """Strip markdown code fences and return the JSON substring."""
+    # Remove ```json ... ``` or ``` ... ``` wrappers
+    import re
+    text = re.sub(r"^```(?:json)?\s*", "", text.strip(), flags=re.MULTILINE)
+    text = re.sub(r"```\s*$", "", text.strip(), flags=re.MULTILINE)
+    text = text.strip()
+    start = text.find("{")
+    end = text.rfind("}") + 1
+    if start >= 0 and end > start:
+        return text[start:end]
+    return text
+
+
 # ── Judge: generate questions ──────────────────────────────────────────────
 
 async def _generate_questions(
@@ -184,15 +198,16 @@ async def _generate_questions(
     )
 
     try:
-        text = resp.raw_text or ""
-        start, end = text.find("{"), text.rfind("}") + 1
-        if start >= 0 and end > start:
-            data = json.loads(text[start:end])
+        raw = resp.raw_text or ""
+        if not raw:
+            log.warning(f"Judge returned empty response (model: {resp.model_id}, error: {resp.error})")
+        else:
+            data = json.loads(_extract_json(raw))
             questions = [q for q in data.get("questions", []) if q]
             if questions:
                 return questions[:max_questions]
     except Exception as e:
-        log.warning(f"Could not parse judge questions JSON: {e}")
+        log.warning(f"Could not parse judge questions JSON: {e} — raw[:200]: {(resp.raw_text or '')[:200]}")
 
     # Fallback generic questions
     return [
@@ -245,6 +260,8 @@ async def _ai_answer(
         max_tokens=MAX_TOKENS_ANSWER,
         system_prompt=system,
     )
+    if not resp.raw_text:
+        log.warning(f"Actor {candidate_key} ({actor_client.model_id}) returned empty — error: {resp.error}")
     return resp.raw_text or "[Sin respuesta]", resp.input_tokens + resp.output_tokens, resp.error
 
 
@@ -304,12 +321,13 @@ async def _generate_analytics(
     )
 
     try:
-        text = resp.raw_text or ""
-        start, end = text.find("{"), text.rfind("}") + 1
-        if start >= 0 and end > start:
-            return json.loads(text[start:end])
+        raw = resp.raw_text or ""
+        if not raw:
+            log.warning(f"Judge returned empty analytics (model: {resp.model_id}, error: {resp.error})")
+        else:
+            return json.loads(_extract_json(raw))
     except Exception as e:
-        log.warning(f"Could not parse analytics JSON: {e}")
+        log.warning(f"Could not parse analytics JSON: {e} — raw[:200]: {(resp.raw_text or '')[:200]}")
 
     return {"summary": resp.raw_text or "[Sin análisis]", "raw": True}
 

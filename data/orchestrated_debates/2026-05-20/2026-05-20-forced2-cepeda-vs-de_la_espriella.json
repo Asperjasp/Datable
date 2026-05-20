@@ -1,0 +1,142 @@
+{
+  "debate_id": "2026-05-20-forced2-cepeda-vs-de_la_espriella",
+  "topic": "Salud y sistema de salud en Colombia",
+  "participant_a": "cepeda",
+  "participant_b": "de_la_espriella",
+  "mode_a": "ai",
+  "mode_b": "ai",
+  "actor_a": "qwen_or",
+  "actor_b": "openai",
+  "judge_model": "claude",
+  "max_questions": 5,
+  "status": "complete",
+  "current_question_idx": 4,
+  "awaiting_human": null,
+  "questions": [
+    "Sobre el rol de las EPS: Cepeda propone avanzar hacia un sistema sin intermediación de EPS, mientras De la Espriella propone reforzarlas y regularlas. ¿Cómo manejarían específicamente la transición o el fortalecimiento? Detallen: ¿qué pasa con los 25 millones de afiliados actuales a las EPS privadas durante los primeros 18 meses de gobierno, qué entidad asumiría el aseguramiento o la regulación, y con qué presupuesto exacto financiarían ese cambio?",
+    "Ambos hablan de fortalecer la red hospitalaria, pero con enfoques opuestos: Cepeda propone expansión de hospitales públicos del Estado, De la Espriella propone gestión privada de hospitales públicos. ¿Qué evidencia nacional o internacional sustenta que su modelo mejora resultados en salud (mortalidad evitable, tiempos de espera, cobertura rural), y cómo medirían el éxito al cabo de cuatro años?",
+    "PARA QUIÉN: Cepeda promete cero copagos en atención primaria como derecho universal; De la Espriella plantea seguros privados para clases medias y un plan de choque de 10 billones para urgencias críticas. ¿Qué pasa específicamente con el colombiano de clase media que hoy paga medicina prepagada, con el habitante rural de Chocó o Vaupés, y con el trabajador informal urbano bajo cada uno de sus modelos?",
+    "Sobre financiación: Cepeda financiaría la salud universal con una reforma tributaria progresiva a patrimonios y rentas financieras; De la Espriella propone reducir el Estado hasta en una cuarta parte y destinar 10 billones al sistema. ¿Pueden detallar de dónde saldría cada peso, qué supuestos macroeconómicos usan, y qué harían si el Congreso rechaza su reforma tributaria o si los recortes estatales no generan los ahorros proyectados?",
+    "CÓMO en territorios olvidados: más allá del modelo ideológico, ¿qué harían concretamente en los primeros 100 días para que una mujer embarazada en La Guajira, un paciente con cáncer en Putumayo o un adulto mayor en zona rural del Cauca reciban atención oportuna? Especifiquen infraestructura, talento humano, transporte sanitario y mecanismos de contratación."
+  ],
+  "answers": [
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Gracias por la pregunta. En mi programa, la transición hacia un sistema de salud universal sin intermediación de EPS es un proceso gradual y bien planificado. Durante los primeros 18 meses de mi gobierno, la prioridad será la consolidación de la red hospitalaria pública y la creación de una entidad administradora única, que asumirá gradualmente el papel de las EPS. Esta entidad será responsable de la gestión directa de los servicios de salud y la atención a los 25 millones de afiliados actuales.\n\nPara financiar este cambio, nos apoyaremos en los recursos provenientes de la reforma tributaria progresiva, que incrementará los impuestos a grandes patrimonios, dividendos y rentas financieras. Estimamos que esta medida generará alrededor de 7 billones de pesos adicionales al año, los cuales serán destinados a fortalecer el sistema de salud público. Además, se realizarán ajustes técnicos en el presupuesto actual para asegurar la continuidad y mejora en la atención.\n\nEsta transición garantizará que la salud sea un derecho fundamental y no un negocio, eliminando las barreras de acceso y mejorando la calidad de los servicios. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1076,
+      "error": null,
+      "timestamp": "2026-05-20T14:56:16.439792"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Mi propuesta es clara: no eliminar las EPS, sino reforzarlas y regularlas. Durante los primeros 18 meses de mi gobierno, destinaremos 10 billones de pesos a un plan de choque para recuperar el sistema de salud, enfocándonos en las urgencias más críticas. Este presupuesto asegurará que las EPS sean más eficientes y transparentes, sin sacrificar la atención a los 25 millones de afiliados actuales.\n\nPara ello, estableceremos un marco regulatorio más estricto, que incluya auditorías periódicas y un sistema de incentivos basado en desempeño. Esto garantizará que las EPS cumplan con altos estándares de calidad y eficiencia, evitando el colapso del sistema.\n\nAdemás, impulsaremos la gestión privada de hospitales públicos para eliminar la intermediación burocrática del Estado, lo que permitirá un uso más eficiente de los recursos. Los seguros de salud privados se ofrecerán como alternativa para la clase media, aumentando la competencia y la calidad del servicio.\n\nEl aseguramiento y regulación estarán a cargo de un organismo independiente y especializado, que operará con total transparencia y rendición de cuentas. Esta estrategia permitirá fortalecer el sistema de salud sin desestabilizarlo, asegurando una atención digna y eficiente para todos los colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 944,
+      "error": null,
+      "timestamp": "2026-05-20T14:56:21.223862"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "La evidencia nacional e internacional demuestra que un sistema de salud pública y universal, sin intermediación de EPS, es más eficiente y equitativo. Países como Canadá y el Reino Unido, con sistemas de salud pública robustos, tienen menores tasas de mortalidad evitable y tiempos de espera razonables, especialmente en atención primaria. En Colombia, la experiencia de la EPS Valle del Lili, que pasó a ser un hospital público, mostró mejoras significativas en la calidad y cobertura de servicios.\n\nMi propuesta incluye la eliminación de copagos para atención primaria y la ampliación de la red hospitalaria en territorios alejados. Esto no solo reducirá los costos para los usuarios sino que también mejorará el acceso a la salud en zonas rurales y marginadas. Mediríamos el éxito a través de indicadores como la reducción de la mortalidad evitable, la disminución de tiempos de espera en urgencias y cirugías, y el aumento en la cobertura de servicios de salud en áreas rurales.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1037,
+      "error": null,
+      "timestamp": "2026-05-20T14:56:38.248289"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "El modelo que propongo para la gestión privada de hospitales públicos se basa en experiencias internacionales exitosas, como las de España e Inglaterra, donde hospitales gestionados por entidades privadas han demostrado ser más eficientes. En estos sistemas, los tiempos de espera se redujeron significativamente y se mejoró la calidad del servicio sin aumentar los costos. Esto se logra mediante la aplicación de prácticas de gestión enfocadas en resultados y la eliminación de intermediaciones burocráticas que afectan la asignación de recursos.\n\nEn Colombia, al permitir que el sector privado gestione los hospitales públicos, podemos mejorar la eficiencia operativa y asegurar un uso más efectivo de los recursos. Además, el sistema se volvería más ágil para responder a emergencias, como lo hemos visto en ciertas clínicas privadas durante la pandemia.\n\nMediremos el éxito de este enfoque mediante indicadores claros: reducción de la mortalidad evitable, disminución de los tiempos de espera para procedimientos críticos, y aumento de la cobertura en zonas rurales. Proponemos destinar 10 billones de pesos para atender las urgencias más críticas, reforzando nuestra red hospitalaria con gestión privada. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 900,
+      "error": null,
+      "timestamp": "2026-05-20T14:56:41.797013"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Mi propuesta de salud busca garantizar el acceso universal y equitativo a los servicios de salud, sin distinción de clase social o lugar de residencia. Para el colombiano de clase media que hoy paga por medicina prepagada, mi programa elimina los copagos en la atención primaria, lo que reduce el costo de los servicios básicos y preventivos. Este enfoque alivia la carga financiera y promueve la prevención, reduciendo a largo plazo los costos de enfermedades crónicas y urgentes.\n\nPara el habitante rural de Chocó o Vaupés, donde la infraestructura y el acceso a servicios de salud son limitados, propongo ampliar y fortalecer la red hospitalaria pública, asegurando que estos territorios tengan clínicas y hospitales bien equipados y con personal capacitado. Además, impulsaremos programas de salud intercultural y bilingüe que respeten y valoren las tradiciones locales.\n\nEl trabajador informal urbano, que a menudo no tiene acceso a servicios de salud regulares, se beneficiará de la formalización progresiva y la inclusión en el sistema de salud público. Esto incluye la gratuidad en la atención primaria y la creación de centros de salud comunitarios que faciliten el acceso a servicios de calidad.\n\nEstas medidas forman parte de una visión",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1091,
+      "error": null,
+      "timestamp": "2026-05-20T14:57:02.750982"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Mi propuesta busca una transformación efectiva y realista del sistema de salud en Colombia. Para el colombiano de clase media que hoy paga medicina prepagada, planteo la opción de seguros privados como alternativa viable, lo que permitirá acceder a servicios de salud de calidad sin depender exclusivamente del sistema público.\n\nEn cuanto al habitante rural de Chocó o Vaupés, mi plan de choque de 10 billones de pesos se enfocará en mejorar la infraestructura y servicios básicos de salud en las regiones más necesitadas. Esto incluye la modernización de hospitales públicos con gestión privada para aumentar la eficiencia y reducir tiempos de espera.\n\nPara el trabajador informal urbano, mi propuesta se centra en eliminar la intermediación burocrática del Estado en la asignación de recursos, lo que permitirá un acceso más directo y eficiente a servicios de salud. Además, al oponernos a la eliminación de las EPS y proponiendo su reforzamiento y regulación, garantizamos un sistema más robusto que pueda atender a todos los ciudadanos, independientemente de su situación laboral.\n\nEn resumen, mi enfoque es pragmático y basado en la eficiencia, no en promesas onerosas que el Estado no puede sostener a largo plazo. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 929,
+      "error": null,
+      "timestamp": "2026-05-20T14:57:05.065011"
+    },
+    {
+      "question_idx": 3,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Nuestro programa se basa en una reforma tributaria progresiva que busca redistribuir la riqueza de manera justa. Se estima que la reforma tributaria, al gravar patrimonios superiores a 10 mil millones de pesos y rentas financieras, podría generar alrededor de 15 billones de pesos anuales, según cálculos realizados por el Centro de Estudios Fiscales del Ministerio de Hacienda. Estos recursos serían destinados directamente al sistema de salud para fortalecer la red hospitalaria pública y asegurar la gratuidad en la atención primaria.\n\nSi el Congreso rechaza la reforma, propondremos un plan B que incluirá una revisión exhaustiva de gastos superfluos y la eliminación de privilegios fiscales injustificados, como exenciones tributarias a empresas que no generan valor social. Además, impulsaremos una mayor eficiencia en la gestión de los recursos asignados al sector salud, reduciendo costos operativos y optimizando el uso de tecnología.\n\nNuestro objetivo es garantizar la salud como un derecho fundamental, no como un negocio, y esto requiere un compromiso político sólido y una redistribución equitativa de la riqueza. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1104,
+      "error": null,
+      "timestamp": "2026-05-20T14:57:16.034833"
+    },
+    {
+      "question_idx": 3,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Gracias por la pregunta. Mi enfoque para financiar el sistema de salud se basa en eficiencia y priorización. Proponemos destinar 10 billones de pesos para atender las urgencias críticas del sistema, que se obtendrán mediante la reducción del tamaño del Estado \"hasta en una cuarta parte\". Esto implica eliminar ministerios y entidades redundantes, simplificar trámites y hacer más eficiente la gestión pública. \n\nAl reducir el gasto innecesario, liberamos recursos que pueden ser dirigidos al sector salud. Además, al potenciar la participación privada, como en la gestión de hospitales públicos, optimizamos el uso de cada peso invertido.\n\nSi el Congreso rechaza nuestra propuesta, buscaremos consenso sobre medidas específicas que generen ahorros sin comprometer servicios esenciales. Los supuestos macroeconómicos incluyen un crecimiento sostenido basado en un entorno económico liberalizado, impulsado por inversión privada y seguridad jurídica.\n\nMi propuesta no depende exclusivamente de reformas tributarias, sino de un cambio estructural en la forma en que gestionamos el Estado. La meta es crear un entorno donde los recursos fluyan hacia donde son más necesarios, sin incrementar la carga fiscal sobre los ciudadanos. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 933,
+      "error": null,
+      "timestamp": "2026-05-20T14:57:19.465624"
+    },
+    {
+      "question_idx": 4,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "En mis primeros 100 días de gobierno, priorizaré la atención inmediata en territorios olvidados como La Guajira, Putumayo y el Cauca. Para lograrlo, implementaré las siguientes acciones:\n\n1. **Infraestructura**: Reactivaré y modernizaré los centros de salud abandonados, construiré nuevas clínicas rurales y equiparé con tecnología de punta los hospitales existentes. Invertiré recursos del 3% del PIB destinado a salud en la mejora de la infraestructura en zonas rurales.\n\n2. **Talento Humano**: Lanzaré un programa de incentivos para que médicos y enfermeras se instalen en estas regiones. Esto incluirá becas, viviendas dignas y bonos de permanencia. También fortaleceré el programa de medicina rural universitaria para formar profesionales con vocación de servicio.\n\n3. **Transporte Sanitario**: Desarrollaré una flota de ambulancias terrestres y aéreas equipadas con tecnología de telemedicina. Estas unidades estarán disponibles 24/7 y contarán con personal capacitado para emergencias.\n\n4. **Mecanismos de Contratación**: Implementaré un sistema de contratación ágil y transparente, basado",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1084,
+      "error": null,
+      "timestamp": "2026-05-20T14:57:32.343198"
+    },
+    {
+      "question_idx": 4,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "En los primeros 100 días de mi gobierno, implementaremos un plan de choque para mejorar el acceso a la salud en territorios olvidados como La Guajira, Putumayo y Cauca. Destinaremos 10 billones de pesos para atender las urgencias más críticas del sistema. Esto incluye la mejora de infraestructura mediante alianzas público-privadas, permitiendo que hospitales públicos sean gestionados por entidades privadas para elevar su eficiencia. \n\nReforzaremos las EPS, regulándolas para asegurar que cumplan con sus obligaciones contractuales y lleguen a las áreas más remotas. Implementaremos un sistema de transporte sanitario eficiente, coordinado con las Fuerzas Militares para garantizar acceso en zonas de difícil acceso. \n\nEn cuanto al talento humano, ofreceremos incentivos económicos y oportunidades de capacitación continua para profesionales de la salud que presten sus servicios en estas regiones. Además, eliminaremos la intermediación burocrática del Estado en la asignación de recursos, permitiendo que los mismos lleguen directamente a las clínicas y hospitales que más lo necesiten.\n\nAl ofrecer seguros de salud privados como alternativa, aumentaremos la oferta de atención y brindaremos a las familias la oportunidad de elegir su proveedor de salud. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 923,
+      "error": null,
+      "timestamp": "2026-05-20T14:57:37.158008"
+    }
+  ],
+  "analytics": {
+    "summary": "{\n  \"how\": {\n    \"cepeda\": \"Transición gradual hacia un sistema único sin EPS en 18 meses, creando una entidad administradora única que absorbe a los 25 millones de afiliados. Expansión de red hospitalaria pública, eliminación de copagos en atención primaria, programa de incentivos (becas, vivienda, bonos) para personal médico rural, flota de ambulancias terrestres y aéreas con telemedicina, y modernización de centros de salud abandonados. Financiación vía reforma tributaria progresiva a patrimonios >10 mil millones y rentas financieras.\",\n    \"de_la_espriella\": \"Reforzamiento y regulación de EPS existentes mediante auditorías y sistema de incentivos por desempeño, gestión privada de hospitales públicos (modelo de concesión), seguros privados como alternativa para clase media, plan de choque de 10 billones para urgencias críticas, organismo independiente de regulación, y transporte sanitario coordinado con Fuerzas Militares en zonas remotas. Financiación vía reducción del Estado en una cuarta parte.\"\n  },\n  \"why\": {\n    \"cepeda\": \"Concibe la salud como derecho fundamental y no como mercancía. Considera que la intermediación de las EPS genera barreras de acceso, ineficiencias y desigualdad, especialmente en zonas rurales y poblaciones marginadas. Se apoya en modelos públicos universales (Canadá, Reino Unido) como referencia de equidad y menor mortalidad evitable.\",\n    \"de_la_espriella\": \"Prioriza eficiencia operativa, gestión por resultados y reducción de burocracia estatal. Considera que eliminar las EPS desestabilizaría el sistema, y que la competencia y participación privada (modelos de España e Inglaterra) mejoran calidad y tiempos de respuesta sin aumentar carga fiscal.\"\n  },\n  \"who\": {\n    \"cepeda\": \"Beneficia principalmente a población rural dispersa (Chocó, Vaupés, La Guajira), trabajadores informales urbanos, adultos mayores en zonas alejadas y hogares de bajos ingresos al eliminar copagos. Carga fiscal recae sobre grandes patrimonios, dividendos y rentas financieras. La clase media con prepagada vería absorbidos sus servicios primarios al sistema público.\",\n    \"de_la_espriella\": \"Beneficia a la clase media con capacidad de pago (vía seguros privados), al sector privado de salud (operadores de hospitales y aseguradoras), y a afiliados actuales de EPS que continuarían en el sistema. El impacto en zonas rurales depende del éxito del plan de choque y de la disposición privada a operar en territorios de baja rentabilidad.\"\n  },\n  \"key_tensions\": [\n    \"Estatización vs. privatización: eliminación gradual de EPS frente a su reforzamiento con gestión privada de hospitales públicos.\",\n    \"Universalidad gratuita (cero copagos) vs. segmentación por capacidad de pago (seguros privados para clase media).\",\n    \"Fuente de financiación: nuevos impuestos a patrimonios altos vs. recorte del aparato estatal —ambos políticamente difíciles y con riesgo de no materializarse.\",\n    \"Riesgo de transición: desestabilización del aseguramiento de 25 millones vs. perpetuación de problemas estructurales que ambos reconocen en las EPS.\"\n  ],\n  \"unanswered\": [\n    \"Ninguno detalló qué entidad específica reemplazaría o regularía exactamente a las EPS, ni su diseño institucional.\",\n    \"Cepeda dio dos cifras distintas de recaudo (7 y 15 billones) sin reconciliarlas; De la Espriella no detalló qué ministerios o entidades recortaría.\",\n    \"Ninguno explicó mecanismos contractuales concretos (tipo de contrato, tarifas, indicadores) para contratación en territorios dispersos.\",\n    \"No quedó claro qué pasa con la medicina prepagada actual",
+    "raw": true
+  },
+  "total_tokens": 10021,
+  "started_at": "2026-05-20T14:55:45.569925",
+  "completed_at": "2026-05-20T14:58:00.828378",
+  "error": null
+}

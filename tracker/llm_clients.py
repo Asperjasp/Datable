@@ -463,6 +463,16 @@ AVAILABLE_MODELS: dict[str, ModelConfig] = {
         env_key="OPENAI_API_KEY",
         factory=OpenAIClient,
     ),
+    # Alias used by debate_schedule.py actor assignments
+    "openai": ModelConfig(
+        key="openai",
+        display_name="GPT-4o (openai alias)",
+        provider="openai",
+        group="OpenAI",
+        region="us",
+        env_key="OPENAI_API_KEY",
+        factory=OpenAIClient,
+    ),
     "gemini": ModelConfig(
         key="gemini",
         display_name="Gemini 2.0 Flash",
