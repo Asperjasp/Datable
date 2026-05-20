@@ -122,8 +122,21 @@ def build_record(
     )
 
 
+def _writable_data_dir(base_path: Path) -> Path:
+    data = base_path / "data"
+    try:
+        data.mkdir(parents=True, exist_ok=True)
+        (data / ".write_test").touch()
+        (data / ".write_test").unlink()
+        return data
+    except OSError:
+        p = Path("/tmp/debat-zero/data")
+        p.mkdir(parents=True, exist_ok=True)
+        return p
+
+
 def save_records(records: List[TrackerRecord], date_str: str, model_key: str, base_path: Path) -> Path:
-    day_dir = base_path / "data" / "raw" / date_str
+    day_dir = _writable_data_dir(base_path) / "raw" / date_str
     day_dir.mkdir(parents=True, exist_ok=True)
     out_file = day_dir / f"{model_key}.json"
     with open(out_file, "w", encoding="utf-8") as f:
@@ -132,7 +145,7 @@ def save_records(records: List[TrackerRecord], date_str: str, model_key: str, ba
 
 
 def append_to_timeseries(records: List[TrackerRecord], base_path: Path) -> None:
-    processed_dir = base_path / "data" / "processed"
+    processed_dir = _writable_data_dir(base_path) / "processed"
     processed_dir.mkdir(parents=True, exist_ok=True)
     csv_path = processed_dir / "timeseries.csv"
 

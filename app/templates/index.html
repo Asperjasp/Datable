@@ -198,6 +198,12 @@
 <script>
 const API = '/api';
 const TODAY = new Date().toISOString().slice(0, 10);
+
+async function safeJson(res) {
+  const text = await res.text();
+  try { return JSON.parse(text); }
+  catch { return { detail: text.slice(0, 300) }; }
+}
 document.getElementById('today').textContent = TODAY;
 document.getElementById('runDate').value = TODAY;
 document.getElementById('mdStart').value = TODAY;
@@ -351,7 +357,7 @@ async function runBatch() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-    const data = await res.json();
+    const data = await safeJson(res);
     if (res.ok) {
       log('output', `\n✅ Done!`, 'ok');
       log('output', `Total records: ${data.total_records}`, 'ok');
@@ -397,7 +403,7 @@ async function runMultiDay() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-    const data = await res.json();
+    const data = await safeJson(res);
     if (res.ok) {
       log('md-output', `\n✅ Done! Total: ${data.total_records} records`, 'ok');
       data.days.forEach(d => {
@@ -419,7 +425,7 @@ async function testOpenRouter() {
   log('or-output', 'Testing OpenRouter (Qwen 2.5 72B)…', 'info');
   try {
     const res = await fetch(`${API}/openrouter/test`, { method: 'POST' });
-    const data = await res.json();
+    const data = await safeJson(res);
     if (res.ok) {
       log('or-output', `✅ ${data.response}`, 'ok');
     } else {
