@@ -44,7 +44,8 @@ from pathlib import Path
 from typing import List
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, UploadFile, File
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 from fastapi.responses import HTMLResponse
 
 from tracker.debate import (
@@ -474,40 +475,32 @@ async def list_simulation_results():
 
 # ── Document Upload ────────────────────────────────────────────────────
 
+class DocumentUpload(BaseModel):
+    filename: str
+    content: str  # plain text content of the document
+
+
+class DocumentsBulkUpload(BaseModel):
+    documents: List[DocumentUpload]
+
+
 @app.post("/api/documents/{candidate_key}")
-async def upload_documents(candidate_key: str, files: List[UploadFile] = File(...)):
+async def upload_documents(candidate_key: str, body: DocumentsBulkUpload):
     """
-    Upload documents for a candidate's knowledge base.
-    Supports: .txt, .pdf, .doc, .docx
+    Upload documents for a candidate's knowledge base as JSON.
+    Each document has a filename and plain-text content field.
     """
     valid_candidates = ["cepeda", "de_la_espriella", "valencia", "fajardo", "lopez"]
     if candidate_key not in valid_candidates:
         raise HTTPException(status_code=400, detail=f"Unknown candidate: {candidate_key}. Valid: {valid_candidates}")
-    
-    saved_files = []
-    
-    for file in files:
-        # Save to temp file for processing
-        temp_path = BASE_PATH / "data" / "documents" / f"temp_{file.filename}"
-        content = await file.read()
-        with open(temp_path, "wb") as f:
-            f.write(content)
-        
-        # Process the file
-        doc = process_uploaded_file(temp_path, file.filename)
-        add_document_to_candidate(candidate_key, doc)
-        saved_files.append(file.filename)
-        
-        # Clean up temp file
-        temp_path.unlink()
-    
+
+    saved = []
+    for doc in body.documents:
+        add_document_to_candidate(candidate_key, {"filename": doc.filename, "content": doc.content})
+        saved.append(doc.filename)
+
     summary = get_candidate_documents_summary(candidate_key)
-    
-    return {
-        "candidate": candidate_key,
-        "uploaded": saved_files,
-        "total_documents": summary["total_documents"],
-    }
+    return {"candidate": candidate_key, "uploaded": saved, "total_documents": summary["total_documents"]}
 
 
 @app.get("/api/documents/{candidate_key}")
