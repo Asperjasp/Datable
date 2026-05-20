@@ -1,0 +1,122 @@
+{
+  "debate_id": "2026-05-20-cepeda-vs-de_la_espriella",
+  "topic": "Salud y sistema de salud en Colombia",
+  "participant_a": "cepeda",
+  "participant_b": "de_la_espriella",
+  "mode_a": "ai",
+  "mode_b": "ai",
+  "actor_a": "qwen_or",
+  "actor_b": "qwen_or",
+  "judge_model": "qwen_or",
+  "max_questions": 3,
+  "status": "complete",
+  "current_question_idx": 2,
+  "awaiting_human": null,
+  "questions": [
+    "¿Cómo planean financiar sus respectivos planes de salud, y cuáles serían los plazos y mecanismos específicos para implementar estas reformas, considerando que uno propone un sistema universal sin EPS y el otro busca reforzar y regularizar las EPS existentes?",
+    "Para quiénes están diseñadas sus propuestas de salud, y cómo asegurarán que los grupos más vulnerables, como las comunidades rurales y las poblaciones indígenas, tengan acceso efectivo a los servicios de salud, considerando sus diferentes enfoques sobre la gestión pública y privada?",
+    "¿Por qué consideran que sus propuestas de salud son viables y sostenibles a largo plazo, y qué evidencia o estudios tienen para respaldar la eficacia de sus modelos, especialmente en términos de calidad de atención y eficiencia en el uso de recursos?"
+  ],
+  "answers": [
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Nuestro enfoque es claro: avanzar hacia un sistema de salud universal sin intermediación de EPS, fortaleciendo la red hospitalaria pública. Esto se financiará a través de una reforma tributaria progresiva que aumente los impuestos a grandes patrimonios, dividendos y rentas financieras. Estimamos que esta medida puede generar alrededor de 3% del PIB adicional, recursos que serán destinados directamente a la salud y la educación.\n\nLa implementación se hará en dos etapas. En la primera, de 18 meses, se eliminarán los copagos para la atención primaria y se fortalecerán las clínicas y hospitales públicos. En la segunda etapa, de dos a cuatro años, se completará la transición hacia un sistema universal, asegurando la cobertura integral y eliminando la intermediación de las EPS.\n\nNuestro objetivo es garantizar que la salud sea un derecho fundamental, no un negocio, y que todos los colombianos tengan acceso a servicios de calidad. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 991,
+      "error": null,
+      "timestamp": "2026-05-20T11:31:25.998197"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Nuestro plan de salud, dentro del marco de Defensores de la Patria, se enfoca en la reestructuración y fortalecimiento de las Entidades Promotoras de Salud (EPS) existentes, no en su eliminación. Destinaremos 10 billones de pesos para abordar las urgencias más críticas del sistema, como la infraestructura hospitalaria y la modernización tecnológica. Creemos que el Estado debe desempeñar un rol de regulación y no de intermediario, eliminando la burocracia que obstaculiza la eficiencia en la asignación de recursos.\n\nPara financiar estas reformas, proponemos un modelo de gestión privada en hospitales públicos, lo que permitirá una mejor administración de los recursos y una mayor calidad en los servicios. Además, implementaremos seguros de salud privados como alternativas viables para las clases medias, reduciendo así la presión sobre el sistema público.\n\nEl plazo para implementar estas medidas es de dos años, con un plan de acción dividido en fases que incluyen la evaluación y selección de hospitales para gestión privada, la implementación de sistemas de gestión más eficientes y la promoción de seguros de salud privados.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1048,
+      "error": null,
+      "timestamp": "2026-05-20T11:31:35.808851"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Nuestras propuestas de salud están diseñadas para todos los colombianos, con un enfoque especial en los grupos más vulnerables, incluyendo comunidades rurales y poblaciones indígenas. El sistema de salud universal que proponemos busca eliminar las barreras de acceso, garantizando que la atención sea un derecho fundamental y no un privilegio. Para ello, proponemos la eliminación de copagos en la atención primaria y la ampliación del sistema de clínicas y hospitales públicos en territorios alejados, donde la presencia del Estado ha sido históricamente débil.\n\n Además, impulsaremos la formación de profesionales de la salud en estas regiones a través de becas y programas de incentivos, asegurando que haya personal capacitado y comprometido con la atención en zonas rurales. La educación intercultural y bilingüe en salud permitirá que los servicios sean más sensibles a las necesidades y prácticas tradicionales de las comunidades indígenas, promoviendo la equidad y la inclusión.\n\nEstas medidas están respaldadas por un incremento en la inversión en salud, que busca alcanzar el 7% del PIB, conforme a las recomendaciones de la Organización Mundial de la Salud. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1046,
+      "error": null,
+      "timestamp": "2026-05-20T11:31:48.204461"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Nuestras propuestas de salud están diseñadas para garantizar un sistema eficiente y de alta calidad para todos los colombianos. Destinaremos 10 billones de pesos para abordar las urgencias más críticas del sistema, reforzando las EPS y eliminando la intermediación burocrática que genera ineficiencias. Este plan incluye la gestión privada en hospitales públicos, lo que ha demostrado mejorar la calidad y eficiencia en países como Estados Unidos y Reino Unido.\n\nPara garantizar el acceso de grupos vulnerables, especialmente en comunidades rurales y poblaciones indígenas, implementaremos un programa de vouchers sanitarios. Estos vouchers permitirán a las familias más necesitadas acceder a servicios de salud privados o públicos de calidad. Además, fortaleceremos la infraestructura de salud en zonas rurales, asegurando que los recursos lleguen directamente a las áreas más necesitadas y no queden atrapados en la burocracia.\n\nNuestro objetivo es que ningún colombiano se quede sin atención médica, y estos mecanismos garantizan una distribución equitativa de recursos y una mejor calidad de servicios. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1040,
+      "error": null,
+      "timestamp": "2026-05-20T11:31:57.159751"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "text": "Nuestras propuestas de salud son viables y sostenibles porque se basan en fortalecer la red hospitalaria pública y avanzar hacia un sistema de salud universal, eliminando intermediarios que aumentan los costos y disminuyen la calidad de la atención. Según un estudio de la Universidad de los Andes, los sistemas de salud basados en el fortalecimiento del sector público son más eficientes en el uso de recursos y ofrecen mejor calidad de atención a largo plazo. Además, la reforma de salud propuesta por el gobierno de Gustavo Petro ha demostrado una reducción significativa en los tiempos de espera y una mejor distribución de los recursos. La eliminación de copagos para la atención primaria y la expansión de la red de clínicas y hospitales del Estado en territorios alejados son medidas que han mostrado resultados positivos en países como Cuba y España, donde la salud pública es un pilar fundamental del bienestar social. [SIMULACIÓN ACADÉMICA — no representa posiciones reales]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 970,
+      "error": null,
+      "timestamp": "2026-05-20T11:32:02.771218"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "text": "Nuestras propuestas de salud están diseñadas para enfrentar la crisis del sistema de salud en Colombia, que ha sido caracterizada por la ineficiencia y la mala gestión. Destinaremos 10 billones de pesos para abordar las urgencias más críticas, pero lo importante es cómo se gastará ese dinero. Proponemos la gestión privada de hospitales públicos, un modelo que ha demostrado mejorar la eficiencia y la calidad de la atención en países como España y el Reino Unido. Según un estudio de la Universidad de Barcelona, la gestión privada en hospitales públicos ha reducido los tiempos de espera y mejorado la satisfacción de los pacientes.\n\nAdemás, mantendremos las EPS pero las regularizaremos para evitar abusos y garantizar la transparencia. Eliminaremos la intermediación burocrática excesiva, que ha sido una fuente de corrupción y desperdicio de recursos. Según el Banco Mundial, la reducción de la burocracia en la asignación de recursos puede aumentar la eficiencia del gasto en salud en un 20%.\n\nFinalmente, promoveremos seguros de salud privados como alternativa para las clases medias, lo que no solo aliviará la carga del sistema público sino que también incentivará la competencia y la mejora de la calidad.",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 1052,
+      "error": null,
+      "timestamp": "2026-05-20T11:32:10.916067"
+    }
+  ],
+  "analytics": {
+    "how": {
+      "cepeda": "Iván Cepeda propone financiar su plan de salud a través de una reforma tributaria progresiva que aumente los impuestos a grandes patrimonios, dividendos y rentas financieras. La implementación se dividirá en dos etapas: en la primera, de 18 meses, se eliminarán los copagos para la atención primaria y se fortalecerán las clínicas y hospitales públicos. En la segunda etapa, de dos a cuatro años, se completará la transición hacia un sistema universal, asegurando la cobertura integral y eliminando la intermediación de las EPS.",
+      "de_la_espriella": "Abelardo de la Espriella propone financiar su plan de salud con 10 billones de pesos destinados a abordar las urgencias más críticas del sistema, como la infraestructura hospitalaria y la modernización tecnológica. La implementación se realizará en dos años, con un plan de acción dividido en fases que incluyen la evaluación y selección de hospitales para gestión privada, la implementación de sistemas de gestión más eficientes y la promoción de seguros de salud privados."
+    },
+    "why": {
+      "cepeda": "Iván Cepeda prioriza un sistema de salud universal sin intermediación de EPS para garantizar que la salud sea un derecho fundamental y no un negocio. Cree que el fortalecimiento de la red hospitalaria pública y la eliminación de copagos para la atención primaria son medidas necesarias para eliminar las barreras de acceso y asegurar la equidad en la atención de salud.",
+      "de_la_espriella": "Abelardo de la Espriella busca reforzar y regularizar las EPS existentes para mejorar la eficiencia y la calidad de la atención. Cree que la gestión privada de hospitales públicos y la promoción de seguros de salud privados pueden reducir la burocracia y la ineficiencia, aliviando la presión sobre el sistema público y garantizando una distribución equitativa de recursos."
+    },
+    "who": {
+      "cepeda": "Los grupos más vulnerables, como las comunidades rurales y las poblaciones indígenas, se beneficiarían con la eliminación de copagos en la atención primaria y la ampliación de la red de clínicas y hospitales públicos en territorios alejados. Además, profesionales de la salud en estas regiones recibirían formación y incentivos.",
+      "de_la_espriella": "Las clases medias se beneficiarían con la promoción de seguros de salud privados, reduciendo la presión sobre el sistema público. Comunidades rurales y poblaciones indígenas se verían favorecidas con la implementación de vouchers sanitarios y el fortalecimiento de la infraestructura de salud en zonas rurales."
+    },
+    "key_tensions": [
+      "La tensión principal entre ambas propuestas radica en la visión del papel del Estado y la gestión privada en el sistema de salud. Cepeda aboga por un sistema público universal, mientras que de la Espriella propone una combinación de gestión privada y pública."
+    ],
+    "unanswered": [
+      "Ninguno de los candidatos proporcionó detalles específicos sobre cómo se asegurarán de que los recursos destinados a la salud no sean desviados por la corrupción o la ineficiencia administrativa."
+    ],
+    "evidence_quality": {
+      "cepeda": 7,
+      "de_la_espriella": 6
+    },
+    "specificity": {
+      "cepeda": 8,
+      "de_la_espriella": 7
+    },
+    "summary": "Iván Cepeda propone un sistema de salud universal sin EPS, financiado por una reforma tributaria progresiva, con un enfoque en fortalecer la red hospitalaria pública y eliminar copagos. Abelardo de la Espriella busca reforzar y regularizar las EPS, implementar gestión privada en hospitales públicos y promover seguros de salud privados. Ambos candidatos buscan mejorar el acceso a la salud para grupos vulnerables, pero difieren en la gestión y financiación del sistema.",
+    "disclaimer": "[SIMULACIÓN ACADÉMICA — no representa posiciones reales]"
+  },
+  "total_tokens": 6147,
+  "started_at": "2026-05-20T11:31:08.099430",
+  "completed_at": "2026-05-20T11:32:46.815476",
+  "error": null
+}
