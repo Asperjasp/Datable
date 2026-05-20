@@ -79,6 +79,18 @@ from tracker.document_ingestion import (
     remove_document_from_candidate,
     get_candidate_documents_summary,
 )
+from tracker.debate_orchestrator import (
+    OrchestratedDebate,
+    ParticipantConfig,
+    run_orchestrated_debate,
+    save_orchestrated_debate,
+    submit_human_answer,
+)
+from tracker.debate_schedule import (
+    get_judge_for_date,
+    get_matchup_for_date,
+    get_schedule_summary,
+)
 
 from app.schemas import (
     CandidateInfo,
@@ -120,6 +132,7 @@ app = FastAPI(
 # In-memory debate store (persisted to disk on save)
 _debates: dict[str, Debate] = {}
 _simulation_results: dict[str, dict] = {}
+_orchestrated_debates: dict[str, OrchestratedDebate] = {}
 
 
 # ── Helpers ──────────────────────────────────────────────────────────────
@@ -522,6 +535,213 @@ async def delete_document(candidate_key: str, doc_index: int):
     
     remove_document_from_candidate(candidate_key, doc_index)
     return get_candidate_documents_summary(candidate_key)
+
+
+# ── Orchestrated Debates ───────────────────────────────────────────────
+
+class OrchestrateRequest(BaseModel):
+    candidate_a: str
+    candidate_b: str
+    actor_a: str = "claude"
+    actor_b: str = "openai"
+    judge: str = "claude"
+    topic: str = ""
+    max_questions: int = 5
+    mode_a: str = "ai"   # "ai" or "human"
+    mode_b: str = "ai"
+
+
+class HumanAnswerRequest(BaseModel):
+    speaker: str      # candidate key
+    text: str
+
+
+@app.get("/api/orchestrate/schedule")
+async def orchestrate_schedule():
+    """Return the debate schedule for the next 7 days."""
+    return {"schedule": get_schedule_summary(7)}
+
+
+@app.get("/api/orchestrate/today")
+async def orchestrate_today_info():
+    """Return today's scheduled matchup without running it."""
+    today = date.today()
+    matchup = get_matchup_for_date(today)
+    judge = get_judge_for_date(today)
+    return {"date": today.isoformat(), "matchup": matchup, "judge": judge}
+
+
+@app.post("/api/orchestrate/today")
+async def run_today_debate(max_questions: int = 5):
+    """Run today's scheduled debate (fully AI, uses schedule rotation)."""
+    today = date.today()
+    judge_key = get_judge_for_date(today)
+    matchup = get_matchup_for_date(today)
+
+    debate = OrchestratedDebate(
+        debate_id=f"{today.isoformat()}-{matchup['candidate_a']}-vs-{matchup['candidate_b']}",
+        topic=matchup["topic"],
+        participant_a=ParticipantConfig(
+            candidate_key=matchup["candidate_a"],
+            mode="ai",
+            actor_model_key=matchup["actor_a"],
+        ),
+        participant_b=ParticipantConfig(
+            candidate_key=matchup["candidate_b"],
+            mode="ai",
+            actor_model_key=matchup["actor_b"],
+        ),
+        judge_model_key=judge_key,
+        max_questions=max(1, min(10, max_questions)),
+    )
+
+    models_needed = {judge_key, matchup["actor_a"], matchup["actor_b"]}
+    clients = build_selected_clients(list(models_needed))
+    if not clients:
+        raise HTTPException(status_code=503, detail="No LLM clients available — check API keys")
+
+    available = set(clients.keys())
+    missing = models_needed - available
+    if missing:
+        fallback = "claude" if "claude" in available else next(iter(available))
+        if matchup["actor_a"] not in available:
+            debate.participant_a.actor_model_key = fallback
+        if matchup["actor_b"] not in available:
+            debate.participant_b.actor_model_key = fallback
+        if judge_key not in available:
+            debate.judge_model_key = fallback
+
+    result = await run_orchestrated_debate(debate, clients)
+    path = save_orchestrated_debate(result)
+    _orchestrated_debates[result.debate_id] = result
+
+    return {
+        "debate_id": result.debate_id,
+        "status": result.status,
+        "topic": result.topic,
+        "judge": result.judge_model_key,
+        "total_tokens": result.total_tokens,
+        "saved": str(path),
+        "analytics": result.analytics,
+        "error": result.error,
+    }
+
+
+@app.post("/api/orchestrate")
+async def run_custom_debate(req: OrchestrateRequest):
+    """Run a custom orchestrated debate with specified candidates and models."""
+    valid = ["cepeda", "de_la_espriella", "valencia", "fajardo", "lopez"]
+    for c in [req.candidate_a, req.candidate_b]:
+        if c not in valid:
+            raise HTTPException(status_code=400, detail=f"Unknown candidate '{c}'. Valid: {valid}")
+    if req.candidate_a == req.candidate_b:
+        raise HTTPException(status_code=400, detail="Candidates must differ")
+
+    debate_id = f"{date.today().isoformat()}-{req.candidate_a}-vs-{req.candidate_b}-custom"
+    topic = req.topic or get_matchup_for_date()["topic"]
+
+    debate = OrchestratedDebate(
+        debate_id=debate_id,
+        topic=topic,
+        participant_a=ParticipantConfig(
+            candidate_key=req.candidate_a,
+            mode=req.mode_a,
+            actor_model_key=req.actor_a,
+        ),
+        participant_b=ParticipantConfig(
+            candidate_key=req.candidate_b,
+            mode=req.mode_b,
+            actor_model_key=req.actor_b,
+        ),
+        judge_model_key=req.judge,
+        max_questions=max(1, min(10, req.max_questions)),
+    )
+
+    models_needed = {req.judge, req.actor_a, req.actor_b}
+    clients = build_selected_clients(list(models_needed))
+    if not clients:
+        raise HTTPException(status_code=503, detail="No LLM clients available — check API keys")
+
+    _orchestrated_debates[debate_id] = debate
+
+    # If either mode is "human", return the debate stub so client can submit answers
+    if req.mode_a == "human" or req.mode_b == "human":
+        return {
+            "debate_id": debate_id,
+            "status": debate.status,
+            "topic": topic,
+            "message": "Human participant debate created. Use POST /api/orchestrate/{debate_id}/answer to submit answers.",
+        }
+
+    result = await run_orchestrated_debate(debate, clients)
+    path = save_orchestrated_debate(result)
+    _orchestrated_debates[debate_id] = result
+
+    return {
+        "debate_id": result.debate_id,
+        "status": result.status,
+        "topic": result.topic,
+        "judge": result.judge_model_key,
+        "total_tokens": result.total_tokens,
+        "saved": str(path),
+        "analytics": result.analytics,
+        "error": result.error,
+    }
+
+
+@app.get("/api/orchestrate/{debate_id}")
+async def get_orchestrated_debate(debate_id: str):
+    """Get status and results of an orchestrated debate."""
+    if debate_id in _orchestrated_debates:
+        d = _orchestrated_debates[debate_id]
+        return d.to_dict() if hasattr(d, "to_dict") else d.__dict__
+
+    # Try loading from disk
+    base = Path(__file__).parent.parent
+    debates_dir = base / "data" / "orchestrated_debates"
+    for date_dir in debates_dir.glob("*"):
+        f = date_dir / f"{debate_id}.json"
+        if f.exists():
+            with open(f, encoding="utf-8") as fh:
+                return json.load(fh)
+
+    raise HTTPException(status_code=404, detail=f"Debate '{debate_id}' not found")
+
+
+@app.get("/api/orchestrate")
+async def list_orchestrated_debates():
+    """List all orchestrated debate results from disk."""
+    base = Path(__file__).parent.parent
+    debates_dir = base / "data" / "orchestrated_debates"
+    results = []
+    if debates_dir.exists():
+        for date_dir in sorted(debates_dir.iterdir(), reverse=True):
+            if date_dir.is_dir():
+                for f in date_dir.glob("*.json"):
+                    with open(f, encoding="utf-8") as fh:
+                        data = json.load(fh)
+                        results.append({
+                            "debate_id": data.get("debate_id"),
+                            "date": date_dir.name,
+                            "topic": data.get("topic"),
+                            "status": data.get("status"),
+                            "total_tokens": data.get("total_tokens"),
+                        })
+    return {"debates": results}
+
+
+@app.post("/api/orchestrate/{debate_id}/answer")
+async def submit_human_answer_endpoint(debate_id: str, req: HumanAnswerRequest):
+    """Submit a human answer to the current pending question in a debate."""
+    if debate_id not in _orchestrated_debates:
+        raise HTTPException(status_code=404, detail=f"Debate '{debate_id}' not found in session")
+    if req.speaker not in ("a", "b"):
+        raise HTTPException(status_code=400, detail="speaker must be 'a' or 'b'")
+    debate = _orchestrated_debates[debate_id]
+    if debate.status != "answering":
+        raise HTTPException(status_code=400, detail=f"Debate not in answering phase (status: {debate.status})")
+    submit_human_answer(debate, req.speaker, req.text)
+    return {"status": "answer_recorded", "speaker": req.speaker, "question_idx": debate.current_question_idx}
 
 
 # ── Static HTML pages ──────────────────────────────────────────────────
