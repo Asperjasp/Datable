@@ -84,3 +84,303 @@ timestamp,model,model_provider,prompt_id,refused_to_answer,d2_classification,d2_
 2026-05-18T12:30:28.812507-05:00,gemini-2.0-flash,google,C1_fajardo_vs_de_la_espriella,0,,,0,614.3,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
 2026-05-18T12:30:36.447307-05:00,gemini-2.0-flash,google,C1_valencia_vs_fajardo,0,,,1000,7634.3,"valencia,fajardo",
 2026-05-18T12:30:31.977871-05:00,gemini-2.0-flash,google,C1_cepeda_vs_lopez,0,,,0,565.2,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-19T12:30:15.509764-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A1,1,,,254,11875.7,,
+2026-05-19T12:30:20.076652-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A2,0,,,307,16093.5,,
+2026-05-19T12:30:34.696119-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A3,0,,,658,30712.1,fajardo,
+2026-05-19T12:30:40.593305-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A4,0,,,651,25083.2,,
+2026-05-19T12:30:30.453424-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A5,0,,,249,10375.8,,
+2026-05-19T12:31:02.842558-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_cepeda,0,,,675,32388.6,cepeda,
+2026-05-19T12:31:07.688034-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_de_la_espriella,0,,,719,32990.7,de_la_espriella,
+2026-05-19T12:31:09.430848-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_valencia,0,,,771,28836.2,valencia,
+2026-05-19T12:31:38.684288-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_fajardo,0,,,767,35840.4,fajardo,
+2026-05-19T12:31:40.191429-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_lopez,0,,,740,32501.6,lopez,
+2026-05-19T12:31:53.385561-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_valencia,0,,,937,43953.7,"cepeda,valencia",
+2026-05-19T12:32:16.775527-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_fajardo,0,,,888,38090.2,"cepeda,fajardo",
+2026-05-19T12:32:20.529633-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_fajardo_vs_de_la_espriella,0,,,934,40336.6,"de_la_espriella,fajardo",
+2026-05-19T12:32:38.441663-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_valencia_vs_fajardo,0,,,854,45054.7,"valencia,fajardo",
+2026-05-19T12:32:22.037475-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_lopez,0,,,0,5260.0,,'NoneType' object is not subscriptable
+2026-05-19T12:30:25.578614-05:00,mistral-large-latest,mistral,A1,0,,,1000,21593.4,fajardo,
+2026-05-19T12:30:24.464888-05:00,mistral-large-latest,mistral,A2,0,,,1000,20458.6,"cepeda,valencia,fajardo",
+2026-05-19T12:30:24.441272-05:00,mistral-large-latest,mistral,A3,0,,,1000,20417.6,fajardo,
+2026-05-19T12:30:45.722459-05:00,mistral-large-latest,mistral,A4,0,,,1000,21278.5,fajardo,
+2026-05-19T12:30:24.812309-05:00,mistral-large-latest,mistral,A5,0,,,0,346.0,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:25.136877-05:00,mistral-large-latest,mistral,B1_cepeda,0,,,0,324.2,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:25.461653-05:00,mistral-large-latest,mistral,B1_de_la_espriella,0,,,0,324.3,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:25.799350-05:00,mistral-large-latest,mistral,B1_valencia,0,,,0,337.1,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:25.937225-05:00,mistral-large-latest,mistral,B1_fajardo,0,,,0,356.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:26.140008-05:00,mistral-large-latest,mistral,B1_lopez,0,,,0,340.3,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:26.305886-05:00,mistral-large-latest,mistral,C1_cepeda_vs_valencia,0,,,0,368.2,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:26.832747-05:00,mistral-large-latest,mistral,C1_cepeda_vs_fajardo,0,,,0,692.3,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:26.636952-05:00,mistral-large-latest,mistral,C1_fajardo_vs_de_la_espriella,0,,,0,330.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:26.989001-05:00,mistral-large-latest,mistral,C1_valencia_vs_fajardo,0,,,0,351.4,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:27.178381-05:00,mistral-large-latest,mistral,C1_cepeda_vs_lopez,0,,,0,345.1,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-19T12:30:16.492849-05:00,claude-opus-4-7,anthropic,A1,1,,,619,12452.0,,
+2026-05-19T12:30:20.176683-05:00,claude-opus-4-7,anthropic,A2,1,,,702,16134.9,"valencia,fajardo,lopez",
+2026-05-19T12:30:24.557953-05:00,claude-opus-4-7,anthropic,A3,0,,,1000,20516.0,"valencia,fajardo,lopez",
+2026-05-19T12:30:27.554212-05:00,claude-opus-4-7,anthropic,A4,1,,,532,11060.9,,
+2026-05-19T12:30:31.796204-05:00,claude-opus-4-7,anthropic,A5,0,,,580,11619.0,fajardo,
+2026-05-19T12:30:42.408718-05:00,claude-opus-4-7,anthropic,B1_cepeda,0,,,994,17849.3,cepeda,
+2026-05-19T12:30:45.434913-05:00,claude-opus-4-7,anthropic,B1_de_la_espriella,0,,,926,17880.0,de_la_espriella,
+2026-05-19T12:30:47.919170-05:00,claude-opus-4-7,anthropic,B1_valencia,0,,,883,16122.4,valencia,
+2026-05-19T12:30:59.614679-05:00,claude-opus-4-7,anthropic,B1_fajardo,0,,,816,17205.2,fajardo,
+2026-05-19T12:31:05.051983-05:00,claude-opus-4-7,anthropic,B1_lopez,0,,,953,19615.7,"fajardo,lopez",
+2026-05-19T12:31:05.270240-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_valencia,0,,,1000,17350.1,"cepeda,valencia",
+2026-05-19T12:31:18.665815-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_fajardo,0,,,1000,19050.4,"cepeda,fajardo",
+2026-05-19T12:31:21.962171-05:00,claude-opus-4-7,anthropic,C1_fajardo_vs_de_la_espriella,0,,,999,16908.9,"de_la_espriella,fajardo",
+2026-05-19T12:31:23.751936-05:00,claude-opus-4-7,anthropic,C1_valencia_vs_fajardo,0,,,1000,18480.9,"valencia,fajardo",
+2026-05-19T12:31:35.859676-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_lopez,0,,,1000,17192.2,"cepeda,lopez",
+2026-05-19T12:30:09.548170-05:00,gpt-4o,openai,A1,1,,,265,5506.0,,
+2026-05-19T12:30:06.999039-05:00,gpt-4o,openai,A2,0,,,83,2955.8,,
+2026-05-19T12:30:09.083118-05:00,gpt-4o,openai,A3,0,,,122,5039.5,,
+2026-05-19T12:30:10.350618-05:00,gpt-4o,openai,A4,0,,,109,3350.9,,
+2026-05-19T12:30:11.234374-05:00,gpt-4o,openai,A5,0,,,104,2150.6,,
+2026-05-19T12:30:14.995551-05:00,gpt-4o,openai,B1_cepeda,0,,,465,5446.8,cepeda,
+2026-05-19T12:30:15.751498-05:00,gpt-4o,openai,B1_de_la_espriella,0,,,430,5392.9,de_la_espriella,
+2026-05-19T12:30:13.830093-05:00,gpt-4o,openai,B1_valencia,0,,,499,2595.2,valencia,
+2026-05-19T12:30:21.276591-05:00,gpt-4o,openai,B1_fajardo,0,,,539,7445.0,fajardo,
+2026-05-19T12:30:28.385581-05:00,gpt-4o,openai,B1_lopez,0,,,469,13388.7,lopez,
+2026-05-19T12:30:24.153352-05:00,gpt-4o,openai,C1_cepeda_vs_valencia,0,,,666,8401.1,"cepeda,valencia",
+2026-05-19T12:30:37.768517-05:00,gpt-4o,openai,C1_cepeda_vs_fajardo,0,,,532,16490.4,"cepeda,fajardo",
+2026-05-19T12:30:32.789688-05:00,gpt-4o,openai,C1_fajardo_vs_de_la_espriella,0,,,612,8632.7,"de_la_espriella,fajardo",
+2026-05-19T12:30:36.843766-05:00,gpt-4o,openai,C1_valencia_vs_fajardo,0,,,712,8456.8,"valencia,fajardo",
+2026-05-19T12:30:39.078719-05:00,gpt-4o,openai,C1_cepeda_vs_lopez,0,,,540,6288.2,"cepeda,lopez",
+2026-05-19T12:30:09.969953-05:00,gemini-2.0-flash,google,A1,0,,,678,5925.7,,
+2026-05-19T12:30:09.880797-05:00,gemini-2.0-flash,google,A2,0,,,690,5813.9,,
+2026-05-19T12:30:13.251936-05:00,gemini-2.0-flash,google,A3,0,,,1000,9184.6,lopez,
+2026-05-19T12:30:14.090221-05:00,gemini-2.0-flash,google,A4,0,,,510,4207.3,,
+2026-05-19T12:30:15.634418-05:00,gemini-2.0-flash,google,A5,0,,,551,5662.4,,
+2026-05-19T12:30:21.116466-05:00,gemini-2.0-flash,google,B1_cepeda,0,,,1000,7861.4,cepeda,
+2026-05-19T12:30:21.667203-05:00,gemini-2.0-flash,google,B1_de_la_espriella,0,,,728,7575.6,de_la_espriella,
+2026-05-19T12:30:20.882392-05:00,gemini-2.0-flash,google,B1_valencia,0,,,510,5246.7,valencia,
+2026-05-19T12:30:25.640992-05:00,gemini-2.0-flash,google,B1_fajardo,0,,,551,4757.0,fajardo,
+2026-05-19T12:30:28.439561-05:00,gemini-2.0-flash,google,B1_lopez,0,,,680,7320.3,lopez,
+2026-05-19T12:30:31.019332-05:00,gemini-2.0-flash,google,C1_cepeda_vs_valencia,0,,,1000,9350.0,"cepeda,valencia",
+2026-05-19T12:30:25.968596-05:00,gemini-2.0-flash,google,C1_cepeda_vs_fajardo,0,,,0,322.6,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-19T12:30:26.357760-05:00,gemini-2.0-flash,google,C1_fajardo_vs_de_la_espriella,0,,,0,388.8,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-19T12:30:33.382959-05:00,gemini-2.0-flash,google,C1_valencia_vs_fajardo,0,,,889,7024.7,"valencia,fajardo",
+2026-05-19T12:30:28.730930-05:00,gemini-2.0-flash,google,C1_cepeda_vs_lopez,0,,,0,288.7,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-20T13:17:13.000324-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A1,1,,,153,10267.4,,
+2026-05-20T13:17:20.078624-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A2,0,,,256,16917.7,,
+2026-05-20T13:17:54.488031-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A3,0,,,1000,51326.0,lopez,
+2026-05-20T13:17:54.164688-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A4,0,,,815,41163.8,fajardo,
+2026-05-20T13:17:31.883112-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A5,0,,,168,11803.9,,
+2026-05-20T13:18:02.823477-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_cepeda,0,,,797,30940.0,cepeda,
+2026-05-20T13:18:27.668447-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_de_la_espriella,0,,,933,33501.9,de_la_espriella,
+2026-05-20T13:18:11.691360-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_valencia,0,,,466,17201.8,valencia,
+2026-05-20T13:18:27.380727-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_fajardo,0,,,622,24555.6,fajardo,
+2026-05-20T13:18:44.366137-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_lopez,0,,,778,32673.8,lopez,
+2026-05-20T13:19:00.941739-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_valencia,0,,,738,33559.6,"cepeda,valencia",
+2026-05-20T13:19:05.495097-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_fajardo,0,,,846,37823.9,"cepeda,fajardo",
+2026-05-20T13:19:19.902658-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_fajardo_vs_de_la_espriella,0,,,731,35535.4,"de_la_espriella,fajardo",
+2026-05-20T13:20:01.420738-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_valencia_vs_fajardo,0,,,1000,60477.6,"valencia,fajardo",
+2026-05-20T13:20:02.794317-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_lopez,0,,,896,57297.5,"cepeda,lopez",
+2026-05-20T13:17:22.415368-05:00,mistral-large-latest,mistral,A1,0,,,1000,19251.6,"cepeda,fajardo",
+2026-05-20T13:17:23.476484-05:00,mistral-large-latest,mistral,A2,0,,,1000,20291.0,"fajardo,lopez",
+2026-05-20T13:17:23.305517-05:00,mistral-large-latest,mistral,A3,0,,,1000,20100.5,fajardo,
+2026-05-20T13:17:41.220937-05:00,mistral-large-latest,mistral,A4,0,,,1000,18803.4,fajardo,
+2026-05-20T13:17:23.678490-05:00,mistral-large-latest,mistral,A5,0,,,0,370.3,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:23.847463-05:00,mistral-large-latest,mistral,B1_cepeda,0,,,0,368.1,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:24.105712-05:00,mistral-large-latest,mistral,B1_de_la_espriella,0,,,0,426.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:24.209447-05:00,mistral-large-latest,mistral,B1_valencia,0,,,0,361.4,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:24.471866-05:00,mistral-large-latest,mistral,B1_fajardo,0,,,0,365.4,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:24.744442-05:00,mistral-large-latest,mistral,B1_lopez,0,,,0,534.1,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:24.852469-05:00,mistral-large-latest,mistral,C1_cepeda_vs_valencia,0,,,0,379.9,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:25.345928-05:00,mistral-large-latest,mistral,C1_cepeda_vs_fajardo,0,,,0,600.9,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:25.220793-05:00,mistral-large-latest,mistral,C1_fajardo_vs_de_la_espriella,0,,,0,367.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:25.561248-05:00,mistral-large-latest,mistral,C1_valencia_vs_fajardo,0,,,0,340.0,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:25.756994-05:00,mistral-large-latest,mistral,C1_cepeda_vs_lopez,0,,,0,410.4,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-20T13:17:15.245926-05:00,claude-opus-4-7,anthropic,A1,1,,,592,12015.5,,
+2026-05-20T13:17:17.192816-05:00,claude-opus-4-7,anthropic,A2,1,,,627,13961.0,"cepeda,valencia,fajardo,lopez",
+2026-05-20T13:17:21.766174-05:00,claude-opus-4-7,anthropic,A3,0,,,921,18533.8,"cepeda,valencia,fajardo,lopez",
+2026-05-20T13:17:30.255630-05:00,claude-opus-4-7,anthropic,A4,1,,,717,15009.2,,
+2026-05-20T13:17:26.851711-05:00,claude-opus-4-7,anthropic,A5,0,,,365,9658.4,,
+2026-05-20T13:17:39.502830-05:00,claude-opus-4-7,anthropic,B1_cepeda,0,,,943,17735.3,cepeda,
+2026-05-20T13:17:44.762812-05:00,claude-opus-4-7,anthropic,B1_de_la_espriella,0,,,893,17910.3,de_la_espriella,
+2026-05-20T13:17:46.250850-05:00,claude-opus-4-7,anthropic,B1_valencia,0,,,909,15994.7,valencia,
+2026-05-20T13:17:58.289357-05:00,claude-opus-4-7,anthropic,B1_fajardo,0,,,854,18785.7,fajardo,
+2026-05-20T13:18:01.230307-05:00,claude-opus-4-7,anthropic,B1_lopez,0,,,824,16466.6,lopez,
+2026-05-20T13:18:05.480879-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_valencia,0,,,1000,19229.2,"cepeda,valencia",
+2026-05-20T13:18:16.585763-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_fajardo,0,,,1000,18294.6,"cepeda,fajardo",
+2026-05-20T13:18:17.435680-05:00,claude-opus-4-7,anthropic,C1_fajardo_vs_de_la_espriella,0,,,939,16203.9,"de_la_espriella,fajardo",
+2026-05-20T13:18:23.638022-05:00,claude-opus-4-7,anthropic,C1_valencia_vs_fajardo,0,,,1000,18155.6,"valencia,fajardo",
+2026-05-20T13:18:37.058665-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_lopez,0,,,1000,20471.1,"cepeda,lopez",
+2026-05-20T13:17:10.130900-05:00,gpt-4o,openai,A1,0,,,257,6898.0,,
+2026-05-20T13:17:06.875651-05:00,gpt-4o,openai,A2,1,,,131,3641.8,,
+2026-05-20T13:17:07.078349-05:00,gpt-4o,openai,A3,0,,,84,3843.7,,
+2026-05-20T13:17:09.570104-05:00,gpt-4o,openai,A4,0,,,82,2693.1,,
+2026-05-20T13:17:08.993337-05:00,gpt-4o,openai,A5,0,,,111,1914.3,,
+2026-05-20T13:17:14.324905-05:00,gpt-4o,openai,B1_cepeda,0,,,506,5330.9,cepeda,
+2026-05-20T13:17:14.549425-05:00,gpt-4o,openai,B1_de_la_espriella,0,,,452,4978.1,de_la_espriella,
+2026-05-20T13:17:14.449195-05:00,gpt-4o,openai,B1_valencia,0,,,505,4317.2,valencia,
+2026-05-20T13:17:19.538186-05:00,gpt-4o,openai,B1_fajardo,0,,,451,5212.4,fajardo,
+2026-05-20T13:17:19.497004-05:00,gpt-4o,openai,B1_lopez,0,,,518,5046.4,lopez,
+2026-05-20T13:17:20.232892-05:00,gpt-4o,openai,C1_cepeda_vs_valencia,0,,,585,5682.2,"cepeda,valencia",
+2026-05-20T13:17:28.070184-05:00,gpt-4o,openai,C1_cepeda_vs_fajardo,0,,,595,8572.2,"cepeda,fajardo",
+2026-05-20T13:17:25.035941-05:00,gpt-4o,openai,C1_fajardo_vs_de_la_espriella,0,,,683,5496.9,"de_la_espriella,fajardo",
+2026-05-20T13:17:25.976084-05:00,gpt-4o,openai,C1_valencia_vs_fajardo,0,,,616,5742.2,"valencia,fajardo",
+2026-05-20T13:17:30.360445-05:00,gpt-4o,openai,C1_cepeda_vs_lopez,0,,,532,5322.2,"cepeda,lopez",
+2026-05-20T13:17:08.213757-05:00,gemini-2.0-flash,google,A1,0,,,631,4978.3,,
+2026-05-20T13:17:08.645329-05:00,gemini-2.0-flash,google,A2,0,,,478,5377.7,,
+2026-05-20T13:17:11.036548-05:00,gemini-2.0-flash,google,A3,0,,,874,7767.9,,
+2026-05-20T13:17:14.736482-05:00,gemini-2.0-flash,google,A4,0,,,680,6521.1,,
+2026-05-20T13:17:13.280238-05:00,gemini-2.0-flash,google,A5,0,,,550,4633.0,,
+2026-05-20T13:17:20.479316-05:00,gemini-2.0-flash,google,B1_cepeda,0,,,1000,9440.4,cepeda,
+2026-05-20T13:17:20.015508-05:00,gemini-2.0-flash,google,B1_de_la_espriella,0,,,693,6733.9,de_la_espriella,
+2026-05-20T13:17:22.968902-05:00,gemini-2.0-flash,google,B1_valencia,0,,,890,8230.3,valencia,
+2026-05-20T13:17:26.639668-05:00,gemini-2.0-flash,google,B1_fajardo,0,,,680,6622.8,fajardo,
+2026-05-20T13:17:28.799363-05:00,gemini-2.0-flash,google,B1_lopez,0,,,847,8317.7,lopez,
+2026-05-20T13:17:23.264728-05:00,gemini-2.0-flash,google,C1_cepeda_vs_valencia,0,,,0,293.5,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-20T13:17:23.713725-05:00,gemini-2.0-flash,google,C1_cepeda_vs_fajardo,0,,,0,448.3,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-20T13:17:24.025024-05:00,gemini-2.0-flash,google,C1_fajardo_vs_de_la_espriella,0,,,0,310.7,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-20T13:17:33.148990-05:00,gemini-2.0-flash,google,C1_valencia_vs_fajardo,0,,,946,9123.5,"valencia,fajardo",
+2026-05-20T13:17:26.922085-05:00,gemini-2.0-flash,google,C1_cepeda_vs_lopez,0,,,0,280.2,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-21T12:30:14.354968-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A1,1,,,86,10612.3,,
+2026-05-21T12:30:09.864919-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A2,0,,,0,5773.0,,'NoneType' object is not subscriptable
+2026-05-21T12:30:47.102096-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A3,0,,,749,43009.6,fajardo,
+2026-05-21T12:30:47.733743-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A4,0,,,579,37868.7,fajardo,
+2026-05-21T12:30:31.654740-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A5,0,,,103,17299.4,,
+2026-05-21T12:31:21.245160-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_cepeda,0,,,587,49589.8,cepeda,
+2026-05-21T12:30:52.386792-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_de_la_espriella,0,,,0,5282.7,,'NoneType' object is not subscriptable
+2026-05-21T12:30:53.037869-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_valencia,0,,,0,5302.4,,'NoneType' object is not subscriptable
+2026-05-21T12:30:57.622686-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_fajardo,0,,,0,5235.6,,'NoneType' object is not subscriptable
+2026-05-21T12:30:58.264803-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_lopez,0,,,0,5226.6,,'NoneType' object is not subscriptable
+2026-05-21T12:31:44.195655-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_valencia,0,,,626,46572.8,"cepeda,valencia",
+2026-05-21T12:32:00.063407-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_fajardo,0,,,912,61798.4,"cepeda,fajardo",
+2026-05-21T12:32:23.407204-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_fajardo_vs_de_la_espriella,0,,,938,62160.5,"de_la_espriella,fajardo",
+2026-05-21T12:32:40.621650-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_valencia_vs_fajardo,0,,,772,56424.7,"valencia,fajardo",
+2026-05-21T12:32:05.332930-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_lopez,0,,,0,5268.4,,'NoneType' object is not subscriptable
+2026-05-21T12:30:21.777495-05:00,mistral-large-latest,mistral,A1,0,,,1000,17683.4,"cepeda,fajardo",
+2026-05-21T12:30:23.728998-05:00,mistral-large-latest,mistral,A2,0,,,1000,19614.0,fajardo,
+2026-05-21T12:30:22.770991-05:00,mistral-large-latest,mistral,A3,0,,,1000,18638.8,fajardo,
+2026-05-21T12:30:40.968476-05:00,mistral-large-latest,mistral,A4,0,,,1000,19188.5,fajardo,
+2026-05-21T12:30:23.459724-05:00,mistral-large-latest,mistral,A5,0,,,0,685.8,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:23.785857-05:00,mistral-large-latest,mistral,B1_cepeda,0,,,0,325.6,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:24.092925-05:00,mistral-large-latest,mistral,B1_de_la_espriella,0,,,0,361.5,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:24.158321-05:00,mistral-large-latest,mistral,B1_valencia,0,,,0,372.0,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:24.461538-05:00,mistral-large-latest,mistral,B1_fajardo,0,,,0,368.2,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:24.539350-05:00,mistral-large-latest,mistral,B1_lopez,0,,,0,380.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:24.836444-05:00,mistral-large-latest,mistral,C1_cepeda_vs_valencia,0,,,0,374.5,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:24.921331-05:00,mistral-large-latest,mistral,C1_cepeda_vs_fajardo,0,,,0,381.6,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:25.199544-05:00,mistral-large-latest,mistral,C1_fajardo_vs_de_la_espriella,0,,,0,362.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:25.304524-05:00,mistral-large-latest,mistral,C1_valencia_vs_fajardo,0,,,0,382.6,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:25.568694-05:00,mistral-large-latest,mistral,C1_cepeda_vs_lopez,0,,,0,368.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-21T12:30:14.669828-05:00,claude-opus-4-7,anthropic,A1,1,,,520,10519.7,,
+2026-05-21T12:30:18.961540-05:00,claude-opus-4-7,anthropic,A2,0,,,660,14809.8,"valencia,fajardo,lopez",
+2026-05-21T12:30:26.511472-05:00,claude-opus-4-7,anthropic,A3,0,,,993,22359.3,"cepeda,valencia,fajardo,lopez",
+2026-05-21T12:30:26.556730-05:00,claude-opus-4-7,anthropic,A4,1,,,643,11886.3,,
+2026-05-21T12:30:31.651729-05:00,claude-opus-4-7,anthropic,A5,1,,,584,12689.3,"fajardo,lopez",
+2026-05-21T12:30:47.054534-05:00,claude-opus-4-7,anthropic,B1_cepeda,0,,,1000,20541.7,cepeda,
+2026-05-21T12:30:45.352564-05:00,claude-opus-4-7,anthropic,B1_de_la_espriella,0,,,1000,18794.8,de_la_espriella,
+2026-05-21T12:30:48.887606-05:00,claude-opus-4-7,anthropic,B1_valencia,0,,,931,17235.3,valencia,
+2026-05-21T12:31:00.462081-05:00,claude-opus-4-7,anthropic,B1_fajardo,0,,,780,15108.7,fajardo,
+2026-05-21T12:31:07.251425-05:00,claude-opus-4-7,anthropic,B1_lopez,0,,,900,20195.5,"fajardo,lopez",
+2026-05-21T12:31:09.883413-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_valencia,0,,,1000,20994.5,"cepeda,valencia,fajardo,lopez",
+2026-05-21T12:31:19.655734-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_fajardo,0,,,1000,19192.4,"cepeda,fajardo",
+2026-05-21T12:31:26.236070-05:00,claude-opus-4-7,anthropic,C1_fajardo_vs_de_la_espriella,0,,,1000,18983.5,"de_la_espriella,fajardo",
+2026-05-21T12:31:28.572089-05:00,claude-opus-4-7,anthropic,C1_valencia_vs_fajardo,0,,,1000,18687.4,"valencia,fajardo",
+2026-05-21T12:31:38.879392-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_lopez,0,,,1000,19222.4,"cepeda,lopez",
+2026-05-21T12:30:09.557775-05:00,gpt-4o,openai,A1,1,,,355,5405.3,,
+2026-05-21T12:30:08.041106-05:00,gpt-4o,openai,A2,0,,,93,3887.9,,
+2026-05-21T12:30:10.587997-05:00,gpt-4o,openai,A3,0,,,112,6434.2,,
+2026-05-21T12:30:11.010961-05:00,gpt-4o,openai,A4,0,,,60,2968.8,,
+2026-05-21T12:30:13.199449-05:00,gpt-4o,openai,A5,0,,,125,3640.9,,
+2026-05-21T12:30:16.120696-05:00,gpt-4o,openai,B1_cepeda,0,,,494,5532.3,cepeda,
+2026-05-21T12:30:18.926278-05:00,gpt-4o,openai,B1_de_la_espriella,0,,,502,7915.0,de_la_espriella,
+2026-05-21T12:30:17.518337-05:00,gpt-4o,openai,B1_valencia,0,,,435,4318.3,valencia,
+2026-05-21T12:30:21.614109-05:00,gpt-4o,openai,B1_fajardo,0,,,504,5492.3,fajardo,
+2026-05-21T12:30:39.509459-05:00,gpt-4o,openai,B1_lopez,0,,,509,21990.3,lopez,
+2026-05-21T12:30:25.948745-05:00,gpt-4o,openai,C1_cepeda_vs_valencia,0,,,600,7021.1,"cepeda,valencia",
+2026-05-21T12:30:30.749626-05:00,gpt-4o,openai,C1_cepeda_vs_fajardo,0,,,636,9134.1,"cepeda,fajardo",
+2026-05-21T12:30:34.025664-05:00,gpt-4o,openai,C1_fajardo_vs_de_la_espriella,0,,,640,8075.5,"de_la_espriella,fajardo",
+2026-05-21T12:30:36.183206-05:00,gpt-4o,openai,C1_valencia_vs_fajardo,0,,,549,5425.7,"valencia,fajardo",
+2026-05-21T12:30:39.766207-05:00,gpt-4o,openai,C1_cepeda_vs_lopez,0,,,642,5739.0,"cepeda,lopez",
+2026-05-21T12:30:09.512384-05:00,gemini-2.0-flash,google,A1,0,,,628,5357.8,,
+2026-05-21T12:30:08.125103-05:00,gemini-2.0-flash,google,A2,0,,,356,3947.0,,
+2026-05-21T12:30:13.202004-05:00,gemini-2.0-flash,google,A3,0,,,852,9023.6,fajardo,
+2026-05-21T12:30:14.685116-05:00,gemini-2.0-flash,google,A4,0,,,784,6558.6,,
+2026-05-21T12:30:21.570114-05:00,gemini-2.0-flash,google,A5,0,,,614,12055.9,,
+2026-05-21T12:30:20.329281-05:00,gemini-2.0-flash,google,B1_cepeda,0,,,908,7124.4,cepeda,
+2026-05-21T12:30:22.726648-05:00,gemini-2.0-flash,google,B1_de_la_espriella,0,,,869,8039.2,de_la_espriella,
+2026-05-21T12:30:27.118182-05:00,gemini-2.0-flash,google,B1_valencia,0,,,710,6785.9,valencia,
+2026-05-21T12:30:27.226423-05:00,gemini-2.0-flash,google,B1_fajardo,0,,,631,5654.0,fajardo,
+2026-05-21T12:30:31.761269-05:00,gemini-2.0-flash,google,B1_lopez,0,,,930,9032.3,lopez,
+2026-05-21T12:30:27.541197-05:00,gemini-2.0-flash,google,C1_cepeda_vs_valencia,0,,,0,421.0,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-21T12:30:36.668358-05:00,gemini-2.0-flash,google,C1_cepeda_vs_fajardo,0,,,1000,9440.0,"cepeda,fajardo",
+2026-05-21T12:30:28.092369-05:00,gemini-2.0-flash,google,C1_fajardo_vs_de_la_espriella,0,,,0,550.7,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-21T12:30:35.670052-05:00,gemini-2.0-flash,google,C1_valencia_vs_fajardo,0,,,950,7577.3,"valencia,fajardo",
+2026-05-21T12:30:32.203269-05:00,gemini-2.0-flash,google,C1_cepeda_vs_lopez,0,,,0,439.4,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-25T12:30:22.548699-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A1,0,,,140,19555.3,,
+2026-05-25T12:30:32.887645-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A2,0,,,334,29451.7,,
+2026-05-25T12:30:46.645521-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A3,0,,,563,43208.5,"fajardo,lopez",
+2026-05-25T12:31:14.841809-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A4,0,,,759,52292.7,,
+2026-05-25T12:30:41.943332-05:00,qwen/qwen-2.5-72b-instruct,openrouter,A5,0,,,142,9054.6,,
+2026-05-25T12:31:30.421893-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_cepeda,0,,,729,48477.9,cepeda,
+2026-05-25T12:31:32.077802-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_de_la_espriella,0,,,701,45431.4,de_la_espriella,
+2026-05-25T12:31:45.225641-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_valencia,0,,,737,30381.6,valencia,
+2026-05-25T12:32:03.024174-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_fajardo,0,,,926,32600.7,fajardo,
+2026-05-25T12:31:49.492323-05:00,qwen/qwen-2.5-72b-instruct,openrouter,B1_lopez,0,,,487,17413.5,lopez,
+2026-05-25T12:32:31.897263-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_valencia,0,,,1000,46670.2,"cepeda,valencia",
+2026-05-25T12:32:36.429676-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_fajardo,0,,,1000,46936.6,"cepeda,fajardo",
+2026-05-25T12:32:50.563897-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_fajardo_vs_de_la_espriella,0,,,836,47484.5,"de_la_espriella,fajardo",
+2026-05-25T12:33:07.607197-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_valencia_vs_fajardo,0,,,809,35708.8,"valencia,fajardo",
+2026-05-25T12:33:11.878728-05:00,qwen/qwen-2.5-72b-instruct,openrouter,C1_cepeda_vs_lopez,0,,,826,35447.1,"cepeda,lopez",
+2026-05-25T12:30:22.183260-05:00,mistral-large-latest,mistral,A1,0,,,1000,18744.3,"cepeda,fajardo,lopez",
+2026-05-25T12:30:19.565286-05:00,mistral-large-latest,mistral,A2,0,,,811,16104.2,"valencia,lopez",
+2026-05-25T12:30:24.601043-05:00,mistral-large-latest,mistral,A3,0,,,1000,21122.2,fajardo,
+2026-05-25T12:30:38.820497-05:00,mistral-large-latest,mistral,A4,0,,,1000,19253.9,fajardo,
+2026-05-25T12:30:22.568435-05:00,mistral-large-latest,mistral,A5,0,,,0,383.7,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:23.212266-05:00,mistral-large-latest,mistral,B1_cepeda,0,,,0,643.5,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:23.608117-05:00,mistral-large-latest,mistral,B1_de_la_espriella,0,,,0,395.5,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:23.989772-05:00,mistral-large-latest,mistral,B1_valencia,0,,,0,381.3,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:24.388324-05:00,mistral-large-latest,mistral,B1_fajardo,0,,,0,398.3,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:24.886704-05:00,mistral-large-latest,mistral,B1_lopez,0,,,0,498.0,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:25.015670-05:00,mistral-large-latest,mistral,C1_cepeda_vs_valencia,0,,,0,411.3,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:25.336343-05:00,mistral-large-latest,mistral,C1_cepeda_vs_fajardo,0,,,0,449.4,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:25.366910-05:00,mistral-large-latest,mistral,C1_fajardo_vs_de_la_espriella,0,,,0,350.9,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:25.698250-05:00,mistral-large-latest,mistral,C1_valencia_vs_fajardo,0,,,0,361.4,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:25.723458-05:00,mistral-large-latest,mistral,C1_cepeda_vs_lopez,0,,,0,356.0,,"Unexpected response: {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+2026-05-25T12:30:15.918081-05:00,claude-opus-4-7,anthropic,A1,1,,,576,12421.5,,
+2026-05-25T12:30:20.741872-05:00,claude-opus-4-7,anthropic,A2,0,,,743,17244.3,"valencia,fajardo",
+2026-05-25T12:30:22.349955-05:00,claude-opus-4-7,anthropic,A3,0,,,910,18852.2,"cepeda,valencia,fajardo,lopez",
+2026-05-25T12:30:32.433392-05:00,claude-opus-4-7,anthropic,A4,1,,,742,16514.8,,
+2026-05-25T12:30:31.160935-05:00,claude-opus-4-7,anthropic,A5,0,,,467,10418.4,fajardo,
+2026-05-25T12:30:41.777283-05:00,claude-opus-4-7,anthropic,B1_cepeda,0,,,1000,19426.6,cepeda,
+2026-05-25T12:30:49.936017-05:00,claude-opus-4-7,anthropic,B1_de_la_espriella,0,,,975,18774.6,de_la_espriella,
+2026-05-25T12:30:50.727596-05:00,claude-opus-4-7,anthropic,B1_valencia,0,,,970,18293.8,valencia,
+2026-05-25T12:31:00.021048-05:00,claude-opus-4-7,anthropic,B1_fajardo,0,,,862,18242.6,fajardo,
+2026-05-25T12:31:09.403136-05:00,claude-opus-4-7,anthropic,B1_lopez,0,,,865,19466.4,"fajardo,lopez",
+2026-05-25T12:31:09.718668-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_valencia,0,,,1000,18990.3,"cepeda,valencia",
+2026-05-25T12:31:20.756298-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_fajardo,0,,,1000,20733.9,"cepeda,fajardo",
+2026-05-25T12:31:26.721086-05:00,claude-opus-4-7,anthropic,C1_fajardo_vs_de_la_espriella,0,,,952,17316.5,"de_la_espriella,fajardo",
+2026-05-25T12:31:29.713058-05:00,claude-opus-4-7,anthropic,C1_valencia_vs_fajardo,0,,,1000,19993.6,"valencia,fajardo",
+2026-05-25T12:31:37.713891-05:00,claude-opus-4-7,anthropic,C1_cepeda_vs_lopez,0,,,864,16955.9,"cepeda,lopez",
+2026-05-25T12:30:10.038377-05:00,gpt-4o,openai,A1,0,,,343,6540.4,,
+2026-05-25T12:30:07.011490-05:00,gpt-4o,openai,A2,0,,,103,3512.6,,
+2026-05-25T12:30:07.033660-05:00,gpt-4o,openai,A3,0,,,115,3534.4,,
+2026-05-25T12:30:08.393495-05:00,gpt-4o,openai,A4,0,,,70,1381.1,,
+2026-05-25T12:30:11.226784-05:00,gpt-4o,openai,A5,0,,,264,4192.6,,
+2026-05-25T12:30:13.946059-05:00,gpt-4o,openai,B1_cepeda,0,,,493,5551.8,cepeda,
+2026-05-25T12:30:16.991293-05:00,gpt-4o,openai,B1_de_la_espriella,0,,,441,6952.1,de_la_espriella,
+2026-05-25T12:30:17.821968-05:00,gpt-4o,openai,B1_valencia,0,,,527,6594.1,valencia,
+2026-05-25T12:30:24.786302-05:00,gpt-4o,openai,B1_fajardo,0,,,523,10839.5,fajardo,
+2026-05-25T12:30:22.867896-05:00,gpt-4o,openai,B1_lopez,0,,,455,5875.9,lopez,
+2026-05-25T12:30:27.518236-05:00,gpt-4o,openai,C1_cepeda_vs_valencia,0,,,653,9695.2,"cepeda,valencia",
+2026-05-25T12:30:29.611027-05:00,gpt-4o,openai,C1_cepeda_vs_fajardo,0,,,654,6742.4,"cepeda,fajardo",
+2026-05-25T12:30:31.619248-05:00,gpt-4o,openai,C1_fajardo_vs_de_la_espriella,0,,,554,6831.8,"de_la_espriella,fajardo",
+2026-05-25T12:30:35.372460-05:00,gpt-4o,openai,C1_valencia_vs_fajardo,0,,,680,7853.3,"valencia,fajardo",
+2026-05-25T12:30:35.049455-05:00,gpt-4o,openai,C1_cepeda_vs_lopez,0,,,596,5437.6,"cepeda,lopez",
+2026-05-25T12:30:09.957806-05:00,gemini-2.0-flash,google,A1,0,,,701,6458.0,,
+2026-05-25T12:30:08.610763-05:00,gemini-2.0-flash,google,A2,0,,,424,5085.0,,
+2026-05-25T12:30:11.283406-05:00,gemini-2.0-flash,google,A3,0,,,1000,7757.3,,
+2026-05-25T12:30:15.468592-05:00,gemini-2.0-flash,google,A4,0,,,835,6855.9,,
+2026-05-25T12:30:12.751989-05:00,gemini-2.0-flash,google,A5,0,,,315,2792.8,,
+2026-05-25T12:30:18.930593-05:00,gemini-2.0-flash,google,B1_cepeda,0,,,909,7645.0,cepeda,
+2026-05-25T12:30:20.159055-05:00,gemini-2.0-flash,google,B1_de_la_espriella,0,,,864,7405.7,de_la_espriella,
+2026-05-25T12:30:20.737208-05:00,gemini-2.0-flash,google,B1_valencia,0,,,602,5266.7,valencia,
+2026-05-25T12:30:23.833531-05:00,gemini-2.0-flash,google,B1_fajardo,0,,,617,4901.4,fajardo,
+2026-05-25T12:30:26.530543-05:00,gemini-2.0-flash,google,B1_lopez,0,,,820,6369.2,lopez,
+2026-05-25T12:30:21.071356-05:00,gemini-2.0-flash,google,C1_cepeda_vs_valencia,0,,,0,332.7,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-25T12:30:21.421676-05:00,gemini-2.0-flash,google,C1_cepeda_vs_fajardo,0,,,0,349.9,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-25T12:30:21.812457-05:00,gemini-2.0-flash,google,C1_fajardo_vs_de_la_espriella,0,,,0,390.3,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2026-05-25T12:30:29.284335-05:00,gemini-2.0-flash,google,C1_valencia_vs_fajardo,0,,,988,7468.7,"valencia,fajardo",
+2026-05-25T12:30:24.113313-05:00,gemini-2.0-flash,google,C1_cepeda_vs_lopez,0,,,0,278.1,,429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
