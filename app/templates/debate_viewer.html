@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debat-Zero — Visor de Debate</title>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #161a24;
+      --surface2: #1e2330;
+      --border: #2a3040;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --accent: #3b82f6;
+
+      --col-a: #2563eb;
+      --col-a-bg: #0f1f3d;
+      --col-a-glow: rgba(37,99,235,0.15);
+
+      --col-judge: #7c3aed;
+      --col-judge-bg: #1a0f3d;
+      --col-judge-glow: rgba(124,58,237,0.15);
+
+      --col-b: #dc2626;
+      --col-b-bg: #3d0f0f;
+      --col-b-glow: rgba(220,38,38,0.15);
+
+      --pos-bg:  #1a2a1a;
+      --reb-bg:  #2a1a1a;
+      --pos-border: #166534;
+      --reb-border: #9a3412;
+
+      --ok: #22c55e;
+      --warn: #f59e0b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; }
+
+    /* ── Header ── */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .header a { color: var(--muted); text-decoration: none; font-size: 12px; }
+    .header a:hover { color: var(--text); }
+    .header h1 { font-size: 18px; font-weight: 700; }
+    .header .meta { margin-left: auto; display: flex; gap: 24px; font-size: 12px; color: var(--muted); }
+    .header .meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── Debate meta bar ── */
+    .debate-meta {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex; gap: 32px; align-items: center; flex-wrap: wrap;
+    }
+    .debate-meta .topic { font-size: 16px; font-weight: 600; color: var(--text); }
+    .debate-meta .chip {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 12px; font-size: 12px; color: var(--muted);
+    }
+    .status-badge {
+      padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase;
+    }
+    .status-complete { background: rgba(34,197,94,.15); color: var(--ok); }
+    .status-error    { background: rgba(239,68,68,.15);  color: #ef4444; }
+    .status-pending  { background: rgba(245,158,11,.15); color: var(--warn); }
+
+    /* ── Scores bar ── */
+    .scores-bar {
+      padding: 12px 24px;
+      display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .score-item { display: flex; gap: 8px; align-items: center; }
+    .score-label { color: var(--muted); }
+    .score-a { color: #60a5fa; font-weight: 700; }
+    .score-b { color: #f87171; font-weight: 700; }
+    .score-sep { color: var(--border); }
+
+    /* ── 3-column arena ── */
+    .arena {
+      display: grid;
+      grid-template-columns: 1fr 220px 1fr;
+      gap: 0;
+      min-height: calc(100vh - 180px);
+    }
+
+    .col-a, .col-b, .col-judge {
+      padding: 20px 16px;
+      border-right: 1px solid var(--border);
+    }
+    .col-b { border-right: none; }
+
+    .col-a     { background: var(--col-a-bg); }
+    .col-judge { background: var(--col-judge-bg); border-right: 1px solid var(--border); }
+    .col-b     { background: var(--col-b-bg); }
+
+    .col-header {
+      text-align: center; padding: 12px 8px 20px;
+      border-bottom: 2px solid; margin-bottom: 20px;
+    }
+    .col-a     .col-header { border-color: var(--col-a); }
+    .col-judge .col-header { border-color: var(--col-judge); }
+    .col-b     .col-header { border-color: var(--col-b); }
+
+    .col-header .candidate-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .col-header .coalition { font-size: 11px; color: var(--muted); }
+    .col-header .model-tag {
+      display: inline-block; margin-top: 6px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2px 8px; font-size: 10px; color: var(--muted);
+    }
+    .col-a     .candidate-name { color: #93c5fd; }
+    .col-judge .candidate-name { color: #c4b5fd; }
+    .col-b     .candidate-name { color: #fca5a5; }
+
+    /* ── Document cards (knowledge base) ── */
+    .docs-section { margin-bottom: 16px; }
+    .docs-section h4 { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+    .doc-card {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 10px; margin-bottom: 6px; font-size: 11px;
+    }
+    .doc-card .doc-title { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .doc-card .doc-type  { color: var(--muted); font-size: 10px; }
+
+    /* ── Question blocks ── */
+    .question-block { margin-bottom: 28px; }
+    .question-label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--col-judge); margin-bottom: 8px; font-weight: 600;
+    }
+    .question-text {
+      background: var(--surface2); border: 1px solid var(--col-judge);
+      border-radius: 8px; padding: 12px 14px; font-size: 13px;
+      line-height: 1.5; color: var(--text);
+    }
+
+    /* ── Turn cards ── */
+    .turn-card {
+      border-radius: 8px; padding: 12px 14px; margin-bottom: 10px;
+      font-size: 13px; line-height: 1.6; position: relative;
+    }
+    .turn-card.position {
+      background: var(--pos-bg); border-left: 3px solid var(--pos-border);
+    }
+    .turn-card.rebuttal {
+      background: var(--reb-bg); border-left: 3px solid var(--reb-border);
+    }
+    .turn-label {
+      font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+      font-weight: 700; margin-bottom: 6px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .turn-label.position { color: #4ade80; }
+    .turn-label.rebuttal { color: #fb923c; }
+    .turn-text { color: var(--text); white-space: pre-wrap; }
+    .turn-tokens { font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+    /* ── Artifact cards ── */
+    .artifact-card {
+      background: rgba(255,255,255,.03); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 10px; margin-top: 8px; font-size: 11px;
+    }
+    .artifact-card .art-title { font-weight: 600; color: var(--warn); margin-bottom: 3px; }
+    .artifact-card .art-content { color: var(--text); }
+    .artifact-card .art-source  { color: var(--muted); font-size: 10px; margin-top: 3px; }
+
+    /* ── Analytics panel (judge col) ── */
+    .analytics-section { margin-top: 24px; }
+    .analytics-section h4 {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--col-judge); margin-bottom: 12px; padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .analytics-block { margin-bottom: 16px; }
+    .analytics-block .dimension { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .analytics-block .a-val { color: #93c5fd; font-size: 12px; margin-bottom: 4px; line-height: 1.4; }
+    .analytics-block .b-val { color: #fca5a5; font-size: 12px; line-height: 1.4; }
+    .tension-item { font-size: 12px; color: var(--text); margin-bottom: 4px; padding-left: 12px; position: relative; }
+    .tension-item::before { content: "·"; position: absolute; left: 0; color: var(--col-judge); }
+    .summary-text { font-size: 12px; line-height: 1.6; color: var(--text); margin-top: 8px; font-style: italic; }
+    .score-row { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 11px; }
+    .score-row .label { color: var(--muted); }
+    .score-bar { width: 60px; height: 4px; background: var(--border); border-radius: 2px; margin-top: 2px; }
+    .score-bar-fill { height: 100%; border-radius: 2px; }
+    .score-bar-fill.a { background: var(--col-a); }
+    .score-bar-fill.b { background: var(--col-b); }
+
+    /* ── Loading / error ── */
+    .loading { text-align: center; padding: 60px; color: var(--muted); }
+    .error-msg { color: #f87171; background: rgba(239,68,68,.1); padding: 12px 16px; border-radius: 8px; margin: 16px; }
+
+    /* ── Debate list page ── */
+    .debate-list { max-width: 900px; margin: 40px auto; padding: 0 24px; }
+    .debate-list h2 { font-size: 22px; font-weight: 700; margin-bottom: 24px; }
+    .debate-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 20px; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 16px; cursor: pointer;
+      text-decoration: none; color: var(--text);
+      transition: border-color .15s, background .15s;
+    }
+    .debate-row:hover { background: var(--surface2); border-color: var(--accent); }
+    .debate-row .dr-date { font-size: 12px; color: var(--muted); min-width: 90px; }
+    .debate-row .dr-topic { flex: 1; font-weight: 600; }
+    .debate-row .dr-vs { font-size: 12px; color: var(--muted); }
+    .debate-row .dr-tokens { font-size: 11px; color: var(--muted); min-width: 80px; text-align: right; }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <div class="loading">Cargando debate…</div>
+</div>
+
+<script>
+const API = '/api';
+const debateId = new URLSearchParams(location.search).get('id');
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function modelShort(m) {
+  if (!m) return '';
+  if (m.includes('claude'))  return 'Claude Opus';
+  if (m.includes('qwen'))    return 'Qwen 2.5-72B';
+  if (m.includes('gpt-4o'))  return 'GPT-4o';
+  if (m.includes('mistral')) return 'Mistral';
+  return m.split('/').pop();
+}
+
+function scoreFill(score, cls) {
+  const pct = Math.min(100, (score||0)*10);
+  return `<div class="score-bar"><div class="score-bar-fill ${cls}" style="width:${pct}%"></div></div>`;
+}
+
+// ── Render a turn card ────────────────────────────────────────────────────────
+
+function renderTurn(turn) {
+  const isPos = turn.turn_type === 'position';
+  const typeClass = isPos ? 'position' : 'rebuttal';
+  const typeLabel = isPos ? '▲ Posición propia' : '⟳ Réplica al rival';
+
+  const artifacts = (turn.artifacts||[]).map(a => `
+    <div class="artifact-card">
+      <div class="art-title">📊 ${esc(a.title||'')}</div>
+      <div class="art-content">${esc(a.content||'')}</div>
+      ${a.source ? `<div class="art-source">Fuente: ${esc(a.source)}</div>` : ''}
+    </div>
+  `).join('');
+
+  return `
+    <div class="turn-card ${typeClass}">
+      <div class="turn-label ${typeClass}">${typeLabel}</div>
+      <div class="turn-text">${esc(turn.text)}</div>
+      ${artifacts}
+      <div class="turn-tokens">${modelShort(turn.model)} · ${turn.tokens} tokens</div>
+    </div>
+  `;
+}
+
+// ── Render full debate ────────────────────────────────────────────────────────
+
+function renderDebate(d) {
+  const a = d.analytics || {};
+  const aKey = d.participant_a;
+  const bKey = d.participant_b;
+
+  // Collect name/model from turns
+  const aTurns = d.turns.filter(t => t.speaker === aKey);
+  const bTurns = d.turns.filter(t => t.speaker === bKey);
+  const aDisplay = aTurns[0]?.speaker_display || aKey;
+  const bDisplay = bTurns[0]?.speaker_display || bKey;
+  const aModel   = modelShort(aTurns[0]?.model || d.actor_a);
+  const bModel   = modelShort(bTurns[0]?.model || d.actor_b);
+  const judgeModel = modelShort(d.judge_model);
+
+  // Score chips for header bar
+  const ev = a.evidence_quality || {};
+  const sp = a.specificity || {};
+  const rb = a.rebuttal_effectiveness || {};
+
+  const scoresBar = (ev[aKey] !== undefined) ? `
+    <div class="scores-bar">
+      <div class="score-item">
+        <span class="score-label">Evidencia:</span>
+        <span class="score-a">${aDisplay} ${ev[aKey]}/10</span>
+        <span class="score-sep">·</span>
+        <span class="score-b">${bDisplay} ${ev[bKey]}/10</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Especificidad:</span>
+        <span class="score-a">${sp[aKey]}/10</span>
+        <span class="score-sep">·</span>
+        <span class="score-b">${sp[bKey]}/10</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Réplica:</span>
+        <span class="score-a">${rb[aKey]??'–'}/10</span>
+        <span class="score-sep">·</span>
+        <span class="score-b">${rb[bKey]??'–'}/10</span>
+      </div>
+      <div style="margin-left:auto;font-size:11px;color:var(--muted)">
+        ${d.total_tokens?.toLocaleString()} tokens totales
+      </div>
+    </div>
+  ` : '';
+
+  // Per-question arena
+  const questions = d.questions || [];
+  const questionBlocks = questions.map((q, qIdx) => {
+    const qTurns = d.turns.filter(t => t.question_idx === qIdx)
+                          .sort((a,b) => a.turn_order - b.turn_order);
+
+    const aPosTurn = qTurns.find(t => t.speaker === aKey && t.turn_type === 'position');
+    const bPosTurn = qTurns.find(t => t.speaker === bKey && t.turn_type === 'position');
+    const bRebTurn = qTurns.find(t => t.speaker === bKey && t.turn_type === 'rebuttal');
+    const aRebTurn = qTurns.find(t => t.speaker === aKey && t.turn_type === 'rebuttal');
+
+    const colAContent = [aPosTurn, aRebTurn].filter(Boolean).map(renderTurn).join('');
+    const colBContent = [bPosTurn, bRebTurn].filter(Boolean).map(renderTurn).join('');
+
+    // Judge: question card per column
+    const judgeQ = `
+      <div class="question-block">
+        <div class="question-label">Pregunta ${qIdx+1}</div>
+        <div class="question-text">${esc(q)}</div>
+      </div>
+    `;
+
+    return `
+      <div style="display:contents" data-q="${qIdx}">
+        <!-- A col -->
+        <div style="padding:16px;border-bottom:1px solid var(--border);background:var(--col-a-bg)">
+          ${colAContent || '<div style="color:var(--muted);font-size:12px;padding:8px">Esperando respuesta…</div>'}
+        </div>
+        <!-- Judge col -->
+        <div style="padding:16px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);background:var(--col-judge-bg)">
+          ${judgeQ}
+        </div>
+        <!-- B col -->
+        <div style="padding:16px;border-bottom:1px solid var(--border);background:var(--col-b-bg)">
+          ${colBContent || '<div style="color:var(--muted);font-size:12px;padding:8px">Esperando respuesta…</div>'}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Analytics in judge column (full-width below)
+  const howA = (a.how||{})[aKey] || '';
+  const howB = (a.how||{})[bKey] || '';
+  const whyA = (a.why||{})[aKey] || '';
+  const whyB = (a.why||{})[bKey] || '';
+  const whoA = (a.who||{})[aKey] || '';
+  const whoB = (a.who||{})[bKey] || '';
+  const strA = (a.strongest_arguments||{})[aKey] || '';
+  const strB = (a.strongest_arguments||{})[bKey] || '';
+  const wkA  = (a.weakest_points||{})[aKey] || '';
+  const wkB  = (a.weakest_points||{})[bKey] || '';
+  const tensions   = (a.key_tensions||[]).map(t => `<div class="tension-item">${esc(t)}</div>`).join('');
+  const unanswered = (a.unanswered||[]).map(t => `<div class="tension-item">${esc(t)}</div>`).join('');
+
+  const analyticsPanel = a.summary ? `
+    <div style="grid-column:1/-1;background:var(--surface2);border-top:2px solid var(--col-judge);padding:24px 32px">
+      <h3 style="color:var(--col-judge);font-size:14px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px">
+        Análisis del Juez — ${judgeModel}
+      </h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+
+        <div>
+          <h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:10px">CÓMO</h4>
+          <div style="color:#93c5fd;font-size:12px;margin-bottom:8px;line-height:1.5"><strong>${aDisplay}:</strong> ${esc(howA)}</div>
+          <div style="color:#fca5a5;font-size:12px;line-height:1.5"><strong>${bDisplay}:</strong> ${esc(howB)}</div>
+        </div>
+
+        <div>
+          <h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:10px">POR QUÉ</h4>
+          <div style="color:#93c5fd;font-size:12px;margin-bottom:8px;line-height:1.5"><strong>${aDisplay}:</strong> ${esc(whyA)}</div>
+          <div style="color:#fca5a5;font-size:12px;line-height:1.5"><strong>${bDisplay}:</strong> ${esc(whyB)}</div>
+        </div>
+
+        <div>
+          <h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:10px">PARA QUIÉN</h4>
+          <div style="color:#93c5fd;font-size:12px;margin-bottom:8px;line-height:1.5"><strong>${aDisplay}:</strong> ${esc(whoA)}</div>
+          <div style="color:#fca5a5;font-size:12px;line-height:1.5"><strong>${bDisplay}:</strong> ${esc(whoB)}</div>
+        </div>
+
+        <div>
+          <h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:10px">ARG. MÁS SÓLIDO</h4>
+          <div style="color:#93c5fd;font-size:12px;margin-bottom:8px;line-height:1.5"><strong>${aDisplay}:</strong> ${esc(strA)}</div>
+          <div style="color:#fca5a5;font-size:12px;line-height:1.5"><strong>${bDisplay}:</strong> ${esc(strB)}</div>
+        </div>
+
+        <div>
+          <h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:10px">PUNTO MÁS DÉBIL</h4>
+          <div style="color:#93c5fd;font-size:12px;margin-bottom:8px;line-height:1.5"><strong>${aDisplay}:</strong> ${esc(wkA)}</div>
+          <div style="color:#fca5a5;font-size:12px;line-height:1.5"><strong>${bDisplay}:</strong> ${esc(wkB)}</div>
+        </div>
+
+        <div>
+          <h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:10px">TENSIONES</h4>
+          ${tensions || '<div style="color:var(--muted);font-size:12px">—</div>'}
+          ${unanswered ? `<h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin:10px 0 6px">SIN RESPUESTA</h4>${unanswered}` : ''}
+        </div>
+      </div>
+
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
+        <h4 style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:8px">RESUMEN DEL JUEZ</h4>
+        <p style="font-size:13px;line-height:1.7;color:var(--text);font-style:italic">${esc(a.summary)}</p>
+        ${a.disclaimer ? `<p style="font-size:11px;color:var(--muted);margin-top:8px">${esc(a.disclaimer)}</p>` : ''}
+      </div>
+    </div>
+  ` : '';
+
+  const statusClass = d.status === 'complete' ? 'status-complete' : d.status === 'error' ? 'status-error' : 'status-pending';
+
+  return `
+    <div class="header">
+      <a href="/debates">← Todos los debates</a>
+      <h1>Debat-Zero</h1>
+      <div class="meta">
+        <span>📅 ${(d.debate_id||'').slice(0,10)}</span>
+        <span>⚖️ Juez: ${judgeModel}</span>
+        <span class="status-badge ${statusClass}">${d.status}</span>
+      </div>
+    </div>
+
+    <div class="debate-meta">
+      <div class="topic">${esc(d.topic)}</div>
+      <div class="chip">${aDisplay} vs ${bDisplay}</div>
+      <div class="chip">${d.max_questions} preguntas · formato 4-turnos</div>
+    </div>
+
+    ${scoresBar}
+
+    <!-- 3-column headers -->
+    <div class="arena" style="grid-template-rows:auto">
+      <div class="col-header" style="background:var(--col-a-bg);border-bottom:2px solid var(--col-a);padding:16px">
+        <div class="candidate-name" style="color:#93c5fd">${esc(aDisplay)}</div>
+        <div class="model-tag">${aModel}</div>
+      </div>
+      <div class="col-header" style="background:var(--col-judge-bg);border-bottom:2px solid var(--col-judge);border-left:1px solid var(--border);border-right:1px solid var(--border);padding:16px;text-align:center">
+        <div class="candidate-name" style="color:#c4b5fd">⚖️ Juez</div>
+        <div class="model-tag">${judgeModel}</div>
+      </div>
+      <div class="col-header" style="background:var(--col-b-bg);border-bottom:2px solid var(--col-b);padding:16px;text-align:right">
+        <div class="candidate-name" style="color:#fca5a5">${esc(bDisplay)}</div>
+        <div class="model-tag">${bModel}</div>
+      </div>
+
+      ${questionBlocks}
+
+      ${analyticsPanel}
+    </div>
+  `;
+}
+
+// ── Render debate list ────────────────────────────────────────────────────────
+
+function renderList(debates) {
+  const rows = debates.map(d => `
+    <a class="debate-row" href="/debate-viewer?id=${esc(d.debate_id)}">
+      <span class="dr-date">${esc(d.date)}</span>
+      <span class="dr-topic">${esc(d.topic)}</span>
+      <span class="dr-vs">${esc(d.debate_id||'').split('-').slice(3).join(' ')}</span>
+      <span class="dr-tokens">${(d.total_tokens||0).toLocaleString()} tokens</span>
+    </a>
+  `).join('');
+
+  return `
+    <div class="header">
+      <a href="/">← Dashboard</a>
+      <h1>Debat-Zero — Debates</h1>
+    </div>
+    <div class="debate-list">
+      <h2>📋 Todos los debates (${debates.length})</h2>
+      ${rows || '<div style="color:var(--muted)">Sin debates aún. Corre el primer debate desde el dashboard.</div>'}
+    </div>
+  `;
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────────
+
+async function init() {
+  const app = document.getElementById('app');
+
+  if (debateId) {
+    // Single debate view
+    try {
+      const res = await fetch(`${API}/orchestrate/${encodeURIComponent(debateId)}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      app.innerHTML = renderDebate(data);
+      document.title = `Debate: ${data.topic || debateId}`;
+    } catch (e) {
+      app.innerHTML = `<div class="error-msg">Error cargando debate: ${e.message}</div>`;
+    }
+  } else {
+    // List view
+    try {
+      const res  = await fetch(`${API}/orchestrate`);
+      const data = await res.json();
+      app.innerHTML = renderList(data.debates || []);
+      document.title = 'Debat-Zero — Debates';
+    } catch (e) {
+      app.innerHTML = `<div class="error-msg">Error: ${e.message}</div>`;
+    }
+  }
+}
+
+init();
+</script>
+</body>
+</html>

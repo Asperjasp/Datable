@@ -2,10 +2,14 @@
 """
 Run today's scheduled debate — CLI runner for cron / GitHub Actions.
 
+Match format (12 minutes, 3 questions):
+  Per question: A-position → B-position → B-rebuttal → A-rebuttal
+  Judge: generates questions + HOW/WHY/WHO analytics (no winner verdict)
+
 Usage:
     python scripts/run_daily_debate.py               # today's schedule
-    python scripts/run_daily_debate.py --date 2026-05-22   # specific date
-    python scripts/run_daily_debate.py --questions 10      # full 10-question debate
+    python scripts/run_daily_debate.py --date 2026-05-27
+    python scripts/run_daily_debate.py --questions 3   # default
 """
 import asyncio
 import argparse
@@ -22,23 +26,30 @@ from tracker.debate_schedule import get_judge_for_date, get_matchup_for_date
 from tracker.debate_orchestrator import (
     OrchestratedDebate, ParticipantConfig,
     run_orchestrated_debate, save_orchestrated_debate,
+    TURN_POSITION, TURN_REBUTTAL,
 )
 from tracker.llm_clients import build_selected_clients
+from tracker.candidates import CANDIDATE_BY_KEY
 
 
-async def main(run_date: date, max_questions: int = 5):
+async def main(run_date: date, max_questions: int = 3):
     judge_key = get_judge_for_date(run_date)
-    matchup = get_matchup_for_date(run_date)
+    matchup   = get_matchup_for_date(run_date)
 
-    print(f"\n{'='*60}")
-    print(f"  Debat-Zero — {run_date}")
-    print(f"{'='*60}")
-    print(f"  Topic:       {matchup['topic']}")
-    print(f"  Candidate A: {matchup['candidate_a']} (actor: {matchup['actor_a']})")
-    print(f"  Candidate B: {matchup['candidate_b']} (actor: {matchup['actor_b']})")
-    print(f"  Judge:       {judge_key}")
-    print(f"  Questions:   {max_questions}")
-    print(f"{'='*60}\n")
+    cand_a = CANDIDATE_BY_KEY.get(matchup["candidate_a"])
+    cand_b = CANDIDATE_BY_KEY.get(matchup["candidate_b"])
+
+    print(f"\n{'='*70}")
+    print(f"  DEBAT-ZERO — {run_date}  |  12-min match, {max_questions} questions")
+    print(f"{'='*70}")
+    print(f"  Tema:        {matchup['topic']}")
+    print(f"  Candidato A: {cand_a.full_name if cand_a else matchup['candidate_a']}")
+    print(f"               Actor: {matchup['actor_a']}")
+    print(f"  Candidato B: {cand_b.full_name if cand_b else matchup['candidate_b']}")
+    print(f"               Actor: {matchup['actor_b']}")
+    print(f"  Juez:        {judge_key}")
+    print(f"  Formato:     pos-A → pos-B → réplica-B → réplica-A (×{max_questions})")
+    print(f"{'='*70}\n")
 
     debate = OrchestratedDebate(
         debate_id=f"{run_date.isoformat()}-{matchup['candidate_a']}-vs-{matchup['candidate_b']}",
@@ -60,9 +71,8 @@ async def main(run_date: date, max_questions: int = 5):
     models_needed = {judge_key, matchup["actor_a"], matchup["actor_b"]}
     clients = build_selected_clients(list(models_needed))
 
-    # Fallback missing models to claude
     available = set(clients.keys())
-    missing = models_needed - available
+    missing   = models_needed - available
     if missing:
         print(f"  WARNING: Models unavailable: {missing}")
         fallback = "claude" if "claude" in available else next(iter(available), None)
@@ -70,46 +80,99 @@ async def main(run_date: date, max_questions: int = 5):
             print("  ERROR: No LLM clients available. Check API keys.")
             sys.exit(1)
         print(f"  Falling back to: {fallback}")
-        if matchup["actor_a"] not in available:
-            debate.participant_a.actor_model_key = fallback
-        if matchup["actor_b"] not in available:
-            debate.participant_b.actor_model_key = fallback
-        if judge_key not in available:
-            debate.judge_model_key = fallback
+        if matchup["actor_a"] not in available: debate.participant_a.actor_model_key = fallback
+        if matchup["actor_b"] not in available: debate.participant_b.actor_model_key = fallback
+        if judge_key not in available:           debate.judge_model_key = fallback
 
-    print("  Running debate...\n")
-    result = await run_orchestrated_debate(debate, clients)
+    print("  [FASE 1] Juez generando preguntas...\n")
+    result = await run_orchestrated_debate(debate, clients, run_date=run_date)
+
+    # ── Print full transcript ─────────────────────────────────────────────────
+    print(f"\n{'='*70}")
+    print("  TRANSCRIPCION COMPLETA")
+    print(f"{'='*70}")
+
+    for i, q in enumerate(result.questions):
+        print(f"\n  PREGUNTA {i+1}: {q}\n")
+        q_turns = sorted([t for t in result.turns if t.question_idx == i],
+                         key=lambda t: t.turn_order)
+        for turn in q_turns:
+            label = "POSICIÓN" if turn.turn_type == TURN_POSITION else "RÉPLICA"
+            print(f"  [{turn.speaker_display.upper()} — {label} | {turn.model_used}]")
+            for line in turn.text.split("\n"):
+                print(f"  {line}")
+            if turn.artifacts:
+                for art in turn.artifacts:
+                    print(f"  📊 {art.get('title','')}: {art.get('content','')[:100]}")
+            print(f"  [tokens: {turn.tokens_used}]\n")
+
+    # ── Print analytics ───────────────────────────────────────────────────────
+    print(f"\n{'='*70}")
+    print("  ANALISIS DEL JUEZ — HOW / WHY / WHO")
+    print(f"{'='*70}")
+
+    a = result.analytics or {}
+    if a.get("raw"):
+        print(f"\n  {a.get('summary','')[:600]}")
+    else:
+        for section, label in [("how","CÓMO"), ("why","POR QUÉ"), ("who","PARA QUIÉN")]:
+            d = a.get(section, {})
+            if d:
+                print(f"\n  {label}:")
+                for k, v in d.items():
+                    c = CANDIDATE_BY_KEY.get(k)
+                    print(f"    {c.display_name if c else k}: {v}")
+
+        for section, label in [("strongest_arguments","ARGUMENTOS MÁS SÓLIDOS"),
+                                ("weakest_points","PUNTOS MÁS DÉBILES")]:
+            d = a.get(section, {})
+            if d:
+                print(f"\n  {label}:")
+                for k, v in d.items():
+                    c = CANDIDATE_BY_KEY.get(k)
+                    print(f"    {c.display_name if c else k}: {v}")
+
+        tensions = a.get("key_tensions", [])
+        if tensions:
+            print("\n  TENSIONES CLAVE:")
+            for t in tensions: print(f"    · {t}")
+
+        unanswered = a.get("unanswered", [])
+        if unanswered:
+            print("\n  SIN RESPUESTA CONCRETA:")
+            for u in unanswered: print(f"    · {u}")
+
+        ev = a.get("evidence_quality", {})
+        sp = a.get("specificity", {})
+        rb = a.get("rebuttal_effectiveness", {})
+        if ev:
+            print("\n  PUNTUACIONES (0-10):")
+            for k in ev:
+                c = CANDIDATE_BY_KEY.get(k)
+                n = c.display_name if c else k
+                print(f"    {n}: evidencia={ev.get(k)}  especificidad={sp.get(k)}  réplica={rb.get(k)}")
+
+        if a.get("summary"):
+            print(f"\n  RESUMEN:\n  {a['summary']}")
+        if a.get("disclaimer"):
+            print(f"\n  {a['disclaimer']}")
 
     path = save_orchestrated_debate(result)
-
-    print(f"\n{'='*60}")
-    print(f"  Status:  {result.status}")
-    print(f"  Tokens:  {result.total_tokens}")
-    print(f"  Saved:   {path}")
-
-    if result.analytics:
-        summary = result.analytics.get("summary", "")
-        if summary:
-            print(f"\n  SUMMARY:\n  {summary}")
-        ev = result.analytics.get("evidence_quality", {})
-        sp = result.analytics.get("specificity", {})
-        if ev:
-            print(f"\n  Evidence quality: {ev}")
-        if sp:
-            print(f"  Specificity:      {sp}")
+    print(f"\n{'='*70}")
+    print(f"  STATUS: {result.status}   TOKENS: {result.total_tokens}")
+    print(f"  GUARDADO: {path}")
+    print(f"{'='*70}\n")
 
     if result.error:
-        print(f"\n  ERROR: {result.error}")
+        print(f"  ERROR: {result.error}")
         sys.exit(1)
-
-    print(f"{'='*60}\n")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date", default=None, help="YYYY-MM-DD (default: today)")
-    parser.add_argument("--questions", type=int, default=5, help="Max questions (1-10)")
+    parser.add_argument("--date",      default=None, help="YYYY-MM-DD (default: today)")
+    parser.add_argument("--questions", type=int, default=3, help="Questions per debate (default: 3)")
     args = parser.parse_args()
 
     run_date = date.fromisoformat(args.date) if args.date else date.today()
-    asyncio.run(main(run_date, max(1, min(10, args.questions))))
+    asyncio.run(main(run_date, max(1, min(5, args.questions))))

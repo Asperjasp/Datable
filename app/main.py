@@ -751,6 +751,16 @@ async def dashboard_page():
     return _get_html("dashboard.html")
 
 
+@app.get("/debates", response_class=HTMLResponse)
+async def debates_list_page():
+    return _get_html("debate_viewer.html")
+
+
+@app.get("/debate-viewer", response_class=HTMLResponse)
+async def debate_viewer_page():
+    return _get_html("debate_viewer.html")
+
+
 @app.get("/debate/new", response_class=HTMLResponse)
 async def debate_page():
     return _get_html("debate_setup.html")
