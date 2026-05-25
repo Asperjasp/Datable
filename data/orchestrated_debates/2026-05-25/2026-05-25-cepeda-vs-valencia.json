@@ -1,0 +1,280 @@
+{
+  "debate_id": "2026-05-25-cepeda-vs-valencia",
+  "topic": "Bienestar social y reducción de pobreza",
+  "participant_a": "cepeda",
+  "participant_b": "valencia",
+  "mode_a": "ai",
+  "mode_b": "ai",
+  "actor_a": "openai",
+  "actor_b": "claude",
+  "judge_model": "qwen_or",
+  "max_questions": 3,
+  "status": "complete",
+  "current_question_idx": 2,
+  "awaiting_human": null,
+  "questions": [
+    "Ambos candidatos proponen cambios significativos en el sistema de salud. Iván Cepeda Castro propone avanzar hacia un sistema de salud universal sin intermediación de EPS, mientras que Paloma Valencia Laserna busca recuperar y fortalecer el SGSSS con supervisión estricta de las EPS. ¿Cuáles son los mecanismos específicos, el cronograma y el presupuesto que cada uno utilizaría para implementar estas propuestas? ¿Qué evidencia empírica respalda sus respectivos enfoques?",
+    "En cuanto a la educación, Iván Cepeda Castro propone la universalización de la educación gratuita en todos los niveles, incluyendo la educación superior, mientras que Paloma Valencia Laserna enfatiza la formación técnica y dual, así como la orientación hacia el empleo y el emprendimiento. ¿Cuáles son los beneficiarios concretos de sus propuestas y cómo se financiarán estos programas? ¿Qué costos adicionales implicarían y quién los asumiría?",
+    "En el ámbito económico, Iván Cepeda Castro propone una reforma tributaria progresiva para financiar programas sociales, mientras que Paloma Valencia Laserna busca reducir la carga tributaria para las pymes y fomentar las zonas francas regionales. ¿Cómo asegurarán que sus propuestas no afecten negativamente la economía y el empleo? ¿Qué mecanismos específicos implementarían para medir el impacto de sus políticas y ajustarlas según sea necesario?"
+  ],
+  "turns": [
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "Para avanzar hacia un sistema de salud universal sin intermediación de EPS, propongo un enfoque integral que fortalezca la red hospitalaria pública como columna vertebral del sistema de salud. Iniciaré con la eliminación progresiva de las barreras de acceso, estableciendo cero copagos para la atención primaria y asegurando que la salud sea un derecho fundamental, no un negocio.\n\nEl cronograma contempla un periodo de transición de cuatro años, donde se fortalecerá la infraestructura hospitalaria estatal, especialmente en territorios alejados. Esto incluye la ampliación del sistema de clínicas y hospitales del Estado, priorizando áreas rurales y comunidades vulnerables. Estimamos invertir un 3% adicional del PIB en salud durante este periodo, financiado mediante una reforma tributaria progresiva que aumentará los impuestos a grandes patrimonios y rentas financieras.\n\nEste enfoque está respaldado por evidencia empírica de sistemas de salud universales exitosos en países como Canadá y el Reino Unido, donde la eliminación de la intermediación privada ha mejorado el acceso y equidad en la atención sanitaria. Además, continuaremos con la reforma de salud iniciada por el gobierno de Gustavo Petro, pero con ajustes técnicos necesarios para optimizar su implementación.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1048,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la pobreza en Colombia",
+          "content": "Según el Departamento Administrativo Nacional de Estadística (DANE), la tasa de pobreza monetaria en Colombia se redujo del 42.5% en 2020 al 39.3% en 2021, evidenciando un avance en las políticas de bienestar social.",
+          "source": "DANE, Informe de Pobreza Monetaria 2021"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-05-25T15:15:28.142048"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Colombia construyó durante 30 años uno de los sistemas de salud con mayor cobertura de América Latina: 99% de aseguramiento y protección financiera real para las familias. Mi compromiso es **recuperar y fortalecer el SGSSS**, no destruirlo.\n\n**Mecanismos específicos:**\n1. **Sanear financieramente las EPS**: pago de la deuda acumulada con giro directo auditado y reconocimiento de presupuestos máximos pendientes.\n2. **Supervisión estricta**: fortalecer la Superintendencia de Salud con capacidad técnica, sancionatoria y digitalización de auditorías en tiempo real.\n3. **Libre escogencia garantizada**: el paciente elige médico y especialista sin barreras administrativas.\n4. **Telemedicina y red rural**: conectar hospitales públicos de segundo nivel con centros de referencia.\n5. **Salud mental con presupu",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1825,
+      "artifacts": [],
+      "error": null,
+      "timestamp": "2026-05-25T15:15:41.221842"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "La propuesta del senador Cepeda suena bien en el discurso, pero falla en lo esencial: no dice de dónde saldrá la plata ni cómo se evita el colapso. Dos problemas concretos:\n\n**Primero, el déficit fiscal.** Eliminar copagos y estatizar la red hospitalaria sin financiación clara es repetir el experimento Petro, que dejó a la ADRES con un hueco superior a $10 billones y a hospitales sin flujo de caja. Hoy, según la Defensoría, las quejas por barreras de acceso se duplicaron desde 2022. Estatizar no eliminó las barreras: las multiplicó.\n\n**Segundo, capacidad institucional.** La red pública atiende hoy cerca del 25% del país. Pretender que asuma el 100% en cuatro años, cuando hospitales como el San Juan de Dios llevan décadas sin reabrir plenamente, es irresponsable.",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 2072,
+      "artifacts": [],
+      "error": null,
+      "timestamp": "2026-05-25T15:15:55.071778"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "La propuesta de mi rival, Paloma Valencia, de mantener las EPS adolece de dos problemas críticos. Primero, el modelo actual de EPS ha demostrado ser ineficiente y propenso a la corrupción. Según la Contraloría, las EPS acumulan deudas que superan los $8 billones, lo que compromete los servicios de salud en regiones vulnerables. Segundo, la \"supervisión estricta\" que propone no ha funcionado en décadas; fortalecer la Superintendencia sin cambios estructurales es insuficiente.\n\nMi plan para un sistema de salud universal, sin intermediación de EPS, ofrece una solución más sólida. Nos basaremos en experiencias exitosas como el NHS británico, financiado a través de una reforma tributaria progresiva que aumentará los impuestos a grandes patrimonios y rentas financieras. Así, garantizaremos recursos sostenibles para el sistema de salud.\n\nAdemás, al eliminar copagos en atención primaria, reducimos las barreras de acceso para millones de colombianos. Según la OPS, los sistemas universales de salud resultan en mejores indicadores de salud pública y menor desigualdad.\n\nNuestra propuesta es ambiciosa, pero se asienta sobre una base financiera y operativa más robusta que la de mi rival. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1335,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de programas de bienestar social en la reducción de la pobreza en Colombia",
+          "content": "Entre 2010 y 2020, los programas de bienestar social en Colombia, como Familias en Acción y Jóvenes en Acción, contribuyeron a reducir la tasa de pobreza extrema del 12.3% al 7.4%, beneficiando a más de 2.5 millones de hogares.",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe Anual 2021"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-05-25T15:16:02.387670"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "La universalización de la educación pública y gratuita en todos los niveles beneficiará a toda la población colombiana, particularmente a los jóvenes de sectores vulnerables que históricamente han enfrentado barreras económicas para acceder a la educación superior. Esta propuesta busca garantizar que ninguna persona quede excluida del sistema educativo por motivos financieros, promoviendo la equidad y la movilidad social.\n\nPara financiar estos programas, planteo una reforma tributaria progresiva que aumente los impuestos a grandes patrimonios, dividendos y rentas financieras. Estos recursos serán destinados a educación pública, salud universal y desarrollo del campo. Además, propongo una inversión del 7% del PIB en educación, lo cual es fundamental para transformar el sistema actual.\n\nLos costos adicionales implicados en esta expansión educativa se asumirán mediante el incremento de la recaudación fiscal y la optimización del gasto público. Al priorizar la educación como pilar del desarrollo social y económico, aseguramos no solo la reducción de la pobreza, sino también la creación de una sociedad más justa y equitativa.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1045,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la Pobreza en Colombia",
+          "content": "Entre 2010 y 2018, la pobreza monetaria en Colombia se redujo del 37.2% al 27.0%, y la pobreza extrema disminuyó del 12.3% al 7.2%. Este descenso se logró, en parte, gracias a programas de bienestar social como 'Familias en Acción' y 'Jóvenes en Acción', que brindan apoyo económico directo a los hogares más vulnerables.",
+          "source": "Departamento Nacional de Planeación de Colombia, 2019"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-05-25T15:16:08.773660"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Colombianos, el problema de fondo en educación no es solo el acceso, es que tenemos jóvenes que estudian y no encuentran empleo, o emprenden sin herramientas. Por eso propongo la **Ruta 3E: Estudiar, Emplearse o Emprender**, un modelo que conecta la educación con resultados reales en la vida de las personas.\n\n¿Quiénes son los beneficiarios? Concretamente: medio millón de jóvenes formados en tecnología en cuatro años, niños desde preescolar con bilingüismo —porque sin inglés no hay competitividad global—, y miles de muchachos de estratos populares accediendo a educación técnica y dual, ese modelo alemán donde la empresa y el aula trabajan juntas y el egresado sale con empleo asegurado.\n\n¿Cómo se financia? Con tres pilares: primero, **eficiencia del gasto público**, eliminando la corrupción y la buroc",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1804,
+      "artifacts": [],
+      "error": null,
+      "timestamp": "2026-05-25T15:16:21.519424"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "La propuesta del senador Cepeda suena generosa, pero tiene dos problemas graves que debemos discutir con franqueza.\n\n**Primero, el problema fiscal.** Universalizar la gratuidad en todos los niveles cuesta, según estimaciones del Observatorio Fiscal de la Javeriana, entre 15 y 20 billones de pesos anuales adicionales. Colombia ya tiene un déficit fiscal del 6,8% del PIB y perdió el grado de inversión. Otra reforma tributaria a patrimonios y dividendos —ya tuvimos tres en cuatro años— ahuyenta inversión: la IED cayó 23% en 2024 según el Banco de la República. Menos inversión significa menos empleo formal para esos mismos jóvenes.\n\n**Segundo, el problema de pertinencia.** Gratuidad universal sin calidad reproduce desigualdad. Hoy el 47% de jóv",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 2037,
+      "artifacts": [],
+      "error": null,
+      "timestamp": "2026-05-25T15:16:33.442076"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "La propuesta de Paloma Valencia Laserna, con su **Ruta 3E**, si bien apunta a la empleabilidad, subestima el problema estructural del acceso educativo. La formación técnica y dual es valiosa, pero no soluciona la exclusión de miles de jóvenes del sistema educativo superior, perpetuando así la desigualdad. Además, su enfoque en el bilingüismo ignora las barreras socioeconómicas que enfrentan los estudiantes de zonas rurales y comunidades marginadas.\n\nSobre el financiamiento, mi propuesta de universalización de la educación gratuita se sustenta en una reforma tributaria progresiva, que busca gravar más a los grandes patrimonios y rentas financieras. Según datos del DANE, la informalidad laboral supera el 47%, lo que evidencia la necesidad de formalizar la economía popular, generando recursos adicionales.\n\nPor otro lado, la afirmación de que mi propuesta es fiscalmente inviable ignora el potencial de ahorro a largo plazo que representa una población más educada y productiva. En países como Finlandia, la inversión en educación pública ha demostrado ser un motor de desarrollo económico sostenible.\n\nNo se trata solo de educación para el empleo inmediato, sino de garantizar un derecho humano fundamental para todos los colombianos. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1323,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la Pobreza en Colombia (2010-2020)",
+          "content": "Entre 2010 y 2020, la tasa de pobreza multidimensional en Colombia disminuyó del 30.4% al 18.1%, evidenciando el impacto positivo de las políticas de bienestar social enfocadas en educación, salud y vivienda.",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza Multidimensional 2020"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-05-25T15:16:39.392348"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "En mi propuesta económica, la reforma tributaria progresiva tiene como objetivo fundamental aumentar los impuestos a los grandes patrimonios, dividendos y rentas financieras, asegurando que los más capaces de contribuir lo hagan en mayor medida. Esta estrategia permitirá financiar de manera sostenible programas sociales esenciales como la educación pública gratuita y el sistema de salud universal sin intermediación de EPS, beneficiando directamente a millones de colombianos y reduciendo la pobreza estructural.\n\nPara asegurar que esta reforma no afecte negativamente la economía y el empleo, se implementarán medidas de acompañamiento, como la formalización de trabajadores informales y el fortalecimiento de la economía popular. Estas acciones generarán empleos formales con beneficios sociales, aumentando el poder adquisitivo y dinamizando la economía.\n\nEn cuanto a la medición del impacto y ajuste de políticas, estableceremos un observatorio independiente que monitoree los efectos de la reforma tributaria y los programas sociales en tiempo real. Este observatorio proporcionará datos precisos para realizar ajustes necesarios y garantizar que las políticas contribuyan efectivamente a la reducción de la desigualdad y la pobreza.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1026,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la pobreza en países con políticas de bienestar robustas",
+          "content": "Un estudio realizado por la OCDE en 2022 muestra que los países con sistemas de bienestar social robustos, como los países nórdicos, han logrado reducir la tasa de pobreza en un promedio del 10% en comparación con aquellos que cuentan con políticas de bienestar menos desarrolladas.",
+          "source": "OCDE, 'Social Policy and Reducing Poverty', 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-05-25T15:16:44.792407"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Colombianos, la mejor política social es el empleo formal. En Colombia, según el DANE, la informalidad supera el 55% y la pobreza monetaria afecta a cerca del 33% de la población. No vamos a sacar a nadie de la pobreza subiendo impuestos: vamos a hacerlo generando empleo productivo.\n\nMi propuesta es clara: reducir la carga tributaria a las pymes, que son el 95% del tejido empresarial y generan más del 65% del empleo. Crearemos zonas francas regionales para descentralizar la inversión y llevar oportunidades a Nariño, Chocó, La Guajira, Caquetá. Sumado a esto, ampliaremos tratados de libre comercio con Asia y convertiremos la Cancillería en un Ministerio de Comercio Exterior.\n\n¿Cómo medimos el impacto? Con tres indicadores verificables y públicos: tasa de formalización laboral",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 1805,
+      "artifacts": [],
+      "error": null,
+      "timestamp": "2026-05-25T15:16:57.099265"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "La propuesta del senador Cepeda tiene dos problemas graves que Colombia ya conoció en carne propia.\n\nPrimero, la reforma tributaria de Petro en 2022 prometió lo mismo —gravar a los \"más capaces\"— y el resultado fue desplome de la inversión privada: según el DANE, la inversión cayó más del 24% en 2023, y el crecimiento se derrumbó del 7,3% en 2022 al 0,6% en 2023. Subir impuestos a dividendos y patrimonios espanta capital, no lo redistribuye.\n\nSegundo, eliminar las EPS no es progresismo, es improvisación: la reforma a la salud ya generó crisis en Nueva EPS y Sanitas, con millones de colombianos sin acceso oportuno a medicamentos. Financiar con más impuestos un sistema quebrado profundiza el problema.\n\nMi propuesta es distinta y verificable: aliviar la",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 2049,
+      "artifacts": [],
+      "error": null,
+      "timestamp": "2026-05-25T15:17:09.779438"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "Mi estimada colega, reducir la carga tributaria a las pymes sin una estrategia fiscal adecuada solo perpetúa la desigualdad y no garantiza la formalización del empleo. El problema radica en que las zonas francas, aunque atractivas en teoría, a menudo se convierten en enclaves de beneficio limitado para las comunidades locales. Según estudios del Banco Mundial, las zonas francas pueden generar empleo, pero tienden a ofrecer trabajos precarios, no sostenibles ni bien remunerados.\n\nMi propuesta de reforma tributaria progresiva se enfoca en gravar a los más ricos, no a las pymes. Así, generamos recursos para financiar programas sociales que reducen pobreza y desigualdad, asegurando un crecimiento equitativo. El Banco Interamericano de Desarrollo ha demostrado que los sistemas tributarios progresivos son más eficaces para reducir la desigualdad.\n\nPara medir el impacto de nuestras políticas, implementaremos un sistema de monitoreo con indicadores de pobreza, empleo y desigualdad, ajustando según resultados. En contraste, su enfoque carece de mecanismos claros de evaluación y ajuste, lo cual podría perpetuar desigualdades estructurales.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1367,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de Pobreza en Colombia a través de Programas de Bienestar Social",
+          "content": "Entre 2010 y 2020, Colombia logró reducir su tasa de pobreza multidimensional del 30.4% al 18.1%, según datos del Departamento Administrativo Nacional de Estadística (DANE). Esta mejora se atribuye en gran medida a la implementación de programas de bienestar social como Familias en Acción y Jóvenes en Acción, que han proporcionado asistencia financiera directa a familias de bajos ingresos y han incentivado la educación entre los jóvenes.",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza Multidimensional 2020"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-05-25T15:17:15.770221"
+    }
+  ],
+  "analytics": {
+    "how": {
+      "cepeda": "Iván Cepeda propone un sistema de salud universal sin intermediación de EPS, con un cronograma de cuatro años para fortalecer la infraestructura hospitalaria estatal, especialmente en áreas rurales y vulnerables. El presupuesto incluiría un 3% adicional del PIB, financiado mediante una reforma tributaria progresiva que aumentaría los impuestos a grandes patrimonios y rentas financieras.",
+      "valencia": "Paloma Valencia busca recuperar y fortalecer el SGSSS con supervisión estricta de las EPS, sanación financiera de las EPS, fortalecimiento de la Superintendencia de Salud, garantía de libre escogencia, implementación de telemedicina y red rural, y aumento del presupuesto para salud mental."
+    },
+    "why": {
+      "cepeda": "Iván Cepeda prioriza un sistema de salud universal sin intermediación de EPS para garantizar el acceso equitativo y universal a la salud, basándose en experiencias exitosas de países como Canadá y el Reino Unido. Su teoría del cambio se basa en la eliminación de barreras económicas y la fortaleza de la red hospitalaria pública.",
+      "valencia": "Paloma Valencia busca mantener y mejorar el actual sistema de salud (SGSSS) para preservar la cobertura y la protección financiera existentes. Su motivación se basa en la eficiencia y la sostenibilidad del sistema actual, con un enfoque en la supervisión y la modernización."
+    },
+    "who": {
+      "cepeda": "Los beneficiarios de la propuesta de Iván Cepeda incluyen a la población en general, con un énfasis particular en los sectores vulnerables y rurales. Los costos serían asumidos por los grandes patrimonios y rentas financieras a través de una reforma tributaria progresiva.",
+      "valencia": "Los beneficiarios de la propuesta de Paloma Valencia incluyen a las EPS, la Superintendencia de Salud, y los pacientes que buscan mayor libertad de elección. Los costos serían asumidos por el Estado a través de una mejor gestión y supervisión, sin cambios significativos en la estructura fiscal."
+    },
+    "strongest_arguments": {
+      "cepeda": "La propuesta de Iván Cepeda se basa en evidencia empírica de sistemas de salud universales exitosos en países como Canadá y el Reino Unido, y en la necesidad de eliminar barreras económicas para garantizar el acceso equitativo a la salud.",
+      "valencia": "La propuesta de Paloma Valencia se basa en la sostenibilidad y eficiencia del sistema actual, argumentando que la supervisión y la modernización son más viables y menos disruptivas que una reforma radical."
+    },
+    "weakest_points": {
+      "cepeda": "El punto más débil de Iván Cepeda es la falta de un plan detallado sobre cómo evitar el colapso financiero y la capacidad institucional de la red pública para asumir la totalidad del sistema en cuatro años.",
+      "valencia": "El punto más débil de Paloma Valencia es la falta de una solución estructural a la corrupción y la ineficiencia en las EPS, y la dependencia de una supervisión que ha demostrado ser insuficiente en el pasado."
+    },
+    "key_tensions": [
+      "La tensión entre la eliminación de intermediarios privados (EPS) y la sostenibilidad del sistema público.",
+      "La tensión entre la reforma radical propuesta por Cepeda y la mejora incremental propuesta por Valencia."
+    ],
+    "unanswered": [
+      "Cómo Paloma Valencia planea financiar la sanación financiera de las EPS y el fortalecimiento de la Superintendencia de Salud sin aumentar la carga fiscal.",
+      "Cómo Iván Cepeda garantizará la capacidad institucional de la red hospitalaria pública para asumir la totalidad del sistema en cuatro años."
+    ],
+    "evidence_quality": {
+      "cepeda": 8,
+      "valencia": 7
+    },
+    "specificity": {
+      "cepeda": 8,
+      "valencia": 7
+    },
+    "rebuttal_effectiveness": {
+      "cepeda": 8,
+      "valencia": 7
+    },
+    "summary": "Iván Cepeda propone un sistema de salud universal sin intermediación de EPS, financiado por una reforma tributaria progresiva, mientras que Paloma Valencia busca fortalecer el sistema actual con supervisión estricta y mejoras en la infraestructura. Ambas propuestas tienen fortalezas y debilidades, con tensiones en la viabilidad financiera y la capacidad institucional.",
+    "disclaimer": "[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]"
+  },
+  "total_tokens": 18736,
+  "started_at": "2026-05-25T15:14:54.611135",
+  "completed_at": "2026-05-25T15:18:19.677617",
+  "error": null
+}

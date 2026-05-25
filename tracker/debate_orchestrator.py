@@ -37,7 +37,7 @@ KB_DIR = Path(__file__).parent.parent / "data" / "knowledge_bases"
 
 MAX_TOKENS_QUESTIONS  = 1000
 MAX_TOKENS_TURN       = 320   # ≈1 minute of debate speaking
-MAX_TOKENS_ARTIFACT   = 200   # supporting stat / citation
+MAX_TOKENS_ARTIFACT   = 280   # supporting stat / citation (needs room for JSON)
 MAX_TOKENS_ANALYTICS  = 3000
 TEMP_JUDGE  = 0.3
 TEMP_ACTOR  = 0.75
