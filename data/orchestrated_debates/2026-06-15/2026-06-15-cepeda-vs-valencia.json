@@ -1,0 +1,240 @@
+{
+  "debate_id": "2026-06-15-cepeda-vs-valencia",
+  "topic": "Bienestar social y reducción de pobreza",
+  "participant_a": "cepeda",
+  "participant_b": "valencia",
+  "mode_a": "ai",
+  "mode_b": "ai",
+  "actor_a": "openai",
+  "actor_b": "claude",
+  "judge_model": "claude",
+  "max_questions": 3,
+  "status": "complete",
+  "current_question_idx": 2,
+  "awaiting_human": null,
+  "questions": [
+    "¿Cómo implementarían su propuesta en los primeros 100 días y con qué presupuesto exacto?",
+    "¿Qué evidencia nacional o internacional respalda que su enfoque funciona, y cómo medirían el éxito a 4 años?",
+    "¿Quiénes se benefician concretamente de su propuesta, quiénes asumen los costos, y cómo llegan a territorios olvidados?"
+  ],
+  "turns": [
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "En los primeros 100 días de mi gobierno, priorizaremos la implementación de un sistema de bienestar social robusto que aborde las raíces de la pobreza y la desigualdad en Colombia. Mi enfoque se centrará en consolidar y expandir los programas sociales existentes, garantizando una cobertura universal y eficiente.\n\nPrimero, destinaremos parte del presupuesto a la reforma tributaria progresiva, la cual busca recaudar mayores ingresos a través de impuestos a grandes patrimonios y rentas financieras. Esto permitirá financiar la ampliación de programas sociales esenciales como la salud y la educación. Proyectamos que esta reforma genere un incremento del 1.5% del PIB en ingresos fiscales, lo que equivaldría a aproximadamente 12 billones de pesos anuales.\n\nEn paralelo, fortaleceremos la economía popular mediante la formalización del empleo informal, asegurando beneficios sociales para estos trabajadores. Para lograrlo, asignaremos recursos del presupuesto nacional para la creación de un fondo especial de apoyo a la economía popular, respaldado por 1.8 billones de pesos.\n\nFinalmente, avanzaremos en la reforma agraria integral, redistribuyendo tierras improductivas, lo que contribuirá a la generación de empleo y mejorará las condiciones de vida de las comunidades rurales.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 991,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la pobreza en Colombia a través de políticas de bienestar social",
+          "content": "Entre 2010 y 2019, la tasa de pobreza en Colombia disminuyó del 37.2% al 27.0%, gracias en parte a políticas de expansión del bienestar social, como la implementación de programas de transferencias condicionadas y el aumento del gasto en salud y educación.",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), 2020"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-15T07:43:20.165009"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-15T07:43:23.030908"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-15T07:43:25.835991"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "Es evidente que mi rival no ha presentado una propuesta concreta sobre bienestar social y reducción de la pobreza. Esto es preocupante, ya que la lucha contra la pobreza y la desigualdad es un tema crítico que no puede ser ignorado. Según el DANE, en 2022, la pobreza monetaria afectaba al 42% de los colombianos, un problema que requiere acciones urgentes y decididas.\n\nEn contraste, mi propuesta se centra en implementar, desde los primeros 100 días, un plan de emergencia para la reducción de la pobreza. Este plan incluye la universalización de la educación y la salud, lo que tiene un impacto directo en mejorar las condiciones de vida de la población más vulnerable. Además, buscaremos aprobar una reforma tributaria progresiva que aumente la recaudación en un 2% del PIB anual, destinando estos recursos a programas sociales y al fortalecimiento de la red de bienestar.\n\nNuestro enfoque está respaldado por datos que demuestran que la inversión en educación y salud públicas no solo reduce la pobreza, sino que también impulsa el crecimiento económico. Esta estrategia asegura un cambio estructural y sostenible en la vida de millones de colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1009,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la pobreza en Colombia a través de programas de bienestar social",
+          "content": "Desde la implementación de programas de bienestar social enfocados en educación y salud, Colombia ha logrado reducir la tasa de pobreza del 30.6% en 2019 al 27.5% en 2022.",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza Monetaria y Multidimensional 2023"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-15T07:43:33.521456"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "Mi enfoque de bienestar social y reducción de pobreza se fundamenta en políticas de redistribución justa y acceso universal a derechos fundamentales, como se ha implementado con éxito en países nórdicos. Por ejemplo, la experiencia de Noruega y Dinamarca demuestra que sistemas de salud y educación universales y gratuitos, junto con una tributación progresiva, reducen significativamente la desigualdad y mejoran el bienestar general. \n\nEn Colombia, el gobierno de Gustavo Petro ha iniciado reformas que buscan estos objetivos, y mi programa propone continuar y profundizar en estas acciones. Implementaremos una reforma tributaria progresiva que permita financiar políticas de bienestar, tales como un sistema de salud universal y educación pública gratuita en todos los niveles. \n\nPara medir el éxito a cuatro años, utilizaremos indicadores claves como la reducción del índice de pobreza multidimensional, el incremento en el acceso a servicios de salud y educación, y la disminución de la desigualdad económica medida por el coeficiente de Gini. Nuestro objetivo es reducir la pobreza extrema en al menos un 30% y mejorar la posición de Colombia en el índice de desarrollo humano de la ONU.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 987,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la Pobreza en Colombia a través de Programas Sociales",
+          "content": "Según el Departamento Administrativo Nacional de Estadística (DANE), la tasa de pobreza monetaria en Colombia se redujo del 42.5% en 2020 al 39.3% en 2021, lo que representa una disminución significativa gracias a la implementación y fortalecimiento de programas de transferencia directa como el Ingreso Solidario.",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza Monetaria 2021"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-15T07:43:43.977032"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-15T07:43:46.908946"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-15T07:43:49.591403"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "Es preocupante que mi rival no haya presentado una propuesta concreta ni evidencia que sustente su enfoque sobre bienestar social y reducción de pobreza. Sin un plan claro, es difícil evaluar cómo se podrían abordar estos problemas críticos que afectan a millones de colombianos.\n\nEn contraste, nuestra propuesta está basada en datos y experiencias exitosas a nivel internacional. Por ejemplo, los países escandinavos han demostrado que un sistema de bienestar robusto y una política tributaria progresiva pueden reducir la desigualdad y mejorar la calidad de vida. En Colombia, el gobierno de Gustavo Petro ya ha comenzado a implementar medidas que han reducido la pobreza extrema en un 2% en su primer año, según el DANE.\n\nMediremos el éxito mediante indicadores claros: reducción de la pobreza en al menos un 10% en cuatro años, aumento del acceso a servicios de salud y educación, y disminución de la desigualdad de ingresos. Implementaremos auditorías semestrales para evaluar el progreso y ajustar las políticas según sea necesario.\n\nNuestro enfoque es integral y basado en evidencia, no en promesas vacías. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1023,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de las Políticas de Bienestar Social en la Reducción de la Pobreza",
+          "content": "Un estudio realizado por el Departamento Nacional de Planeación en 2022 mostró que las políticas de bienestar social implementadas en Colombia entre 2018 y 2022 contribuyeron a una reducción de la pobreza monetaria en un 3.5%. Estas políticas incluyeron programas de transferencias condicionadas, acceso ampliado a servicios de salud y educación, y subsidios a la vivienda.",
+          "source": "Departamento Nacional de Planeación, Informe de Resultados 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-15T07:43:57.678087"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "Mi propuesta de bienestar social y reducción de la pobreza está diseñada para beneficiar principalmente a las poblaciones más vulnerables de Colombia, incluyendo a aquellos en situación de pobreza extrema, comunidades rurales, afrodescendientes e indígenas. Nos enfocamos en proporcionar acceso universal a servicios fundamentales como la salud y la educación, eliminando barreras económicas y geográficas. La universalización de la educación y la salud pública permitirá que todos los colombianos accedan a estos derechos sin importar su ubicación.\n\nLos costos de estas iniciativas serán asumidos principalmente por una reforma tributaria progresiva que busca que quienes más tienen contribuyan más al bienestar común. Esto incluirá más impuestos a grandes patrimonios, dividendos y rentas financieras, asegurando una redistribución justa de la riqueza para financiar estos programas.\n\nPara llegar a los territorios olvidados, fortaleceremos la infraestructura de salud y educación, ampliando la red de hospitales y escuelas del Estado en zonas alejadas. Asimismo, implementaremos programas de economía popular que formalicen el trabajo informal, brindando beneficios sociales y oportunidades de desarrollo local.\n\nNuestro enfoque es una transformación estructural que busca cerrar brechas y construir una sociedad más equitativa. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 970,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la pobreza en países con políticas de bienestar social robustas",
+          "content": "Un estudio de la OCDE mostró que los países con políticas de bienestar social sólidas, como los países nórdicos, han logrado reducir sus tasas de pobreza en un 30% en comparación con aquellos con políticas menos desarrolladas.",
+          "source": "OECD Social Expenditure Database, 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-15T07:44:04.722313"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-15T07:44:07.371134"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-15T07:44:10.221881"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "Al no responder a esta pregunta crucial, mi rival demuestra una falta de claridad y compromiso con el bienestar social y la reducción de la pobreza. En contraste, nuestra propuesta se centra en la equidad y la justicia social, beneficiando concretamente a las comunidades más vulnerables y marginadas de Colombia.\n\nEn términos de beneficios, las políticas de bienestar social que propongo están diseñadas para llegar directamente a quienes más lo necesitan: las familias de escasos recursos, los trabajadores informales y las comunidades rurales e indígenas. Implementaremos una reforma tributaria progresiva que recaudará más de los grandes patrimonios y rentas financieras para financiar programas sociales. Datos del DANE muestran que las zonas rurales concentran el 40% de la pobreza del país. Por ello, destinaremos recursos significativos para mejorar infraestructuras y servicios básicos en estos territorios olvidados.\n\nLos costos serán asumidos en mayor medida por aquellos sectores con mayor capacidad económica, promoviendo así una redistribución justa de la riqueza. Nuestra estrategia no solo es viable, sino que también es necesaria para cerrar las brechas sociales y garantizar un bienestar equitativo para todos los colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1020,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la pobreza en Colombia mediante programas de bienestar social",
+          "content": "Según el Departamento Administrativo Nacional de Estadística (DANE) de Colombia, la tasa de pobreza monetaria nacional disminuyó del 42.5% en 2020 al 39.3% en 2021, debido en parte a la implementación de programas de transferencias monetarias como Ingreso Solidario y Familias en Acción.",
+          "source": "DANE, 2021"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-15T07:44:17.729875"
+    }
+  ],
+  "analytics": {
+    "summary": "[Sin análisis]",
+    "raw": true
+  },
+  "total_tokens": 6000,
+  "started_at": "2026-06-15T07:43:09.835757",
+  "completed_at": "2026-06-15T07:44:19.086845",
+  "error": null
+}
