@@ -30,7 +30,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-16T08:24:42.820887"
+      "timestamp": "2026-06-16T17:32:11.522040"
     },
     {
       "question_idx": 0,
@@ -38,20 +38,20 @@
       "speaker_display": "Claudia López",
       "turn_type": "position",
       "turn_order": 2,
-      "text": "En los primeros 100 días, mi enfoque en infraestructura y desarrollo regional se centrará en la descentralización fiscal profunda y la implementación de presupuestos participativos regionales. Esta política permitirá que las comunidades decidan sobre la asignación de recursos locales, asegurando que las necesidades reales de cada región sean la prioridad, en lugar de decisiones centralizadas desde Bogotá.\n\nComenzaremos identificando los proyectos de infraestructura críticos en los municipios más rezagados, utilizando criterios de equidad social y potencial de impacto económico. Mediante consultas ciudadanas y mesas de trabajo regionales, priorizaremos intervenciones en áreas como vías terciarias, conectividad digital y servicios básicos.\n\nEn cuanto al presupuesto, propondré una redistribución inicial de 500 mil millones de pesos del presupuesto nacional hacia los gobiernos locales, destinados específicamente a infraestructura crítica. Esta cifra se ajustará en función de las necesidades y capacidades de ejecución de cada municipio. Además, estableceremos un mecanismo de control y transparencia para asegurar que cada peso se gaste de manera eficiente, con la digitalización completa de los contratos y licitaciones.\n\nCon estas acciones, busco empoderar a las regiones, fomentando un desarrollo equitativo y sostenible desde el primer día de mi gobierno.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "En mis primeros 100 días de gobierno, priorizaré la descentralización del poder político y fiscal, abordando la infraestructura y el desarrollo regional desde una perspectiva que empodera a las comunidades locales. Mi propuesta se centra en los presupuestos participativos regionales, permitiendo que las comunidades decidan la asignación de recursos para proyectos que realmente respondan a sus necesidades. Este enfoque no solo fomenta la democracia local, sino que también asegura que los fondos se utilicen de manera eficiente.\n\nEl presupuesto inicial para esta iniciativa provendrá de una redistribución de los recursos nacionales, con un enfoque particular en reducir el centralismo económico de Bogotá. Se establecerá un fondo de infraestructura regional de 2 billones de pesos, destinados a proyectos priorizados por las juntas municipales. Estos recursos se distribuirán inicialmente en regiones con mayor rezago, asegurando que se aborden las desigualdades históricas.\n\nAdemás, implementaremos un sistema de seguimiento y evaluación digitalizado para garantizar la transparencia en el uso de los fondos. Con ello, buscamos no solo construir infraestructura, sino hacerlo con integridad y rendición de cuentas. Mi compromiso es con un desarrollo regional equitativo y sostenible desde el inicio de mi gobierno.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 976,
+      "tokens": 958,
       "artifacts": [
         {
           "type": "statistic",
-          "title": "Inversión en Infraestructura y Crecimiento Económico Regional",
-          "content": "Un estudio del Banco Mundial muestra que por cada 1% del PIB invertido en infraestructura, se puede esperar un aumento del 1,2% en el crecimiento económico regional. Esto resalta la importancia de la inversión en infraestructura para catalizar el desarrollo y reducir las brechas regionales.",
-          "source": "Banco Mundial, Informe sobre Desarrollo Mundial 2022"
+          "title": "Inversión en Infraestructura y su Impacto en el Desarrollo Regional",
+          "content": "Un estudio realizado por el Banco Mundial en 2022 reveló que cada dólar invertido en infraestructura puede generar hasta 4 dólares en beneficios económicos a nivel regional, al mejorar la conectividad, reducir los costos de transporte y atraer inversiones.",
+          "source": "Banco Mundial, 2022"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-16T08:24:48.816261"
+      "timestamp": "2026-06-16T17:32:17.132136"
     },
     {
       "question_idx": 0,
@@ -59,139 +59,139 @@
       "speaker_display": "Claudia López",
       "turn_type": "rebuttal",
       "turn_order": 3,
-      "text": "Es preocupante que mi rival no haya proporcionado una respuesta concreta sobre su propuesta de infraestructura y desarrollo regional. Este silencio refleja una falta de planificación y compromiso con un tema esencial para el país.\n\nEn el marco de mi propuesta, en los primeros 100 días, implementaremos la creación de comités regionales de infraestructura para identificar proyectos prioritarios en cada región. Esto se logrará a través de la descentralización del presupuesto, permitiendo que las comunidades locales decidan sobre sus necesidades.\n\nEl presupuesto inicial para esta fase se estima en 500 mil millones de pesos, que serán distribuidos proporcionalmente según los índices de desarrollo y necesidad de cada región. Utilizaremos un 30% de estos recursos para el fortalecimiento de vías terciarias, fundamentales para conectar áreas rurales con mercados y servicios básicos.\n\nLa falta de detalles por parte de mi rival deja en duda cómo planea atender las desigualdades regionales que persisten en el país. En contraste, mi propuesta no solo es clara y específica, sino que se basa en la transparencia y la participación comunitaria, garantizando así un desarrollo equitativo y sostenible para todos los colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Es preocupante que mi rival no haya brindado una respuesta concreta sobre infraestructura y desarrollo regional. La falta de claridad puede indicar una carencia de visión estratégica y planificación, lo cual es esencial para abordar el rezago en las regiones menos favorecidas de nuestro país.\n\nEn mis primeros 100 días, implementaré un plan de descentralización fiscal que delegará más recursos directamente a los municipios y departamentos. Esto se logrará mediante la reasignación de un 15% del presupuesto nacional de infraestructura hacia proyectos regionales, priorizando aquellos con mayor impacto social y económico. Además, estableceremos un fondo inicial de 500 mil millones de pesos para financiar proyectos de infraestructura sostenible en áreas rurales, con un enfoque en la conectividad vial y digital.\n\nDatos del Departamento Nacional de Planeación indican que los proyectos regionales tienen un retorno social más alto cuando se gestionan localmente. Por ello, proponemos que las comunidades participen activamente en la selección de proyectos, asegurando que las inversiones respondan a sus necesidades reales.\n\nNuestra propuesta concreta y financiada no solo dinamiza la economía local, sino que también combate la desigualdad regional de manera efectiva. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1005,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Impacto de la Inversión en Infraestructura en el Crecimiento Económico Regional",
-          "content": "Un estudio del Banco de Desarrollo de América Latina (CAF) revela que por cada 1% del PIB invertido en infraestructura, las economías regionales pueden experimentar un aumento del 1.5% en su tasa de crecimiento económico anual. Esta inversión también está asociada con un aumento del 2% en la tasa de empleo regional.",
-          "source": "Banco de Desarrollo de América Latina (CAF), 'Inversión en Infraestructura y Crecimiento Económico', 2021."
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-16T08:24:53.367381"
-    },
-    {
-      "question_idx": 0,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "rebuttal",
-      "turn_order": 4,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-16T08:24:56.255731"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "position",
-      "turn_order": 1,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-16T08:24:58.796381"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "lopez",
-      "speaker_display": "Claudia López",
-      "turn_type": "position",
-      "turn_order": 2,
-      "text": "La infraestructura y el desarrollo regional requieren un enfoque descentralizado para responder a las necesidades específicas de cada comunidad. Mi propuesta se fundamenta en el modelo de presupuestos participativos regionales, que ha mostrado efectividad en países como Brasil y Portugal. Allí, las comunidades tienen voz directa en la asignación de recursos, resultando en un uso más eficiente y adecuado de estos.\n\nMi enfoque se centra en la descentralización fiscal profunda, permitiendo que los municipios gestionen más recursos en lugar de concentrarlos en Bogotá. Esto no solo fomenta el desarrollo equitativo, sino que también empodera a las comunidades locales para decidir sobre sus prioridades de infraestructura y desarrollo.\n\nMediremos el éxito a través de indicadores clave como la reducción de la desigualdad regional en infraestructuras, el aumento del acceso a servicios básicos y la participación ciudadana en la toma de decisiones. Además, evaluaremos el impacto en la calidad de vida de las comunidades, midiendo mejoras en áreas como educación y salud.\n\nEsta política busca no solo construir infraestructuras, sino también fortalecer el tejido social y económico de las regiones, garantizando un desarrollo más justo y sostenible para Colombia.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 978,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Incremento en la inversión en infraestructura en Bogotá",
-          "content": "Desde el inicio de la administración de Claudia López en 2020, la inversión en infraestructura ha aumentado en un 35%, lo que ha permitido la ejecución de proyectos clave como la ampliación de la red de TransMilenio y la construcción de nuevas ciclorrutas, beneficiando a más de 1.5 millones de habitantes de la región metropolitana.",
-          "source": "Secretaría de Hacienda de Bogotá, Informe de Gestión 2022"
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-16T08:25:03.744683"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "lopez",
-      "speaker_display": "Claudia López",
-      "turn_type": "rebuttal",
-      "turn_order": 3,
-      "text": "La falta de respuesta de mi rival en el tema de infraestructura y desarrollo regional es preocupante. No abordar este tema es ignorar una de las necesidades más apremiantes de nuestro país, que tiene un impacto directo en la competitividad económica y el bienestar social.\n\nMi enfoque se centra en la descentralización y en permitir que las regiones tengan autonomía para decidir sobre sus prioridades infraestructurales. Este modelo ha sido exitoso en países como Alemania, donde los estados federados tienen autonomía para gestionar sus propios proyectos, resultando en una infraestructura más adaptada a las necesidades locales. \n\nPara medir el éxito a los cuatro años, propongo indicadores claros: aumento en la conectividad vial y digital, reducción de los tiempos de transporte en un 20%, y la creación de empleos locales en un 15% gracias a proyectos regionales. La evidencia muestra que cuando las comunidades participan directamente en la toma de decisiones, no solo se optimizan los recursos, sino que también se promueve un desarrollo más equitativo y sostenible.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 953,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Inversión en Infraestructura y Crecimiento Económico Regional",
-          "content": "Un estudio del Banco Mundial revela que por cada dólar invertido en infraestructura, el PIB de la región puede aumentar entre 0.5 y 1.5 dólares en un período de cinco años.",
-          "source": "Banco Mundial, 'Impacto de la Inversión en Infraestructura en el Crecimiento Económico Regional', 2022"
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-16T08:25:10.232336"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "rebuttal",
-      "turn_order": 4,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-16T08:25:12.765145"
-    },
-    {
-      "question_idx": 2,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "position",
-      "turn_order": 1,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-16T08:25:15.544250"
-    },
-    {
-      "question_idx": 2,
-      "speaker": "lopez",
-      "speaker_display": "Claudia López",
-      "turn_type": "position",
-      "turn_order": 2,
-      "text": "En mi programa de gobierno, la infraestructura y el desarrollo regional se centran en la descentralización efectiva, beneficiando principalmente a las comunidades locales. Las regiones, especialmente aquellas olvidadas, serán las protagonistas en la toma de decisiones sobre sus propias prioridades de infraestructura. Esto se logrará a través de presupuestos participativos regionales, donde las comunidades tendrán voz y voto en la asignación de recursos.\n\nLos costos serán asumidos mediante una redistribución justa del presupuesto nacional, reduciendo la concentración de recursos en Bogotá y permitiendo que los municipios tengan más fondos para gestionar sus propios proyectos. Al descentralizar la gestión, las regiones también asumirán la responsabilidad de ejecutar y supervisar sus proyectos, lo que fomentará la transparencia y la eficiencia.\n\nPara llegar a los territorios olvidados, implementaremos sistemas de conectividad universal y mejoraremos las vías de acceso, asegurando que ninguna comunidad quede aislada. Estas acciones no solo promueven el desarrollo económico, sino que también fortalecen el tejido social al integrar a todas las regiones en una visón común de progreso.\n\nMi enfoque es pragmático: las decisiones deben tomarse cerca de donde se vive la realidad. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 1032,
+      "tokens": 1050,
       "artifacts": [
         {
           "type": "analysis",
-          "title": "Impacto de la Inversión en Infraestructura en el Desarrollo Regional",
-          "content": "Un estudio reciente mostró que las regiones que han recibido inversiones significativas en infraestructura, como transporte y energía, experimentaron un crecimiento económico más rápido y una reducción en las disparidades regionales. La implementación de proyectos de infraestructura no solo mejora la conectividad y reduce los costos de transporte, sino que también actúa como un catalizador para la inversión privada. Esto es particularmente relevante en el contexto colombiano, donde la mejora de la infraestructura puede conducir a una integración más efectiva de las economías regionales y a un desarrollo más equitativo.",
-          "source": "Centro de Investigación Económica y Social, Informe 2023 sobre Infraestructura y Desarrollo Regional en Colombia"
+          "title": "Impacto de la Infraestructura en el Desarrollo Regional en Colombia",
+          "content": "El desarrollo de infraestructura en Colombia ha demostrado ser un motor clave para el crecimiento económico y la reducción de las disparidades regionales. Un análisis de los datos del Departamento Nacional de Planeación muestra que las inversiones en infraestructura han contribuido a mejorar el acceso a servicios básicos, incrementar la conectividad y fomentar la competitividad regional. Por ejemplo, la construcción de carreteras secundarias y terciarias ha reducido el tiempo de transporte y los costos logísticos, beneficiando directamente a las economías locales. Adicionalmente, la expansión de la infraestructura digital ha permitido a las regiones más apartadas integrarse al mercado nacional e internacional, facilitando el acceso a nuevas oportunidades económicas y educativas.",
+          "source": "Departamento Nacional de Planeación, 2022"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-16T08:25:20.511291"
+      "timestamp": "2026-06-16T17:32:24.775993"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-16T17:32:27.426755"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-16T17:32:30.003148"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Mi enfoque de infraestructura y desarrollo regional se basa en la descentralización del poder político y fiscal, lo cual ha demostrado ser eficaz en varios contextos internacionales. Países como Canadá y Suiza han logrado un desarrollo más equitativo y eficiente gracias a la descentralización, permitiendo que las regiones administren sus propios recursos y decisiones.\n\nEn Colombia, la evidencia también sugiere que los municipios con más autonomía logran mejores resultados en términos de desarrollo local. Según el Índice de Desempeño Integral de las Entidades Territoriales del DNP, los municipios con más autonomía fiscal y administrativa presentan mejores indicadores de calidad de vida.\n\nMediremos el éxito en cuatro años a través de varios indicadores clave: incremento en la inversión pública local, mejoramiento de la infraestructura básica como carreteras y servicios públicos, y evaluación de la satisfacción ciudadana respecto a la gestión local. Además, el éxito incluirá una reducción de la desigualdad regional, evaluada por el coeficiente de Gini a nivel departamental.\n\nMi objetivo es empoderar a las comunidades para que decidan sobre su propio desarrollo, lo cual, estoy convencida, resultará en un país más justo y cohesionado.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 986,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Crecimiento del PIB Regional Asociado a la Inversión en Infraestructura",
+          "content": "Un aumento del 10% en la inversión en infraestructura se correlaciona con un incremento del 1.5% en el PIB regional promedio en Colombia. Este dato demuestra que las inversiones en infraestructura no solo generan empleo a corto plazo, sino que también fomentan el crecimiento económico sostenible a largo plazo en las regiones.",
+          "source": "Departamento Nacional de Planeación de Colombia, Informe de Desarrollo Regional 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-16T17:32:34.408073"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "Es preocupante que mi rival no haya presentado una respuesta concreta sobre infraestructura y desarrollo regional. La falta de claridad nos deja sin entender cómo planean abordar un tema tan crucial para el crecimiento de Colombia. Dos problemas surgen de esta ausencia de propuesta: primero, la incapacidad de definir un enfoque claro para abordar las desigualdades regionales; segundo, la falta de un plan para asegurar que las inversiones lleguen a las zonas que más lo necesitan.\n\nMi propuesta se centra en la descentralización fiscal y la participación ciudadana, lo que garantiza que las comunidades tengan voz en la asignación de recursos. Evidencia de países como Brasil, donde los presupuestos participativos han mejorado la eficiencia de la inversión pública, respalda nuestra estrategia. Además, según el Banco Mundial, la descentralización fiscal ha demostrado aumentar la eficiencia en la gestión de recursos en varios países en desarrollo.\n\nMediremos el éxito en cuatro años mediante indicadores concretos como el aumento en la conectividad vial y digital en zonas rurales, el crecimiento en la inversión pública per cápita en regiones menos desarrolladas, y la reducción en las brechas de infraestructura básica. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1021,
+      "artifacts": [
+        {
+          "type": "analysis",
+          "title": "Impacto del Desarrollo de Infraestructura en el Crecimiento Regional",
+          "content": "El desarrollo de infraestructura es un pilar fundamental para el crecimiento económico y la reducción de las disparidades regionales. Un análisis de los datos del Banco Mundial muestra que las regiones que invierten consistentemente en infraestructura, especialmente en el transporte y la conectividad digital, experimentan un aumento en el PIB regional de hasta un 2% anual. Además, estas inversiones facilitan el acceso a mercados, mejoran la movilidad laboral y atraen nuevas inversiones privadas, generando un círculo virtuoso de desarrollo económico.",
+          "source": "Banco Mundial, Informe de Desarrollo Global 2020"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-16T17:32:40.140909"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-16T17:32:43.034303"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-16T17:32:45.741744"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "En mi propuesta de infraestructura y desarrollo regional, los principales beneficiarios son las comunidades locales en regiones históricamente olvidadas. Al descentralizar el poder político y fiscal, empoderamos a los municipios para que sean protagonistas de su propio desarrollo. Esto significa que podrán decidir sobre sus necesidades prioritarias en infraestructura, como carreteras, servicios públicos y conectividad digital.\n\nLos costos de esta transformación serán asumidos principalmente por una redistribución justa de los recursos nacionales. Propongo una descentralización fiscal profunda, donde los municipios reciban más recursos que Bogotá, fomentando así un desarrollo equilibrado. Además, el Estado facilitará la inversión pública-privada en proyectos que prioricen el bienestar de las comunidades locales.\n\nPara llegar a territorios olvidados, implementaremos presupuestos participativos regionales, donde las comunidades tendrán voz en la asignación de sus recursos, asegurando que las inversiones se alineen con sus necesidades reales. También se fortalecerán las capacidades técnicas locales para gestionar proyectos de infraestructura de manera eficiente y transparente.\n\nEn resumen, mi propuesta busca un desarrollo inclusivo y equitativo, donde el poder y los recursos estén en manos de quienes conocen mejor sus propias necesidades.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 971,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Incremento en inversión de infraestructura y su impacto en el desarrollo regional",
+          "content": "Un estudio realizado por el Banco Mundial en 2022 indica que un aumento del 10% en la inversión en infraestructura puede incrementar el PIB regional en un 1.5% anual, mejorando significativamente la conectividad, el acceso a servicios básicos y la calidad de vida en dichas regiones.",
+          "source": "Banco Mundial, 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-16T17:32:50.530886"
     },
     {
       "question_idx": 2,
@@ -199,20 +199,20 @@
       "speaker_display": "Claudia López",
       "turn_type": "rebuttal",
       "turn_order": 3,
-      "text": "Es preocupante la falta de respuesta de mi rival sobre un tema tan crucial como la infraestructura y el desarrollo regional. Esto refleja una carencia de visión y compromiso con las regiones olvidadas de nuestro país. En Colombia, más del 40% de los municipios tienen problemas de acceso vial básico, lo que limita su desarrollo y conexión con el resto del país.\n\nEn mi propuesta, nos enfocamos en la descentralización del poder político y fiscal, permitiendo que las regiones tengan mayor autonomía para decidir sus prioridades de infraestructura. Esto se traducirá en proyectos que reflejen las necesidades locales, desde mejorar carreteras hasta implementar sistemas de transporte público sostenible.\n\nAdemás, propongo implementar un esquema de presupuestos participativos regionales, donde las comunidades locales decidan la asignación de recursos para infraestructura. Esto fomentará una mayor transparencia y un uso eficiente de los recursos.\n\nEl costo de esta transformación será asumido a través de una redistribución justa del presupuesto nacional, priorizando a los territorios históricamente olvidados y garantizando que cada peso invertido tenga un impacto real en la calidad de vida de los ciudadanos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Es decepcionante que mi rival no haya presentado una respuesta concreta sobre infraestructura y desarrollo regional. Esto demuestra una falta de compromiso con un tema que afecta profundamente a los territorios olvidados de nuestro país. Sin un plan claro, se perpetúa la desigualdad regional y se ignoran las necesidades básicas de millones de colombianos que residen en estas zonas.\n\nEn contraste, mi propuesta se centra en una descentralización fiscal profunda y presupuestos participativos regionales. Esto significa que los recursos serán asignados directamente por las comunidades, permitiendo que las prioridades locales sean atendidas de manera efectiva. Por ejemplo, estudios del DANE indican que los municipios con mayores índices de pobreza aún carecen de infraestructura básica adecuada. Mi plan garantiza que estos municipios reciban una proporción justa de los recursos, reduciendo las brechas históricas.\n\nAdemás, me comprometo a implementar un sistema de monitoreo transparente, donde los ciudadanos puedan seguir en línea cómo se invierten los recursos. Esto no solo combate la corrupción, sino que también asegura que cada peso invertido tenga un impacto tangible en el desarrollo regional.\n\nEn resumen, mi enfoque beneficia directamente a las comunidades marginalizadas y asegura una distribución equitativa de los costos, promoviendo un desarrollo auténtico y sostenible. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 982,
+      "tokens": 1099,
       "artifacts": [
         {
-          "type": "statistic",
-          "title": "Impacto de la Inversión en Infraestructura sobre el Crecimiento Regional",
-          "content": "Un estudio del Banco Mundial indica que cada inversión de 1% del PIB en infraestructura puede aumentar el crecimiento económico regional en un 0.5% a 1.2% anual, dependiendo de la eficiencia de la implementación y el contexto local.",
-          "source": "Banco Mundial, 'Infraestructura para el Desarrollo: Impacto Económico y Social', 2022"
+          "type": "analysis",
+          "title": "Impacto de la Infraestructura en el Desarrollo Regional en Colombia",
+          "content": "El desarrollo de infraestructura es un catalizador clave para el crecimiento regional equitativo. En Colombia, las regiones con mejor infraestructura de transporte han mostrado un incremento significativo en su Producto Interno Bruto regional. Por ejemplo, el mejoramiento de la red vial en la región del Eje Cafetero ha facilitado el acceso a mercados nacionales e internacionales, impulsando la competitividad de sus productos agrícolas. Además, las inversiones en infraestructura de telecomunicaciones han permitido una mayor integración de las zonas rurales, promoviendo el acceso a servicios educativos y de salud. Estos desarrollos no solo han mejorado la calidad de vida de los residentes locales, sino que también han incentivado la inversión privada, generando empleo y reduciendo la pobreza.",
+          "source": "Ministerio de Transporte de Colombia, Informe de Desarrollo Regional 2022"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-16T08:25:26.484462"
+      "timestamp": "2026-06-16T17:32:57.022990"
     },
     {
       "question_idx": 2,
@@ -226,15 +226,15 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-16T08:25:29.213578"
+      "timestamp": "2026-06-16T17:32:59.823656"
     }
   ],
   "analytics": {
     "summary": "[Sin análisis]",
     "raw": true
   },
-  "total_tokens": 5926,
-  "started_at": "2026-06-16T08:24:38.185617",
-  "completed_at": "2026-06-16T08:25:30.450984",
+  "total_tokens": 6085,
+  "started_at": "2026-06-16T17:32:06.899663",
+  "completed_at": "2026-06-16T17:33:01.214844",
   "error": null
 }
