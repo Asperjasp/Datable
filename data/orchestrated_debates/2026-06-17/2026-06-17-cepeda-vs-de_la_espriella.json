@@ -30,7 +30,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-17T07:31:37.196467"
+      "timestamp": "2026-06-17T16:12:31.344474"
     },
     {
       "question_idx": 0,
@@ -38,20 +38,20 @@
       "speaker_display": "Abelardo de la Espriella",
       "turn_type": "position",
       "turn_order": 2,
-      "text": "En los primeros 100 días de gobierno, ejecutaremos un plan de choque para recuperar el sistema de salud colombiano, destinando 10 billones de pesos a las urgencias más críticas, tal como lo establece nuestro programa. Este fondo se empleará principalmente en la modernización de equipos médicos, la compra de insumos esenciales y el mejoramiento de infraestructuras hospitalarias en zonas vulnerables.\n\nNos oponemos a la eliminación de las EPS; en su lugar, proponemos reforzarlas y regularlas para asegurar una prestación eficiente de los servicios. Implementaremos un modelo de gestión privada para hospitales públicos, lo que garantizará eficiencia y agilidad en la atención sanitaria.\n\nPara eliminar la intermediación burocrática del Estado, asignaremos recursos directamente a las entidades que verdaderamente lo necesiten, asegurando que los recursos lleguen sin trabas administrativas.\n\nFinalmente, introduciremos seguros de salud privados focalizados como alternativa viable para las clases medias, fomentando la competencia y calidad en el sector. Todo esto irá acompañado de un monitoreo constante para garantizar la transparencia y el uso óptimo de los recursos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "En los primeros 100 días de mi administración, implementaremos un plan de choque para recuperar el sistema de salud, destinando 10 billones de pesos para abordar las urgencias más críticas. Este presupuesto se enfocará en mejorar la infraestructura hospitalaria, adquirir equipos médicos de última tecnología y abastecer de medicamentos esenciales a los hospitales más necesitados.\n\nProponemos reforzar las EPS en lugar de eliminarlas, asegurando su regulación para que operen de manera más eficiente y transparente. Además, transformaremos los hospitales públicos bajo un modelo de gestión privada para optimizar su rendimiento y calidad de servicio. Al reducir la intermediación burocrática estatal, los recursos llegarán directamente a donde más se necesiten, garantizando así una atención oportuna y de calidad para todos los colombianos.\n\nIntroduciremos seguros de salud privados como una opción viable para las clases medias, brindando así más alternativas a los ciudadanos. Implementar estas medidas de inmediato permitirá sentar las bases para un sistema de salud más eficiente, accesible y sostenible.\n\nCon estos pasos, estamos comprometidos a devolverle a Colombia un sistema de salud digno y funcional desde el primer día. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1053,
+      "tokens": 980,
       "artifacts": [
         {
-          "type": "analysis",
-          "title": "Comparación de la eficiencia del sistema de salud colombiano",
-          "content": "El sistema de salud en Colombia, a través del modelo de salud de la Ley 100 de 1993, ha logrado una cobertura superior al 95%, lo que se traduce en un acceso más amplio a los servicios médicos básicos. Sin embargo, cuando se compara con sistemas de salud de países de la OCDE, Colombia enfrenta desafíos significativos en términos de calidad y eficiencia. Un análisis de la OCDE en 2022 indica que aunque Colombia tiene una alta cobertura, la satisfacción del paciente y la calidad del servicio son áreas con margen de mejora. En particular, los tiempos de espera para procedimientos no urgentes y la variabilidad en la calidad de atención médica entre regiones destacan como puntos críticos.",
-          "source": "OECD Health at a Glance 2022"
+          "type": "statistic",
+          "title": "Gasto en salud como porcentaje del PIB en Colombia",
+          "content": "En 2022, el gasto en salud representó aproximadamente el 7.2% del Producto Interno Bruto (PIB) de Colombia, lo cual es inferior al promedio de la OCDE, que es alrededor del 9% del PIB.",
+          "source": "Banco Mundial, Base de Datos de Indicadores del Desarrollo Mundial, 2022"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-17T07:31:43.485212"
+      "timestamp": "2026-06-17T16:12:40.245300"
     },
     {
       "question_idx": 0,
@@ -59,69 +59,69 @@
       "speaker_display": "Abelardo de la Espriella",
       "turn_type": "rebuttal",
       "turn_order": 3,
-      "text": "La ausencia de respuesta por parte de mi rival demuestra una falta de preparación y visión en cuanto a un tema tan crítico como es la salud de los colombianos. En los primeros 100 días de mi gobierno, destinaré 10 billones de pesos para atender las urgencias más críticas del sistema de salud. Es preocupante que mi rival no haya mencionado ni un solo peso para este sector, lo cual refleja una negligencia evidente hacia la salud de nuestros ciudadanos.\n\nMi propuesta se centra en reforzar y regular las EPS en lugar de eliminarlas, como algunos proponen sin considerar las consecuencias de desmantelar un sistema sin tener una alternativa viable. Los hospitales públicos, bajo gestión privada, mejorarán la eficiencia y reducirán la intermediación burocrática, permitiendo que los recursos lleguen directamente a donde más se necesitan.\n\nEl Banco Mundial ha señalado que los sistemas de salud eficientes combinan elementos públicos y privados, y es justamente esta sinergia la que busco implementar. En contraste, la falta de planificación de mi rival indica un riesgo para el bienestar de millones de colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 982,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Gasto en salud como porcentaje del PIB en Colombia",
-          "content": "En 2022, el gasto en salud en Colombia representó aproximadamente el 7.5% del Producto Interno Bruto (PIB). Este valor está por debajo del promedio de la OCDE, que es alrededor del 9% del PIB.",
-          "source": "Banco Mundial, Informe de Desarrollo Mundial 2023"
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-17T07:31:48.656392"
-    },
-    {
-      "question_idx": 0,
-      "speaker": "cepeda",
-      "speaker_display": "Iván Cepeda",
-      "turn_type": "rebuttal",
-      "turn_order": 4,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-17T07:31:51.486233"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "cepeda",
-      "speaker_display": "Iván Cepeda",
-      "turn_type": "position",
-      "turn_order": 1,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-17T07:31:54.125587"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "position",
-      "turn_order": 2,
-      "text": "Para revitalizar el sistema de salud colombiano, mi propuesta se basa en modelos internacionales exitosos que han demostrado eficacia y sostenibilidad. Países como Singapur y Suiza han implementado sistemas de salud con fuerte participación del sector privado, combinando eficiencia y calidad. Propongo un plan de choque de 10 billones de pesos para abordar las urgencias críticas, asegurando recursos inmediatos para donde más se necesitan.\n\nLa evidencia respalda que la gestión privada en hospitales públicos, como se ha visto en el Reino Unido con los hospitales de fundación, mejora la eficiencia operativa y la satisfacción del paciente. Mi propuesta de reforzar y regular las EPS busca evitar la fragmentación del sistema, como lo demostró el caso de Chile con la integración de seguros privados y públicos.\n\nMediremos el éxito a los 4 años mediante indicadores clave: reducción en los tiempos de espera para atención, aumento en la satisfacción del paciente, y mejoras en los índices de salud pública, como la mortalidad infantil y la esperanza de vida. La transparencia en la asignación de recursos, eliminando la intermediación burocrática del Estado, será crucial para garantizar que el dinero llegue a donde es más necesario.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Es preocupante que mi rival no haya respondido sobre cómo implementará su propuesta para el sistema de salud en los primeros 100 días. La falta de una estrategia clara refleja una carencia de planificación que podría dejar a millones de colombianos en la incertidumbre. Según el Banco Mundial, Colombia gasta aproximadamente un 7.2% del PIB en salud, pero la eficiencia es cuestionable. Sin una intervención inmediata y bien planificada, el sistema continuará en declive.\n\nMi plan destina 10 billones de pesos para abordar las urgencias más críticas de salud. En los primeros 100 días, priorizaremos la inversión en infraestructura hospitalaria y la modernización de los sistemas de información para reducir tiempos de espera. Además, fortaleceremos las EPS en lugar de eliminarlas, asegurando que operen bajo un marco regulatorio más estricto para mejorar la atención al paciente.\n\nEsta estrategia no solo es más realista, sino que también proporciona una solución inmediata a los problemas actuales. Un sistema de salud eficiente no solo salva vidas, sino que también promueve el desarrollo económico al reducir el ausentismo laboral y mejorar la calidad de vida de todos los colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
       "tokens": 999,
       "artifacts": [
         {
-          "type": "statistic",
-          "title": "Gasto en salud per cápita en Colombia",
-          "content": "En 2022, Colombia destinó aproximadamente el 7.2% de su PIB al sector salud, lo que se traduce en un gasto per cápita de aproximadamente 500 USD, comparado con el promedio de la OCDE que supera los 4,000 USD per cápita.",
-          "source": "Organización para la Cooperación y el Desarrollo Económicos (OCDE), 2022"
+          "type": "citation",
+          "title": "Cita del Ministerio de Salud de Colombia",
+          "content": "Según el Ministerio de Salud y Protección Social de Colombia, el país ha logrado una cobertura del 95% en vacunación infantil, lo que ha sido un factor clave en la disminución de enfermedades prevenibles por vacunación.",
+          "source": "Ministerio de Salud y Protección Social de Colombia, Informe Anual de Salud, 2022"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-17T07:31:59.299702"
+      "timestamp": "2026-06-17T16:12:47.215367"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-17T16:12:50.091269"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-17T16:12:53.071938"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Mi enfoque para el sistema de salud colombiana se inspira en modelos exitosos como el de Singapur, donde el sector privado juega un papel crucial sin dejar de lado la regulación estatal necesaria para garantizar calidad y accesibilidad. Al destinar 10 billones de pesos a las urgencias más críticas y reforzar las EPS en lugar de eliminarlas, buscamos mejorar la eficiencia y la atención al paciente. Los hospitales públicos con gestión privada han demostrado ser más eficientes, como se observa en el modelo español de Alzira.\n\nMediremos el éxito de nuestra estrategia en cuatro años a través de indicadores concretos: tiempos de espera reducidos en un 30%, aumento del 20% en la satisfacción del paciente y una disminución del 15% en los costos operativos de los hospitales públicos. Además, la introducción de seguros de salud privados ofrecerá una alternativa competitiva para las clases medias, incentivando la calidad y la innovación en el servicio.\n\nNuestro plan no solo es viable, sino necesario para un sistema de salud que actualmente enfrenta desafíos críticos. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 983,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Gasto Público en Salud en Colombia",
+          "content": "En 2022, el gasto público en salud como porcentaje del PIB en Colombia fue del 7.5%, lo que representa un incremento respecto al 6.8% registrado en 2018. Este aumento refleja el compromiso del país con la mejora de su sistema de salud, aunque aún se encuentra por debajo del promedio de la OCDE que es del 9.0%.",
+          "source": "Ministerio de Salud y Protección Social de Colombia, 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-17T16:13:02.815790"
     },
     {
       "question_idx": 1,
@@ -129,20 +129,20 @@
       "speaker_display": "Abelardo de la Espriella",
       "turn_type": "rebuttal",
       "turn_order": 3,
-      "text": "La falta de respuesta de mi rival sobre el sistema de salud evidencia una carencia de propuestas concretas y viables, lo cual es alarmante en un país que enfrenta desafíos críticos en este sector.\n\nMi enfoque se centra en fortalecer y regular las EPS, no eliminarlas, dado que la evidencia internacional muestra que modelos mixtos, como el de Alemania, combinan lo mejor del sector público y privado. Un estudio del Commonwealth Fund resalta que sistemas con aseguradoras privadas reguladas logran mejores resultados en satisfacción del paciente y eficiencia. Además, la gestión privada en hospitales públicos ha demostrado, según el informe de la OCDE, incrementar la calidad del servicio mientras se optimizan recursos.\n\nPara medir el éxito en cuatro años, estableceremos indicadores claros: reducción en tiempos de espera, aumento en cobertura efectiva y mejoras en la percepción ciudadana del sistema de salud. Asignaremos recursos de manera directa, eliminando la burocracia estatal que actualmente impide una distribución eficiente, como lo indica el Banco Mundial.\n\nMi propuesta no solo es realista, sino también respaldada por evidencia concreta, garantizando un sistema de salud más robusto y accesible para todos los colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Es preocupante que mi rival no haya ofrecido una respuesta concreta sobre el sistema de salud. Sin un plan estructurado, se corre el riesgo de perpetuar las ineficiencias actuales. En Colombia, uno de los problemas más críticos ha sido la intermediación burocrática que ralentiza la asignación de recursos. Mi propuesta busca eliminar estos cuellos de botella, permitiendo una gestión más eficiente. \n\nInternacionalmente, países como Singapur han demostrado que la gestión privada de hospitales públicos y la competencia entre aseguradoras pueden mejorar dramáticamente la calidad del servicio. Según el Índice Global de Salud de Bloomberg, Singapur se encuentra consistentemente entre los mejores sistemas de salud del mundo.\n\nA cuatro años, mediremos el éxito a través de indicadores clave: tiempos de espera reducidos en urgencias, aumento en la satisfacción del paciente y mejoras en los índices de salud pública. También, el fortalecimiento de las EPS bajo regulaciones más estrictas permitirá un sistema más robusto. \n\nMi plan no solo busca solucionar los problemas actuales, sino también preparar a Colombia para un futuro donde la calidad y la eficiencia sean la norma, no la excepción. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1031,
+      "tokens": 994,
       "artifacts": [
         {
           "type": "statistic",
-          "title": "Gasto en salud como porcentaje del PIB en Colombia",
-          "content": "En el año 2022, Colombia destinó aproximadamente el 7.2% de su PIB al gasto en salud, una cifra que se encuentra por debajo del promedio de países de la OCDE, donde el gasto promedio es del 8.8%. Este dato resalta la necesidad de incrementar la inversión en el sistema de salud para mejorar la calidad y accesibilidad de los servicios médicos en el país.",
-          "source": "Banco Mundial, Indicadores de Desarrollo Mundial"
+          "title": "Índice de Desempeño del Sistema de Salud en Colombia",
+          "content": "Según el Índice de Desempeño del Sistema de Salud 2022, Colombia ocupa el puesto 35 de 89 países, destacándose en el acceso a servicios de salud básicos y cobertura universal.",
+          "source": "World Health Organization, Informe Mundial de Salud 2022"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-17T07:32:05.031323"
+      "timestamp": "2026-06-17T16:13:11.322198"
     },
     {
       "question_idx": 1,
@@ -156,7 +156,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-17T07:32:07.713833"
+      "timestamp": "2026-06-17T16:13:14.244875"
     },
     {
       "question_idx": 2,
@@ -170,7 +170,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-17T07:32:10.466447"
+      "timestamp": "2026-06-17T16:13:17.104054"
     },
     {
       "question_idx": 2,
@@ -178,20 +178,20 @@
       "speaker_display": "Abelardo de la Espriella",
       "turn_type": "position",
       "turn_order": 2,
-      "text": "Mi propuesta de salud se centra en beneficiar a todos los colombianos, especialmente a aquellos en regiones olvidadas del país. Con un plan de choque que destinará 10 billones de pesos para abordar las urgencias más críticas, buscamos mejorar significativamente la infraestructura y los servicios de salud. Al oponernos a la eliminación de las EPS y en su lugar reforzarlas y regularlas, pretendemos asegurar un sistema más robusto y eficiente que llegue a todos los rincones de Colombia.\n\nLos costos serán asumidos mediante una gestión más eficiente de los recursos actuales y la eliminación de intermediaciones burocráticas innecesarias. Al permitir que los hospitales públicos sean gestionados de manera privada, se garantiza una mejora en la calidad del servicio sin aumentar la carga fiscal sobre los ciudadanos.\n\nAdemás, proponemos el uso de seguros de salud privados para las clases medias, lo que permitirá una descarga del sistema público y un acceso más rápido a servicios de calidad. En territorios olvidados, la inversión enfocada en infraestructura y el uso eficiente de recursos permitirá que el sistema de salud llegue de manera efectiva.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Mi propuesta de salud está diseñada para beneficiar a todos los colombianos, especialmente a aquellos en situación de mayor vulnerabilidad. Destinaremos 10 billones de pesos a un plan de choque que atienda las urgencias más críticas del sistema. Este esfuerzo financiero es un compromiso necesario para mejorar la infraestructura y los servicios en los territorios olvidados. Al reforzar las EPS y mejorar su regulación, buscamos garantizar un acceso más eficiente a la salud para todos.\n\nLa gestión privada de los hospitales públicos promoverá una eficiencia que actualmente brilla por su ausencia debido a la burocracia estatal. Esto no solo mejorará la calidad del servicio, sino que también optimizará el uso de recursos. Promoveremos seguros de salud privados, ofreciendo opciones a las clases medias y reduciendo la carga sobre el sector público.\n\nAunque todos los colombianos se beneficiarán, los costos iniciales se asumirán mediante una redistribución más eficiente del presupuesto existente y la eliminación de la intermediación burocrática que actualmente consume recursos sin generar resultados tangibles. Esta redistribución garantizará que los recursos lleguen a donde más se necesitan, incluso a las zonas más alejadas y olvidadas del país. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 988,
+      "tokens": 1079,
       "artifacts": [
         {
-          "type": "statistic",
-          "title": "Gasto en salud como porcentaje del PIB en Colombia",
-          "content": "En 2022, el gasto en salud de Colombia representó aproximadamente el 7.5% del Producto Interno Bruto (PIB), lo que es comparable al promedio de gasto en salud de los países de la OCDE, que es alrededor del 8.8%.",
-          "source": "Banco Mundial, datos del 2022 sobre gasto en salud en países de América Latina y la OCDE"
+          "type": "analysis",
+          "title": "Análisis Comparativo del Sistema de Salud en Colombia",
+          "content": "El sistema de salud en Colombia, a pesar de sus avances, enfrenta varios desafíos en comparación con otros sistemas en la región. Un estudio de la Organización Mundial de la Salud revela que mientras que el gasto per cápita en salud en Colombia fue de aproximadamente 500 USD en 2022, países como Brasil y Chile invierten alrededor de 1,000 USD y 1,500 USD respectivamente. Esta diferencia en inversión se refleja en indicadores de salud, donde Colombia presenta una esperanza de vida de 77 años, inferior a la de Chile que es de 80 años. Además, la cobertura en atención primaria y el acceso a servicios especializados en zonas rurales siguen siendo preocupaciones importantes.",
+          "source": "Organización Mundial de la Salud, Informe Mundial de Salud 2023"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-17T07:32:15.269555"
+      "timestamp": "2026-06-17T16:13:24.482401"
     },
     {
       "question_idx": 2,
@@ -199,20 +199,20 @@
       "speaker_display": "Abelardo de la Espriella",
       "turn_type": "rebuttal",
       "turn_order": 3,
-      "text": "La ausencia de una respuesta por parte de mi rival subraya la falta de un plan concreto y estructurado para abordar la crisis de salud en Colombia. Nuestro sistema de salud enfrenta problemas críticos que no pueden ser ignorados. Según el Ministerio de Salud, existen más de 20 millones de colombianos con acceso precario a servicios médicos, especialmente en territorios olvidados.\n\nMi propuesta busca beneficiar a todo el pueblo colombiano, especialmente a quienes residen en zonas rurales y marginales. Al destinar 10 billones de pesos para resolver urgencias críticas e implementar la gestión privada en hospitales públicos, garantizamos eficiencia y calidad en la atención. La eliminación de la intermediación burocrática reduce costos y acelera la asignación de recursos donde más se necesitan.\n\nContrario a propuestas que buscan liquidar las EPS, propongo reforzarlas y regularlas, garantizando que funcionen de manera óptima en beneficio de los ciudadanos. Además, con los seguros de salud privados como alternativa para clases medias, incrementamos la cobertura y la calidad del servicio, generando un sistema más robusto y competitivo.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "La ausencia de una respuesta por parte de mi rival revela una preocupante falta de claridad y compromiso con la salud de los colombianos. En mi propuesta, los beneficiarios directos son los ciudadanos que han sufrido por un sistema de salud ineficiente y burocrático. Nuestro plan destina 10 billones de pesos para abordar urgencias críticas, una inversión decisiva para mejorar la infraestructura y atención en salud.\n\nMi rival parece ignorar que la eliminación de las EPS, como algunos sugieren, podría generar un colapso en el sistema de salud, afectando a millones de pacientes que dependen de estos servicios. En lugar de eso, propongo reforzarlas y regularlas eficientemente, lo cual ha demostrado ser eficaz en otros países con sistemas similares, como Alemania.\n\nLos territorios olvidados recibirán atención prioritaria mediante hospitales públicos gestionados por entidades privadas, garantizando un servicio más eficiente y oportuno, y eliminando la intermediación burocrática del Estado en la asignación de recursos. Esta intervención es crucial para ofrecer servicios de salud de calidad en áreas rurales.\n\nNuestra estrategia no solo es más práctica, sino que también se basa en modelos exitosos que han transformado sistemas de salud en contextos similares. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1020,
+      "tokens": 1038,
       "artifacts": [
         {
           "type": "statistic",
-          "title": "Gasto público en salud en Colombia",
-          "content": "En 2022, el gasto público en salud en Colombia representó aproximadamente el 7.2% del PIB, lo que es comparable al promedio de gasto en salud de los países de la OCDE, que es del 8.8% del PIB. Sin embargo, a pesar de este gasto significativo, persisten desafíos en la eficiencia y equidad del sistema de salud colombiano.",
-          "source": "Ministerio de Salud y Protección Social de Colombia, 2022"
+          "title": "Gasto en Salud como Porcentaje del PIB en Colombia",
+          "content": "En 2021, el gasto en salud en Colombia representó aproximadamente el 7.2% del Producto Interno Bruto (PIB), lo que indica un compromiso significativo con el sector de salud, aunque todavía está por debajo del promedio de la OCDE del 8.8%.",
+          "source": "Banco Mundial, Datos sobre el Gasto en Salud como Porcentaje del PIB, 2021"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-17T07:32:21.800891"
+      "timestamp": "2026-06-17T16:13:32.070589"
     },
     {
       "question_idx": 2,
@@ -226,7 +226,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-17T07:32:24.483465"
+      "timestamp": "2026-06-17T16:13:35.188069"
     }
   ],
   "analytics": {
@@ -234,7 +234,7 @@
     "raw": true
   },
   "total_tokens": 6073,
-  "started_at": "2026-06-17T07:31:32.619525",
-  "completed_at": "2026-06-17T07:32:25.969386",
+  "started_at": "2026-06-17T16:12:26.770905",
+  "completed_at": "2026-06-17T16:13:36.672625",
   "error": null
 }
