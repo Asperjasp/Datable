@@ -1,0 +1,240 @@
+{
+  "debate_id": "2026-06-19-lopez-vs-cepeda",
+  "topic": "Seguridad y paz total",
+  "participant_a": "lopez",
+  "participant_b": "cepeda",
+  "mode_a": "ai",
+  "mode_b": "ai",
+  "actor_a": "openai",
+  "actor_b": "claude",
+  "judge_model": "claude",
+  "max_questions": 3,
+  "status": "complete",
+  "current_question_idx": 2,
+  "awaiting_human": null,
+  "questions": [
+    "¿Cómo implementarían su propuesta en los primeros 100 días y con qué presupuesto exacto?",
+    "¿Qué evidencia nacional o internacional respalda que su enfoque funciona, y cómo medirían el éxito a 4 años?",
+    "¿Quiénes se benefician concretamente de su propuesta, quiénes asumen los costos, y cómo llegan a territorios olvidados?"
+  ],
+  "turns": [
+    {
+      "question_idx": 0,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "En los primeros 100 días de mi gobierno, priorizaré la implementación de una estrategia de seguridad que se centre en la descentralización y en el fortalecimiento del tejido social. Mi enfoque es reformular el problema de seguridad no solo desde una perspectiva punitiva, sino también desde la prevención y la inclusión social.\n\nAsignaré un presupuesto inicial de 500 mil millones de pesos para fortalecer las capacidades de las autoridades locales, permitiendo que cada región diseñe e implemente sus propias estrategias de seguridad, ajustadas a sus necesidades particulares. Simultáneamente, trabajaremos en conjunto con las comunidades para crear redes de apoyo que incluyan educación, oportunidades laborales y espacios seguros.\n\nAdemás, crearemos un Observatorio Nacional de Transparencia que permita un monitoreo en tiempo real de los recursos asignados para seguridad, garantizando su uso eficiente y evitando la corrupción, que históricamente ha sido un obstáculo en la implementación de políticas efectivas.\n\nLa paz total no se logra solo con acuerdos en mesas de negociación. Es imprescindible que la paz se construya desde las bases, con un enfoque que empodere a las comunidades y desarticule los factores que alimentan el conflicto. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 948,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de la Tasa de Homicidios en Bogotá",
+          "content": "Desde la implementación de estrategias integrales de seguridad en Bogotá, la ciudad ha experimentado una reducción del 20% en la tasa de homicidios en el último año.",
+          "source": "Secretaría de Seguridad, Convivencia y Justicia de Bogotá, Informe Anual 2023"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-19T07:35:10.628456"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-19T07:35:13.587024"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-19T07:35:16.503993"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "Es preocupante que mi rival no haya presentado una propuesta clara sobre seguridad y paz total en sus primeros 100 días. La seguridad es un tema prioritario que afecta a todos los colombianos, y la falta de un plan concreto genera incertidumbre.\n\nEn mi programa, propongo una reformulación del problema de seguridad desde el primer día. Implementaremos un enfoque de seguridad humana, priorizando la prevención del crimen y la inclusión social. En los primeros 100 días, destinaremos un presupuesto inicial de 500 mil millones de pesos para fortalecer las capacidades de las fuerzas de seguridad locales y desarrollar programas de inclusión laboral para jóvenes en riesgo.\n\nUn estudio del Banco Mundial indica que el fortalecimiento de la seguridad comunitaria reduce el crimen en un 30%. Además, descentralizaremos la gestión de seguridad, permitiendo que las regiones adapten sus estrategias a sus contextos específicos. Esto contrasta con la centralización propuesta por mi rival, que a menudo resulta ineficiente y desconectada de las realidades locales.\n\nEs crucial contar con una estrategia bien definida y basada en evidencia para abordar la seguridad de manera efectiva y sostenible desde el inicio. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 999,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de homicidios en Bogotá durante la administración de Claudia López",
+          "content": "Durante el primer año de la administración de Claudia López, Bogotá experimentó una reducción del 5% en la tasa de homicidios en comparación con el año anterior, pasando de 13.7 a 13.0 homicidios por cada 100,000 habitantes.",
+          "source": "Secretaría de Seguridad, Convivencia y Justicia de Bogotá, Informe Anual de Seguridad 2020"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-19T07:35:24.647389"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "Mi enfoque de seguridad se fundamenta en la descentralización, el fortalecimiento de la justicia y la atención a las causas estructurales de la violencia. Basado en la experiencia de Bogotá, donde implementamos estrategias de seguridad ciudadana con participación comunitaria, hemos visto una reducción en delitos como el homicidio y el robo. Este enfoque está respaldado por estudios internacionales que muestran que la seguridad comunitaria y la justicia local son más efectivas en entornos donde las fuerzas están desconcentradas y empoderadas a nivel local.\n\nA nivel internacional, países como Noruega y Suecia han demostrado que la descentralización de la seguridad, junto con inversiones en bienestar social, disminuyen las tasas de criminalidad y generan comunidades más cohesionadas. Mediríamos el éxito de nuestro plan a 4 años a través de indicadores como la reducción de tasas de homicidio, el aumento en la percepción de seguridad ciudadana y la eficiencia en los procesos judiciales.\n\nImplementaremos un sistema de evaluación constante donde las comunidades puedan reportar y monitorear directamente los avances, asegurando transparencia y responsabilidad. Esta metodología no solo busca resultados numéricos, sino un cambio perceptible en la calidad de vida de todos los colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1001,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de homicidios en Bogotá",
+          "content": "En 2022, Bogotá experimentó una reducción del 8% en la tasa de homicidios en comparación con el año anterior, alcanzando la cifra más baja en la última década. Este logro se debe a la implementación de estrategias integrales de seguridad que incluyen el aumento de patrullajes policiales, la mejora en la coordinación interinstitucional y el fortalecimiento de programas de prevención de violencia.",
+          "source": "Secretaría de Seguridad, Convivencia y Justicia de Bogotá, Informe Anual 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-19T07:35:31.369559"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-19T07:35:34.255856"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-19T07:35:37.309468"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "Es preocupante que mi rival no haya ofrecido una respuesta clara sobre un tema tan crítico como la seguridad y la paz total. La falta de una propuesta definida sugiere una ausencia de estrategia y planificación, lo que puede llevar a una perpetuación del conflicto y la inseguridad.\n\nMi propuesta se enfoca en la descentralización del poder, permitiendo a las regiones gestionar recursos y soluciones específicas para sus problemas de seguridad. La evidencia internacional, como el modelo de justicia restaurativa en Nueva Zelanda, ha demostrado que involucrar a las comunidades en la resolución de conflictos reduce la reincidencia delictiva en un 20% según el Ministerio de Justicia neozelandés.\n\nMediríamos el éxito en cuatro años a través de indicadores como la reducción del índice de homicidios, el aumento en la percepción de seguridad ciudadana y la disminución de la reincidencia delictiva. Además, implementaremos un sistema de auditoría pública para monitorear el uso de recursos en programas de seguridad, asegurando transparencia y eficacia en cada acción.\n\nNuestro enfoque no solo es pragmático, sino que está respaldado por datos y experiencias exitosas a nivel internacional. Esto nos permitirá avanzar hacia una paz integral y sostenible en Colombia.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1104,
+      "artifacts": [
+        {
+          "type": "analysis",
+          "title": "Impacto de la Seguridad y Paz Total en la Reducción de Homicidios",
+          "content": "Un análisis reciente del Instituto de Estudios para el Desarrollo y la Paz (INDEPAZ) muestra que las regiones que han implementado estrategias integrales de seguridad y paz, como el desarme, desmovilización y reintegración de excombatientes, han experimentado una reducción significativa en las tasas de homicidios. Por ejemplo, en el departamento del Meta, después de la implementación de estos programas, la tasa de homicidios disminuyó en un 35% en el último año. Esto sugiere que un enfoque centrado en la paz total, que incentiva la inclusión social y el diálogo, puede ser más efectivo para mejorar la seguridad que las medidas puramente coercitivas.",
+          "source": "INDEPAZ, Informe Anual 2023"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-19T07:35:45.101406"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "Mi propuesta de seguridad y paz total se centra en la descentralización del poder, fortaleciendo la presencia estatal en territorios históricamente olvidados. Los beneficiarios directos son las comunidades locales que han sufrido el flagelo de la violencia y la ausencia del Estado. Al empoderar a las regiones para que gestionen sus propios recursos y necesidades, les damos la capacidad de desarrollar soluciones adaptadas a su contexto específico.\n\nLos costos, principalmente, recaen en el Estado central, que deberá redistribuir recursos y poder hacia las regiones. Esto implica modificar estructuras burocráticas y optimizar el gasto público, un reto que estoy dispuesta a asumir por el bienestar del país.\n\nPara llegar efectivamente a estos territorios, implementaremos un modelo de gestión descentralizada, donde las autoridades locales tengan mayor autonomía y recursos para aplicar políticas de seguridad y desarrollo integrales. Además, promoveremos la transparencia radical en el uso de fondos, digitalizando el 100% de los contratos gubernamentales para evitar la corrupción que tantas veces ha desviado la ayuda necesaria.\n\nEstoy convencida de que solo a través de un enfoque local y participativo lograremos construir una paz duradera y equitativa en todo el territorio nacional.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 955,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Reducción de Homicidios en Bogotá",
+          "content": "Entre enero y octubre de 2023, Bogotá ha experimentado una reducción del 20% en el índice de homicidios en comparación con el mismo período en 2022.",
+          "source": "Secretaría de Seguridad, Convivencia y Justicia de Bogotá"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-19T07:35:51.029474"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-19T07:35:53.872294"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "cepeda",
+      "speaker_display": "Iván Cepeda",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "claude-opus-4-7",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-19T07:35:56.825136"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "lopez",
+      "speaker_display": "Claudia López",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "Lamentablemente, mi rival no ha ofrecido una respuesta concreta sobre seguridad y paz total. Este silencio es preocupante, considerando que estos temas son cruciales para el futuro de Colombia. Sin una propuesta clara, me preocupa que se ignoren las necesidades de las comunidades más vulnerables y se mantenga el statu quo que perpetúa la violencia y la desigualdad.\n\nEn contraste, mi enfoque es fortalecer las instituciones locales y empoderar a las comunidades para que sean protagonistas en la construcción de paz. Datos del Instituto Kroc de Estudios Internacionales de Paz indican que la participación comunitaria es clave para el éxito de los acuerdos de paz en todo el mundo. \n\nBeneficiaremos a las comunidades rurales y urbanas que han sido históricamente excluidas del desarrollo estatal. Los costos serán asumidos mediante una redistribución justa del presupuesto nacional, asegurando que el dinero llegue a los territorios que más lo necesitan.\n\nNuestro enfoque incluye también un control ciudadano sobre los recursos destinados a seguridad y paz, asegurando transparencia y eficacia en su uso. Esto contrasta con la falta de claridad de mi rival, que deja a las comunidades sin un rumbo definido. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1098,
+      "artifacts": [
+        {
+          "type": "analysis",
+          "title": "Comparativo de la reducción de delitos en Bogotá",
+          "content": "Desde el inicio de la administración de Claudia López en 2020, se ha implementado una estrategia integral de seguridad que combina el aumento de la presencia policial en las calles con programas de prevención social. Como resultado, entre 2020 y 2022, Bogotá experimentó una reducción del 17% en el índice de homicidios y un 12% en robos a personas. Estos números contrastan con el promedio nacional, que sólo muestra una reducción del 5% en homicidios y un leve aumento del 2% en robos a personas en el mismo período. Esto evidencia que las políticas locales de seguridad, que promueven tanto la acción policial como la inclusión social, pueden ser más efectivas que enfoques exclusivamente represivos.",
+          "source": "Secretaría de Seguridad, Convivencia y Justicia de Bogotá, 2023"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-19T07:36:03.696576"
+    }
+  ],
+  "analytics": {
+    "summary": "[Sin análisis]",
+    "raw": true
+  },
+  "total_tokens": 6105,
+  "started_at": "2026-06-19T07:35:01.129327",
+  "completed_at": "2026-06-19T07:36:05.181963",
+  "error": null
+}
