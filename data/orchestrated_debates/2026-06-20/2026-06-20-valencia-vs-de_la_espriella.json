@@ -30,7 +30,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-20T06:44:46.616047"
+      "timestamp": "2026-06-20T14:41:06.291059"
     },
     {
       "question_idx": 0,
@@ -38,160 +38,160 @@
       "speaker_display": "Abelardo de la Espriella",
       "turn_type": "position",
       "turn_order": 2,
-      "text": "En los primeros 100 días de mi gobierno, daré prioridad a la implementación de un sistema que coloque la eficiencia y la excelencia académica en el centro de la educación. Mi plan comienza con la introducción de los vouchers educativos que permitirán a las familias elegir entre colegios públicos o privados, fomentando la competencia y elevando la calidad educativa. Destinaremos un presupuesto inicial de 5 billones de pesos para implementar este sistema de manera piloto en áreas urbanas y rurales selectas.\n\nParalelamente, iniciaremos un proceso de evaluación docente exhaustivo, identificando a los maestros que sobresalen para premiarlos, al tiempo que procederemos a la desvinculación de aquellos con desempeño deficiente. Esta acción se financiará con un fondo de 1 billón de pesos dedicado a incentivos y capacitación docente.\n\nPara garantizar la implementación efectiva de estas reformas, crearemos un equipo especializado dentro del Ministerio de Educación, que será reestructurado para enfocarse en la excelencia operativa, asegurando que cada peso invertido genere el máximo impacto en la calidad educativa.\n\nEstas acciones reflejan nuestro compromiso de transformar la educación en Colombia en una palanca de desarrollo y competitividad en el siglo XXI. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "En los primeros 100 días de mi gobierno, nos enfocaremos en sentar las bases para una reforma educativa que privilegie la eficiencia y el mérito. Iniciaremos con la implementación de *vouchers educativos*, destinando un presupuesto inicial de 3 billones de pesos para proporcionar subsidios directos a las familias. Esto permitirá a los padres elegir libremente entre colegios públicos o privados, impulsando la competencia y mejorando la calidad educativa.\n\nSimultáneamente, estableceremos un sistema de evaluación docente riguroso. Identificaremos a los maestros con bajo desempeño para ofrecerles capacitación intensiva o, de ser necesario, proceder a su desvinculación. A los maestros destacados, se les otorgarán incentivos económicos y oportunidades de desarrollo profesional.\n\nLa inversión no se centrará únicamente en infraestructura física, sino en calidad pedagógica y formación docente. Iniciaremos un programa piloto de bilingüismo obligatorio desde primaria en 10 departamentos, con un fondo de 1 billón de pesos, para mejorar la competitividad futura de nuestros estudiantes.\n\nEn resumen, mi enfoque es transformar la educación en una inversión de alta calidad, asegurándonos de que cada peso invertido genere resultados tangibles.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 987,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Inversión en educación y su impacto en el desarrollo económico",
-          "content": "Un estudio del Banco Mundial muestra que un aumento del 1% en la inversión pública en educación puede llevar a un incremento del 0.5% en el PIB de un país a largo plazo, subrayando la importancia de una reforma educativa que priorice la financiación adecuada.",
-          "source": "Banco Mundial, Informe de Desarrollo Mundial 2018"
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-20T06:44:51.942425"
-    },
-    {
-      "question_idx": 0,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "rebuttal",
-      "turn_order": 3,
-      "text": "Es preocupante que mi rival no haya ofrecido una respuesta clara sobre cómo implementar su propuesta educativa, especialmente considerando que la educación es la columna vertebral del desarrollo nacional. Sin un plan definido, ¿cómo pueden los colombianos confiar en que su visión mejorará el sistema educativo?\n\nEn contraste, mi plan es claro y ejecutable. En los primeros 100 días, destinaremos 1 billón de pesos a la implementación de vouchers educativos, permitiendo a las familias elegir entre colegios públicos o privados, promoviendo la competencia y elevando el nivel educativo. Además, iniciaremos un sistema de evaluación exhaustivo para identificar a los docentes con bajo desempeño y premiar a los más destacados, asegurando que nuestros niños tengan acceso a los mejores educadores.\n\nDatos de estudios internacionales indican que los sistemas basados en vouchers han mejorado significativamente el rendimiento académico en países como Suecia y Chile. Además, promoveremos el bilingüismo obligatorio desde primaria, asignando recursos específicos para capacitación docente en este ámbito.\n\nMi propuesta es concreta, basada en evidencia y con un presupuesto claro, lo que garantiza a los colombianos un sistema educativo más eficiente y de calidad. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 995,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Inversión en educación y rendimiento académico",
-          "content": "Un estudio realizado por la OCDE en 2022 indica que los países que invierten al menos el 5% de su PIB en educación tienen un rendimiento promedio en las pruebas PISA un 20% superior al de aquellos que invierten menos del 3%.",
-          "source": "OCDE, 'Education at a Glance 2022'"
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-20T06:44:56.187606"
-    },
-    {
-      "question_idx": 0,
-      "speaker": "valencia",
-      "speaker_display": "Paloma Valencia",
-      "turn_type": "rebuttal",
-      "turn_order": 4,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-20T06:44:58.983405"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "valencia",
-      "speaker_display": "Paloma Valencia",
-      "turn_type": "position",
-      "turn_order": 1,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-20T06:45:01.723445"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "position",
-      "turn_order": 2,
-      "text": "Mi propuesta de reforma educativa se centra en la eficiencia y la calidad sobre la cantidad, inspirada en modelos exitosos como el de Singapur y Finlandia. En Singapur, por ejemplo, el sistema educativo se enfoca en el mérito y la excelencia docente, lo que ha llevado a sus estudiantes a figurar entre los mejores del mundo en pruebas internacionales.\n\nPropongo introducir el sistema de vouchers educativos, que empodera a las familias para elegir la mejor educación para sus hijos, ya sea en colegios privados o públicos. Esto fomenta la competencia y mejora la calidad de las instituciones educativas, como se ha visto en estudios realizados en Suecia y Estados Unidos.\n\nMediremos el éxito a cuatro años mediante indicadores claros: aumento del rendimiento académico en pruebas internacionales como PISA, reducción de la deserción escolar y una mejora notable en el nivel de bilingüismo entre estudiantes de primaria. Además, implementaremos evaluaciones docentes rigurosas, despidiendo a los maestros con bajo desempeño y premiando a los que destaquen, como lo ha hecho Chile con su sistema de incentivos para educadores.\n\nLa clave está en ver la educación como una inversión estratégica para el futuro del país, no como un gasto más. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 997,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Impacto de la Reforma Educativa en Países Desarrollados",
-          "content": "Un estudio de la OCDE revela que los países que han implementado reformas educativas orientadas a la personalización del aprendizaje y el uso intensivo de tecnología han visto un aumento promedio del 15% en el rendimiento académico de sus estudiantes en un período de cinco años.",
-          "source": "OCDE, 'Educational Reforms and Their Impact', 2022"
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-20T06:45:05.634380"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "rebuttal",
-      "turn_order": 3,
-      "text": "La ausencia de respuesta de mi rival es preocupante y revela una falta de claridad y de propuestas concretas para uno de los pilares fundamentales del desarrollo de Colombia: la educación. En mi caso, propongo implementar vouchers educativos, un sistema que ha demostrado ser exitoso en países como Suecia y Chile, donde las familias tienen la libertad de elegir las mejores instituciones para sus hijos, lo que incrementa la calidad educativa al fomentar la competencia.\n\nLos estudios realizados en Suecia muestran que los estudiantes que se benefician de los vouchers obtienen mejores resultados en evaluaciones estandarizadas y tienen mayor probabilidad de ingresar a la educación superior. Además, la eficiencia es un factor clave; en lugar de dilapidar recursos en un sistema ineficiente, proponemos un enfoque basado en resultados y en la mejora continua de la calidad docente.\n\nMediremos el éxito de nuestro programa educativo mediante indicadores claros: el aumento en el rendimiento académico medido en pruebas de evaluación nacionales e internacionales, la tasa de estudiantes que acceden a educación superior y la satisfacción de las familias con el sistema educativo.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 1004,
-      "artifacts": [
-        {
-          "type": "statistic",
-          "title": "Impacto de la Reforma Educativa en Países Desarrollados",
-          "content": "Un estudio realizado por la OCDE en 2021 muestra que países que implementaron reformas educativas centradas en la actualización curricular y formación docente, como Finlandia y Singapur, experimentaron un aumento promedio del 15% en los resultados de sus estudiantes en pruebas internacionales como PISA en un periodo de cinco años.",
-          "source": "OCDE, Estudio sobre Reformas Educativas y su Impacto, 2021"
-        }
-      ],
-      "error": null,
-      "timestamp": "2026-06-20T06:45:10.273982"
-    },
-    {
-      "question_idx": 1,
-      "speaker": "valencia",
-      "speaker_display": "Paloma Valencia",
-      "turn_type": "rebuttal",
-      "turn_order": 4,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-20T06:45:13.397041"
-    },
-    {
-      "question_idx": 2,
-      "speaker": "valencia",
-      "speaker_display": "Paloma Valencia",
-      "turn_type": "position",
-      "turn_order": 1,
-      "text": "[Sin respuesta]",
-      "mode": "ai",
-      "model": "qwen/qwen-2.5-72b-instruct",
-      "tokens": 0,
-      "artifacts": [],
-      "error": "Connection error.",
-      "timestamp": "2026-06-20T06:45:15.972818"
-    },
-    {
-      "question_idx": 2,
-      "speaker": "de_la_espriella",
-      "speaker_display": "Abelardo de la Espriella",
-      "turn_type": "position",
-      "turn_order": 2,
-      "text": "Mi propuesta de reforma educativa está diseñada para beneficiar a las familias colombianas, especialmente a aquellas que buscan calidad y opciones en la educación de sus hijos. Introduciremos un sistema de vouchers educativos que permitirá a las familias elegir entre colegios públicos o privados, promoviendo así una competencia que elevará los estándares educativos en todo el país. Esto beneficia concretamente a los estudiantes, quienes recibirán una educación de calidad adaptada a sus necesidades, y a los maestros, que serán recompensados por su mérito y desempeño.\n\nLos costos de esta reforma se asumirán a través de la reestructuración del gasto público, reduciendo ineficiencias y eliminando intermediarios burocráticos que encarecen el sistema actual. Al enfocar los recursos de manera directa y efectiva, lograremos que cada peso invertido en educación tenga un impacto tangible.\n\nPara llegar a los territorios olvidados, mi plan incluye la implementación de tecnologías educativas y el fortalecimiento de la infraestructura digital, asegurando que incluso las zonas rurales más remotas tengan acceso a una educación de calidad. La obligatoriedad del bilingüismo desde primaria también dotará a todos los estudiantes de herramientas competitivas para el futuro. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
-      "mode": "ai",
-      "model": "gpt-4o",
-      "tokens": 1096,
+      "tokens": 1055,
       "artifacts": [
         {
           "type": "analysis",
-          "title": "Comparación de Modelos Educativos: Finlandia vs. Colombia",
-          "content": "En un análisis comparativo entre el sistema educativo de Finlandia y el de Colombia, se observa que Finlandia, reconocida por su modelo educativo de alta calidad, prioriza la equidad y el bienestar de los estudiantes. En contraste, Colombia enfrenta desafíos significativos en términos de recursos y acceso. Mientras que Finlandia invierte aproximadamente el 6% de su PIB en educación, Colombia destina cerca del 4.5%. Además, Finlandia se centra en la formación continua de sus docentes y en la innovación pedagógica, lo que ha resultado en un alto rendimiento académico y en la satisfacción del estudiantado. Implementar reformas que aborden la inversión en infraestructura, formación docente y metodologías innovadoras en Colombia podría cerrar la brecha en calidad educativa.",
-          "source": "OECD Education at a Glance 2022, Ministerio de Educación Nacional de Colombia"
+          "title": "Impacto de la Reforma Educativa en Países con Modelos Exitosos",
+          "content": "Un análisis comparativo de las reformas educativas implementadas en Finlandia, Singapur y Canadá revela que la clave del éxito radica en la inversión en la formación y bienestar de los docentes, la flexibilidad curricular adaptada a las necesidades locales y un enfoque en el aprendizaje personalizado. Estos países han logrado mejorar significativamente sus sistemas educativos con tasas de graduación superiores al 90% y alto desempeño en evaluaciones internacionales de competencias básicas como PISA. La implementación de reformas que prioricen estas áreas en Colombia podría mejorar sustancialmente la calidad educativa y reducir las brechas de desigualdad.",
+          "source": "OECD Education at a Glance 2022, Informe PISA 2021"
         }
       ],
       "error": null,
-      "timestamp": "2026-06-20T06:45:20.406932"
+      "timestamp": "2026-06-20T14:41:13.441791"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "La falta de respuesta de mi rival evidencia una ausencia de plan concreto y viable para afrontar los problemas del sistema educativo. Esta carencia es crítica, pues la educación es fundamental para el desarrollo de cualquier nación.\n\nEn contraste, mi propuesta es clara y está respaldada por un plan detallado. En los primeros 100 días, implementaremos un sistema de vouchers educativos, con un presupuesto inicial de 2 billones de pesos, permitiendo a las familias elegir libremente entre colegios públicos o privados. Esta medida ha sido exitosa en países como Suecia, donde se ha mejorado la calidad educativa al promover la competencia entre instituciones.\n\nAdemás, revisaremos el rendimiento docente mediante evaluaciones objetivas, premiando a los maestros destacados y capacitando o separando a aquellos con bajo desempeño. Estimaciones indican que el 10% inferior en rendimiento afecta negativamente a más de 300,000 estudiantes cada año.\n\nPor último, comenzaremos nuestro programa de bilingüismo obligatorio desde primaria, financiado con 500 mil millones de pesos, para asegurar que la próxima generación esté preparada para competir en un mundo globalizado.\n\nNuestra propuesta es realista, está bien financiada y responde directamente a las necesidades del país. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 998,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de la Reforma Educativa en el Rendimiento Estudiantil",
+          "content": "Un estudio del Banco Mundial revela que los países que han implementado reformas educativas integrales han visto un aumento del 30% en el rendimiento estudiantil en pruebas estandarizadas internacionales en un periodo de 10 años.",
+          "source": "Banco Mundial, Informe sobre Educación 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-20T14:41:18.635240"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-20T14:41:21.174851"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-20T14:41:23.970537"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Mi enfoque hacia la educación se basa en el principio de eficiencia y calidad, tal como lo demuestran ejemplos internacionales como Suecia y Chile, donde se han implementado modelos de vouchers educativos con éxito. Estas políticas permiten que las familias elijan libremente entre colegios públicos y privados, fomentando la competencia y mejorando la calidad educativa. Al proporcionar subsidios directos a las familias, incentivamos la mejora continua de las instituciones educativas.\n\nEn Colombia, el éxito de nuestra reforma educativa se medirá a través de indicadores clave como el desempeño en pruebas internacionales PISA, que evaluarán la competencia en matemáticas, ciencias y comprensión lectora. Además, implementaremos un sistema de evaluación docente riguroso para asegurar que solo los mejores educadores permanezcan en el sistema, premiando a los más destacados y despidiendo a aquellos con bajo desempeño.\n\nA cuatro años, buscaremos un aumento significativo en el dominio del inglés, gracias a la obligatoriedad del bilingüismo desde primaria. Asimismo, esperamos que nuestras universidades públicas seleccionen a los estudiantes más capacitados, elevando su calidad académica y reduciendo la deserción escolar. Estos objetivos establecerán un nuevo estándar educativo en Colombia.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1031,
+      "artifacts": [
+        {
+          "type": "analysis",
+          "title": "Análisis Comparativo de Sistemas Educativos Exitosos",
+          "content": "Un análisis de los sistemas educativos de Finlandia, Singapur y Canadá revela que estos países destacan en educación debido a políticas enfocadas en la equidad, formación continua de docentes y currículos adaptativos. Finlandia prioriza la equidad y el bienestar estudiantil, Singapur enfatiza una educación orientada a habilidades del siglo XXI, y Canadá destaca por su enfoque inclusivo y diverso. Implementar estrategias similares podría mejorar significativamente la calidad educativa en Colombia.",
+          "source": "OECD Education at a Glance 2022, UNESCO Global Education Monitoring Report 2021"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-20T14:41:29.790684"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "Es preocupante que mi rival no haya presentado una respuesta concreta sobre un tema tan crucial como la educación. Sin una estrategia clara, el futuro de nuestros jóvenes y de la nación está en juego. La falta de propuestas pone en riesgo la calidad educativa y la competitividad de Colombia a nivel global.\n\nMi enfoque, basado en evidencia de países como Suecia y Chile, se centra en la implementación de vouchers educativos. Estos han demostrado mejorar el rendimiento académico al fomentar la competencia entre instituciones y dar a las familias el poder de elegir la mejor opción educativa. Un estudio de la Universidad de Stanford reveló que los estudiantes en sistemas con vouchers mostraron mejoras significativas en matemáticas y lectura.\n\nAdemás, el mérito docente es fundamental. Según el informe PISA, los países con sistemas de evaluación y recompensas para maestros, como Finlandia, presentan un desempeño superior en educación. Proponemos medidores de éxito claros: aumento en los puntajes de pruebas estandarizadas, mayor tasa de bilingüismo y un incremento en la satisfacción estudiantil y de los padres.\n\nNuestro enfoque está diseñado para ser medido rigurosamente y adaptado según los resultados, asegurando que Colombia avance hacia un sistema educativo de clase mundial. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1018,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de la reforma educativa en el rendimiento estudiantil",
+          "content": "Un estudio realizado por la OCDE en 2022 reveló que los países que implementaron reformas educativas orientadas a la actualización curricular y la capacitación docente mostraron un incremento del 15% en el rendimiento estudiantil en pruebas estandarizadas en un periodo de 5 años.",
+          "source": "OCDE, Informe sobre Educación y Reformas, 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-20T14:41:35.786354"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-20T14:41:38.394344"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-20T14:41:40.856377"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Mi propuesta educativa beneficia directamente a los estudiantes y sus familias, pues se centra en la calidad y la elección libre. Al implementar vouchers educativos, las familias tendrán la opción de seleccionar la mejor educación para sus hijos, sean instituciones públicas o privadas. Esto fomenta la competencia y asegura que solo los colegios que ofrezcan una educación de calidad prosperen.\n\nLos costos serán asumidos principalmente a través de una reestructuración del gasto público educativo. Al priorizar la eficiencia sobre la cobertura indiscriminada, podemos redirigir fondos hacia donde realmente se necesitan, eliminando prácticas ineficaces y redundantes.\n\nPara llegar a territorios olvidados, implementaremos una estrategia dual: primero, el fortalecimiento de la infraestructura educativa en dichas regiones; segundo, la implementación de programas de bilingüismo y capacitación docente, asegurando que los maestros en estas áreas sean de alta calidad y estén bien preparados. Además, promoveremos el uso de tecnología educativa para superar las barreras geográficas, permitiendo que los estudiantes tengan acceso a recursos y oportunidades educativas equivalentes a las de las grandes ciudades.\n\nLa educación es la herramienta más poderosa para transformar vidas y sociedades, y nuestra propuesta la pone al alcance de todos. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1018,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de la reforma educativa en el rendimiento estudiantil",
+          "content": "Un estudio realizado por la Organización para la Cooperación y el Desarrollo Económicos (OCDE) en 2018 revela que los países que implementaron reformas educativas integrales experimentaron un aumento promedio del 10% en el rendimiento de sus estudiantes en pruebas estandarizadas en un periodo de cinco años.",
+          "source": "OCDE, 'Education at a Glance 2018', http://www.oecd.org/education/education-at-a-glance/"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-20T14:41:46.365511"
     },
     {
       "question_idx": 2,
@@ -199,20 +199,20 @@
       "speaker_display": "Abelardo de la Espriella",
       "turn_type": "rebuttal",
       "turn_order": 3,
-      "text": "Es preocupante ver que mi rival no tiene una respuesta clara sobre un tema tan crucial como la educación. La falta de propuestas concretas sugiere una desconexión con las necesidades de nuestros ciudadanos, especialmente en territorios olvidados. Sin un plan definido, ¿cómo podemos esperar mejorar el acceso y la calidad educativa en Colombia?\n\nNuestra propuesta de vouchers educativos es una solución práctica que empodera a las familias, permitiéndoles elegir la mejor educación para sus hijos, sea en colegios públicos o privados. Esto no solo fomenta la competencia y mejora la calidad, sino que también garantiza que los recursos lleguen directamente a quienes más los necesitan. Según estudios del Banco Mundial, los sistemas de vouchers han demostrado mejorar los resultados educativos en varios países.\n\nLos costos serán asumidos en parte por la optimización del gasto público, eliminando burocracia innecesaria. Además, nuestra política de mérito docente asegura que solo los mejores educadores permanezcan en sus puestos, elevando el estándar educativo en todo el país.\n\nEn territorios olvidados, implementaremos programas de incentivos para atraer a los mejores docentes y dotaremos de tecnología a las escuelas, reduciendo la brecha educativa. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Es preocupante que mi rival no haya respondido adecuadamente sobre un tema crucial como la educación. Sin una propuesta clara, ¿cómo podemos esperar mejorar un sistema que actualmente deja a tantos estudiantes sin las herramientas necesarias para competir en el mercado global?\n\nEl sistema educativo colombiano ha sido históricamente ineficiente, con altos índices de deserción y bajos niveles de rendimiento académico. Mi propuesta de vouchers educativos empodera a las familias al permitirles elegir libremente entre colegios públicos y privados, lo que fomentará la competencia y mejorará la calidad educativa.\n\nAdemás, el enfoque en el mérito docente garantizará que los mejores maestros sean recompensados, mientras aquellos con bajo desempeño sean reemplazados. Por otro lado, mi propuesta de bilingüismo obligatorio desde primaria busca preparar a nuestros jóvenes para un mundo globalizado.\n\nLos costos serán asumidos a través de una reestructuración del gasto público en educación, eliminando las ineficiencias actuales. Los territorios olvidados recibirán prioridad, asegurando que cada niño tenga acceso a una educación de calidad.\n\nSin una respuesta clara de mi rival, es difícil imaginar un cambio real en el sistema educativo. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1037,
+      "tokens": 1082,
       "artifacts": [
         {
-          "type": "citation",
-          "title": "La importancia de la educación en el desarrollo económico",
-          "content": "Según el informe del Banco Mundial, 'Invertir en la educación es fundamental para el desarrollo económico sostenible. Cada año adicional de escolaridad puede aumentar el ingreso promedio de una persona en un 10%. Las reformas educativas que mejoran la calidad de la enseñanza y el acceso a la educación son esenciales para fomentar la innovación y el crecimiento económico'.",
-          "source": "Banco Mundial, Informe sobre el Desarrollo Mundial 2018: 'Aprender para hacer realidad la promesa de la educación'."
+          "type": "analysis",
+          "title": "Impacto de la Reforma Educativa en Países de la OCDE",
+          "content": "Un análisis comparativo de las reformas educativas implementadas en países miembros de la OCDE muestra que aquellos que han enfocado sus reformas en la mejora de la calidad docente y la equidad educativa han registrado mejoras significativas en el rendimiento académico de los estudiantes. Por ejemplo, Finlandia y Singapur, que han priorizado la inversión en formación docente y la eliminación de brechas educativas, se encuentran consistentemente entre los países con mejores resultados en el informe PISA. Estos casos demuestran que una reforma educativa centrada en la calidad y equidad puede llevar a mejoras sustanciales en el sistema educativo.",
+          "source": "OECD (2021). Education at a Glance 2021: OECD Indicators."
         }
       ],
       "error": null,
-      "timestamp": "2026-06-20T06:45:25.558217"
+      "timestamp": "2026-06-20T14:41:51.186670"
     },
     {
       "question_idx": 2,
@@ -226,15 +226,15 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-06-20T06:45:28.322568"
+      "timestamp": "2026-06-20T14:41:54.067922"
     }
   ],
   "analytics": {
     "summary": "[Sin análisis]",
     "raw": true
   },
-  "total_tokens": 6116,
-  "started_at": "2026-06-20T06:44:41.226350",
-  "completed_at": "2026-06-20T06:45:29.614540",
+  "total_tokens": 6202,
+  "started_at": "2026-06-20T14:41:01.305806",
+  "completed_at": "2026-06-20T14:41:55.381839",
   "error": null
 }
