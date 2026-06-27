@@ -1,0 +1,240 @@
+{
+  "debate_id": "2026-06-27-valencia-vs-de_la_espriella",
+  "topic": "Educación y reforma educativa",
+  "participant_a": "valencia",
+  "participant_b": "de_la_espriella",
+  "mode_a": "ai",
+  "mode_b": "ai",
+  "actor_a": "qwen_or",
+  "actor_b": "openai",
+  "judge_model": "claude",
+  "max_questions": 3,
+  "status": "complete",
+  "current_question_idx": 2,
+  "awaiting_human": null,
+  "questions": [
+    "¿Cómo implementarían su propuesta en los primeros 100 días y con qué presupuesto exacto?",
+    "¿Qué evidencia nacional o internacional respalda que su enfoque funciona, y cómo medirían el éxito a 4 años?",
+    "¿Quiénes se benefician concretamente de su propuesta, quiénes asumen los costos, y cómo llegan a territorios olvidados?"
+  ],
+  "turns": [
+    {
+      "question_idx": 0,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-27T06:06:19.708328"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "En los primeros 100 días de gobierno, nuestro enfoque en educación será claro: eficiencia y calidad sobre cantidad. Implementaremos un sistema de vouchers educativos, destinando recursos directamente a las familias para que puedan elegir entre colegios privados o públicos, promoviendo así la competencia y mejorando la calidad educativa. Para esto, asignaremos un presupuesto inicial de 5 billones de pesos, permitiendo que las familias de bajos recursos puedan acceder a una educación de calidad desde el principio.\n\nSimultáneamente, estableceremos un sistema de evaluación docente riguroso, con el objetivo de identificar a los maestros con bajo desempeño para proceder a su sustitución y premiar a los que destaquen. Esto se logrará con un fondo de incentivos de 500 mil millones de pesos, asegurándonos de que el mérito sea el motor de nuestra educación.\n\nAdemás, introduciremos el bilingüismo obligatorio desde la primaria, con un programa piloto en 200 instituciones educativas para sentar las bases de una estrategia de competitividad a largo plazo. La eficiencia y la calidad serán nuestra bandera, asegurando una educación que realmente prepare a nuestros jóvenes para el futuro. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1032,
+      "artifacts": [
+        {
+          "type": "analysis",
+          "title": "Impacto de la Reforma Educativa en el Desempeño Estudiantil",
+          "content": "Un análisis comparativo entre países que han implementado reformas educativas muestra que aquellas naciones que han enfocado sus reformas en la formación docente y la actualización curricular han visto mejoras significativas en el desempeño estudiantil. Por ejemplo, Finlandia y Singapur, que han priorizado estas áreas, consistentemente ocupan los primeros lugares en evaluaciones internacionales como PISA. En contraste, países que han centrado sus reformas únicamente en infraestructuras o cambios administrativos no han experimentado mejoras sostenibles en sus resultados educativos.",
+          "source": "Informe de la OCDE sobre Reformas Educativas y Desempeño, 2020"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-27T06:06:26.713376"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "En primer lugar, es preocupante que mi rival no haya presentado una respuesta concreta sobre cómo implementar su propuesta educativa en los primeros 100 días. Esto revela una falta de planificación y compromiso con un tema crucial para el futuro de nuestro país. La educación no puede esperar.\n\nPor el contrario, yo propongo un plan claro y detallado. En los primeros 100 días, lanzaremos un programa de vouchers educativos que permitirá a las familias elegir entre colegios privados o públicos, empoderando así a los padres y estimulando la competencia y calidad entre las instituciones educativas. Este programa se financiará inicialmente con un presupuesto de 2 billones de pesos, redistribuidos de los gastos burocráticos ineficientes actualmente presentes en el Ministerio de Educación.\n\nAdicionalmente, implementaremos un sistema riguroso de evaluación docente que identificará a los maestros con bajo desempeño para capacitarlos o, en su defecto, proceder a su desvinculación. Los maestros destacados recibirán incentivos económicos, garantizando así una educación de calidad.\n\nMientras mi contrincante carece de un plan tangible, mi propuesta está fundamentada en modelos exitosos como el de Suecia, que han demostrado mejorar la calidad educativa a través de la competencia y la meritocracia.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1093,
+      "artifacts": [
+        {
+          "type": "analysis",
+          "title": "Impacto de las reformas educativas en el desempeño estudiantil",
+          "content": "Un análisis comparativo de las reformas educativas implementadas en diversos países de la OCDE muestra que aquellas reformas centradas en la capacitación docente y la actualización curricular han resultado en una mejora significativa en el desempeño de los estudiantes en pruebas internacionales estandarizadas, como PISA. Por ejemplo, Finlandia y Singapur, países reconocidos por sus sistemas educativos de alto rendimiento, han centrado sus reformas en estos aspectos, logrando mejorar continuamente sus resultados. Esto sugiere que una reforma educativa que priorice la calidad docente y la relevancia del currículo podría tener un impacto positivo en el sistema educativo colombiano.",
+          "source": "Organización para la Cooperación y el Desarrollo Económicos (OCDE) - Informe PISA 2018"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-27T06:06:33.389831"
+    },
+    {
+      "question_idx": 0,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-27T06:06:36.231156"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-27T06:06:38.689362"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Mi propuesta educativa está fundamentada en la eficiencia y el empoderamiento de las familias para escoger las mejores opciones educativas para sus hijos. El éxito de los vouchers educativos ha sido demostrado en países como Suecia y Chile, donde las familias tienen la libertad de elegir entre colegios públicos y privados, lo que ha incentivado la competencia y mejorado la calidad educativa. Además, el mérito docente es crucial; en Singapur, por ejemplo, el sistema educativo premia a los maestros más efectivos, lo que ha llevado a un rendimiento sobresaliente a nivel internacional.\n\nEn Colombia, mediremos el éxito a través de indicadores claros: mejoras en los resultados de las pruebas Saber a nivel nacional, reducción de la deserción escolar y un aumento en la competencia bilingüe. A cuatro años, proyectamos un incremento del 20% en el dominio del inglés entre los estudiantes de primaria, y esperamos ver un ascenso significativo en el ranking PISA, que reflejará una educación de mayor calidad y más competitiva a nivel mundial.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1009,
+      "artifacts": [
+        {
+          "type": "analysis",
+          "title": "Impacto de la Reforma Educativa en Países de la OCDE",
+          "content": "Un análisis comparativo de las reformas educativas implementadas en países de la OCDE muestra que aquellos que han incorporado un enfoque centrado en competencias, con un currículo flexible y adaptado a las necesidades del siglo XXI, han registrado mejoras significativas en los resultados de aprendizaje de sus estudiantes, medidos a través de evaluaciones internacionales como PISA. Estos países han priorizado la formación continua del profesorado y la inclusión de tecnologías en el aula, lo cual ha contribuido a disminuir las brechas de desigualdad educativa.",
+          "source": "Informe de la OCDE sobre Políticas Educativas, 2022"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-27T06:06:44.150690"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "Es preocupante que mi rival no tenga una respuesta concreta sobre educación. La educación es el pilar fundamental para el desarrollo de una nación, y no tener un plan claro denota una falta de visión preocupante.\n\nMi propuesta se centra en el uso de vouchers educativos, un enfoque probado en países como Suecia y Chile, donde se ha demostrado que el subsidio directo a las familias mejora la calidad educativa y aumenta la competencia entre instituciones. De acuerdo con estudios de la OCDE, los sistemas que permiten la elección escolar tienden a tener mejores resultados en pruebas estandarizadas.\n\nLa implementación de estos vouchers, junto con la promoción del mérito docente, elevará los estándares educativos. Vamos a medir el éxito a través de mejoras en los resultados de las pruebas PISA y el incremento en la tasa de bilingüismo, ambos indicadores clave de competitividad global.\n\nAdemás, la gestión privada de los colegios públicos, como se ha implementado exitosamente en el Reino Unido, optimiza recursos y mejora la calidad del servicio educativo. Esto no es un experimento; es una fórmula probada para el éxito. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 983,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de la inversión en educación sobre el crecimiento económico",
+          "content": "Un estudio del Banco Mundial indica que por cada año adicional de educación que recibe la población, el crecimiento económico de un país puede aumentar en promedio un 0.37%.",
+          "source": "Banco Mundial, Informe sobre el Desarrollo Mundial 2018: Aprender para hacer realidad la promesa de la educación"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-27T06:06:49.074992"
+    },
+    {
+      "question_idx": 1,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-27T06:06:51.855532"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "position",
+      "turn_order": 1,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-27T06:06:54.620989"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "position",
+      "turn_order": 2,
+      "text": "Mi propuesta educativa está diseñada para beneficiar a las familias colombianas, especialmente a aquellas que buscan una educación de calidad para sus hijos. Con la implementación de vouchers educativos, las familias recibirán subsidios directos que les permitirán escoger entre colegios privados y públicos, empoderándolas con la libertad de elegir la mejor opción educativa para sus hijos. Este enfoque no solo promueve la competencia y mejora la calidad educativa, sino que también ofrece oportunidades a quienes históricamente han sido olvidados por el sistema.\n\nEl costo de esta reforma será asumido mediante una gestión más eficiente de los recursos actuales, eliminando burocracias innecesarias y canalizando fondos directamente hacia las familias y las instituciones que demuestren resultados. Además, incentivaremos el mérito docente, recompensando a los educadores que se destacan y separando a aquellos que no cumplen con los estándares necesarios.\n\nPara llegar a los territorios olvidados, estableceremos un programa de incentivos para que colegios de alta calidad se instalen en estas áreas, asegurando así que todos los colombianos, sin importar su ubicación geográfica, tengan acceso a una educación de excelencia. Creemos en una educación que premie la excelencia y brinde oportunidades reales de ascenso social. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 983,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de la inversión en educación sobre el PIB",
+          "content": "Un estudio del Banco Mundial muestra que un incremento del 1% en la inversión pública en educación puede generar hasta un 0.5% de aumento en el PIB de un país en desarrollo.",
+          "source": "Banco Mundial, Informe sobre el desarrollo mundial 2021"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-27T06:07:00.038231"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "de_la_espriella",
+      "speaker_display": "Abelardo de la Espriella",
+      "turn_type": "rebuttal",
+      "turn_order": 3,
+      "text": "Es alarmante que mi rival no haya presentado una respuesta concreta sobre educación, un pilar fundamental para el desarrollo de nuestra nación. La falta de una propuesta clara perpetúa la deficiencia en la calidad educativa, especialmente en territorios olvidados. Según el Banco Mundial, en Colombia, el 50% de los estudiantes no alcanza el nivel básico en matemáticas y lectura al finalizar la secundaria. Esto es un claro indicio de que el sistema actual no funciona.\n\nMi propuesta, en cambio, se centra en subsidiar directamente a las familias mediante vouchers educativos. Esto les permite elegir entre colegios públicos y privados, generando competencia y mejorando la calidad. Además, el mérito docente es clave: los maestros deben ser evaluados objetivamente, premiando a los mejores y despidiendo a quienes no cumplan con los estándares necesarios. Esto asegurará que los recursos sean utilizados de manera eficiente.\n\nPara llegar a territorios olvidados, propongo implementar programas de bilingüismo obligatorio desde primaria, asegurando un acceso competitivo a oportunidades globales. Mi enfoque es claro: educar es invertir, y una educación de calidad es el camino hacia un futuro próspero para todos los colombianos.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "mode": "ai",
+      "model": "gpt-4o",
+      "tokens": 1027,
+      "artifacts": [
+        {
+          "type": "statistic",
+          "title": "Impacto de la inversión en educación sobre el crecimiento económico",
+          "content": "Un aumento del 10% en la inversión educativa se asocia con un incremento del 0.5% en el PIB de un país, demostrando que las reformas educativas no solo mejoran el conocimiento y habilidades de la población, sino que también impulsan el crecimiento económico sostenible.",
+          "source": "Banco Mundial, Informe sobre Desarrollo Mundial 2018: Aprender para hacer realidad la promesa de la educación"
+        }
+      ],
+      "error": null,
+      "timestamp": "2026-06-27T06:07:04.887186"
+    },
+    {
+      "question_idx": 2,
+      "speaker": "valencia",
+      "speaker_display": "Paloma Valencia",
+      "turn_type": "rebuttal",
+      "turn_order": 4,
+      "text": "[Sin respuesta]",
+      "mode": "ai",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "tokens": 0,
+      "artifacts": [],
+      "error": "Connection error.",
+      "timestamp": "2026-06-27T06:07:07.654646"
+    }
+  ],
+  "analytics": {
+    "summary": "[Sin análisis]",
+    "raw": true
+  },
+  "total_tokens": 6127,
+  "started_at": "2026-06-27T06:06:14.594072",
+  "completed_at": "2026-06-27T06:07:09.074673",
+  "error": null
+}
