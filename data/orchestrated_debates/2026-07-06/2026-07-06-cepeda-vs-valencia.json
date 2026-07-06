@@ -24,20 +24,20 @@
       "speaker_display": "Iván Cepeda",
       "turn_type": "position",
       "turn_order": 1,
-      "text": "En los primeros 100 días de mi gobierno, implementaré medidas contundentes para avanzar en el bienestar social y la reducción de la pobreza. Iniciaremos con la ejecución de una reforma tributaria progresiva que aumentará los impuestos a grandes patrimonios, dividendos y rentas financieras, liberando recursos críticos para nuestra agenda social. Esto permitirá financiar la universalización de servicios esenciales como educación y salud, reduciendo barreras de acceso y eliminando copagos en atención primaria.\n\nDestinaremos un 20% del presupuesto inicial de esta reforma, estimado en 20 billones de pesos, a fortalecer la red hospitalaria pública y expandir la alimentación escolar universal, beneficiando a cerca de 10 millones de estudiantes. Además, impulsaremos la formalización de trabajadores informales, dándoles acceso a beneficios sociales y protección laboral.\n\nSimultáneamente, priorizaremos la implementación de un programa de economía del cuidado, reconociendo y remunerando el trabajo doméstico no pagado, lo cual es crucial para reducir la desigualdad de género y económica. Estas acciones, fundamentadas en la continuidad del gobierno de Gustavo Petro, son esenciales para construir un Estado de bienestar que garantice derechos a toda la población.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "En los primeros 100 días de mi gobierno, nos centraremos en establecer las bases para un sistema de bienestar social robusto que reduzca la pobreza de manera efectiva y sostenible. Implementaremos un plan de choque que incluya la formalización de trabajadores informales, quienes constituyen una parte significativa de nuestra economía. Esto se traducirá en su acceso a beneficios sociales, como salud y pensiones, fortaleciendo así la economía popular.\n\nEn cuanto a presupuesto, destinaremos parte de los recursos obtenidos a través de una reforma tributaria progresiva, la cual aumentará los impuestos a grandes patrimonios, dividendos y rentas financieras. Estimamos que esta reforma generará aproximadamente un 1% del PIB adicional en ingresos fiscales, lo que nos permitirá financiar la extensión de programas sociales y el fortalecimiento de servicios públicos esenciales como salud y educación. Además, invertiremos en la economía del cuidado, reconociendo y remunerando el trabajo doméstico no pagado, que representa un pilar fundamental para el bienestar de las comunidades.\n\nEstos pasos iniciales son fundamentales para garantizar una reducción efectiva de la pobreza en el corto y largo plazo, promoviendo una Colombia más equitativa y justa. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1003,
+      "tokens": 977,
       "artifacts": [
         {
           "type": "statistic",
-          "title": "Reducción de la Pobreza en Colombia",
-          "content": "Entre 2010 y 2020, la tasa de pobreza multidimensional en Colombia disminuyó del 30.4% al 18.1%, según datos del Departamento Administrativo Nacional de Estadística (DANE). Esta reducción significativa se logró gracias a políticas públicas enfocadas en mejorar la educación, la salud y la infraestructura básica en las zonas más vulnerables del país.",
-          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza Multidimensional 2021"
+          "title": "Reducción de la Pobreza en Colombia: Impacto de Programas Sociales",
+          "content": "Según datos del Departamento Administrativo Nacional de Estadística (DANE), los programas de transferencias condicionadas como Familias en Acción han contribuido a una reducción del 30% en la pobreza extrema en Colombia entre 2010 y 2020.",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza 2021"
         }
       ],
       "error": null,
-      "timestamp": "2026-07-06T06:50:32.751803"
+      "timestamp": "2026-07-06T16:00:32.001326"
     },
     {
       "question_idx": 0,
@@ -51,7 +51,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-07-06T06:50:35.386717"
+      "timestamp": "2026-07-06T16:00:34.778989"
     },
     {
       "question_idx": 0,
@@ -65,7 +65,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-07-06T06:50:38.187870"
+      "timestamp": "2026-07-06T16:00:37.491995"
     },
     {
       "question_idx": 0,
@@ -73,20 +73,20 @@
       "speaker_display": "Iván Cepeda",
       "turn_type": "rebuttal",
       "turn_order": 4,
-      "text": "Es preocupante la falta de respuesta de mi rival sobre bienestar social y reducción de pobreza, considerando que estas son cuestiones críticas para Colombia. La ausencia de un plan concreto podría indicar una falta de claridad en cómo abordar estos temas fundamentales. \n\nNuestro enfoque es claro y sólido: en los primeros 100 días, fortaleceremos programas sociales existentes y lanzaremos nuevas iniciativas con un presupuesto inicial de 10 billones de pesos. Este monto será reorientado de partidas ineficientes y se financiará mediante una reforma tributaria progresiva ya planeada, que aumentará la recaudación de impuestos sobre grandes patrimonios y rentas financieras.\n\nNos enfocaremos en la economía popular: formalizando al menos 500,000 trabajadores informales para que accedan a beneficios sociales. Además, invertiremos en educación y salud universal, que son pilares para salir de la pobreza. Según el DANE, reducir la informalidad laboral en un 10% podría significar una disminución de la pobreza en al menos 2 puntos porcentuales. \n\nNuestra propuesta está basada en datos y en continuidad con las políticas exitosas del gobierno anterior, ofreciendo claridad y dirección desde el primer día. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Es preocupante que mi rival no haya dado detalles sobre su propuesta de bienestar social y reducción de pobreza. La falta de un plan concreto sugiere una improvisación que no podemos permitir en un tema tan crucial. En contraste, yo propongo un enfoque detallado y estructurado para los primeros 100 días.\n\nPrimero, implementaríamos una reforma tributaria progresiva que aumentaría la recaudación en un 2% del PIB, enfocada en grandes patrimonios y rentas financieras. Según estudios de la Comisión Económica para América Latina y el Caribe (CEPAL), esto es factible y sostenible. \n\nCon estos recursos, financiaríamos un programa de transferencias directas para las familias más vulnerables, ampliando el programa Ingreso Solidario existente. Además, destinaremos parte del presupuesto a fortalecer el sistema de salud y educación públicas, atacando las raíces de la pobreza.\n\nEste enfoque no solo es más claro y viable que el vacío de mi rival, sino que también está alineado con las recomendaciones internacionales para combatir la pobreza de manera efectiva y sostenida. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1029,
+      "tokens": 1008,
       "artifacts": [
         {
-          "type": "statistic",
-          "title": "Impacto de los programas de bienestar social en la reducción de la pobreza en Colombia",
-          "content": "Los programas de bienestar social han logrado reducir la tasa de pobreza en Colombia en un 15% durante la última década, según datos del Departamento Administrativo Nacional de Estadística (DANE). Este descenso se debe en gran medida a la implementación de políticas destinadas a mejorar el acceso a la educación, la salud, y a la vivienda digna.",
-          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe Anual de Pobreza 2022"
+          "type": "citation",
+          "title": "La importancia del gasto social en la reducción de la pobreza",
+          "content": "Según un informe de la Comisión Económica para América Latina y el Caribe (CEPAL), los países que han aumentado su gasto social de manera sostenida han visto una reducción significativa en los índices de pobreza. La inversión en educación, salud y programas de transferencias condicionadas ha demostrado ser efectiva en mejorar las condiciones de vida de las poblaciones más vulnerables.",
+          "source": "CEPAL, 'Gasto social y reducción de la pobreza en América Latina', 2021"
         }
       ],
       "error": null,
-      "timestamp": "2026-07-06T06:50:44.450485"
+      "timestamp": "2026-07-06T16:00:44.340720"
     },
     {
       "question_idx": 1,
@@ -94,20 +94,20 @@
       "speaker_display": "Iván Cepeda",
       "turn_type": "position",
       "turn_order": 1,
-      "text": "Mi enfoque hacia el bienestar social y la reducción de la pobreza se fundamenta en la idea de que un estado de bienestar robusto y una distribución equitativa de recursos son esenciales para alcanzar justicia social. La experiencia de países nórdicos, que han logrado reducir significativamente la desigualdad y la pobreza mediante sistemas de bienestar universales y progresivos, nos sirve como ejemplo. En Colombia, la implementación de políticas como la reforma tributaria progresiva permitirá redistribuir los recursos de manera más equitativa, financiando educación pública gratuita, salud universal y una economía del cuidado.\n\nMediríamos el éxito de estas políticas a través de indicadores específicos: reducción de la tasa de pobreza en al menos un 10% y disminución de la desigualdad medida por el coeficiente de Gini. Además, un aumento del 20% en la cobertura de salud y educación públicas sería otro indicador clave. Estos objetivos son realistas considerando el marco de continuidad y profundización de las políticas del gobierno de Gustavo Petro, que ya han mostrado avances en estas áreas.\n\nEn resumen, mi propuesta se basa en modelos exitosos y ajustados a la realidad colombiana, con metas claras y medibles. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Nuestro enfoque sobre bienestar social y reducción de la pobreza se basa en experiencias exitosas tanto a nivel nacional como internacional. En Colombia, el gobierno de Gustavo Petro ha sentado precedentes importantes al priorizar la inversión social y la redistribución de recursos mediante reformas tributarias progresivas. Esta línea ha demostrado que es posible reducir la desigualdad y mejorar las condiciones de vida de los más vulnerables.\n\nInternacionalmente, los países nórdicos han sido ejemplos en la implementación de un estado de bienestar robusto que promueve la igualdad social y el acceso universal a servicios básicos. Estos modelos han logrado reducir significativamente la pobreza y la desigualdad, gracias a políticas fiscales progresivas y sistemas universales de salud y educación. En nuestro caso, implementaremos un sistema de salud universal y educación pública gratuita, lo que no solo mejorará el bienestar social, sino que también será un motor para el desarrollo económico.\n\nMediremos el éxito de nuestro enfoque en un plazo de 4 años mediante indicadores claros: reducción de la tasa de pobreza, disminución de la desigualdad medida por el coeficiente de Gini, y un aumento del acceso a servicios de salud y educación de calidad. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 967,
+      "tokens": 990,
       "artifacts": [
         {
           "type": "statistic",
-          "title": "Impacto de los Programas de Transferencias Condicionadas en la Reducción de la Pobreza",
-          "content": "Un estudio realizado por el Banco Mundial en 2021 revela que los programas de transferencias condicionadas han reducido la pobreza en un promedio del 18% en los países de América Latina donde se han implementado de manera efectiva.",
-          "source": "Banco Mundial, 2021"
+          "title": "Impacto del aumento del gasto social en la reducción de la pobreza en Colombia",
+          "content": "Entre 2010 y 2019, el aumento del gasto social en programas de transferencia condicionada y subsidios directos en Colombia contribuyó a una reducción de la pobreza monetaria del 37.2% al 27.0%, según el Departamento Administrativo Nacional de Estadística (DANE).",
+          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza Monetaria y Desigualdad 2019"
         }
       ],
       "error": null,
-      "timestamp": "2026-07-06T06:50:51.413726"
+      "timestamp": "2026-07-06T16:00:50.729815"
     },
     {
       "question_idx": 1,
@@ -121,7 +121,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-07-06T06:50:54.153327"
+      "timestamp": "2026-07-06T16:00:53.441121"
     },
     {
       "question_idx": 1,
@@ -135,7 +135,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-07-06T06:50:57.084917"
+      "timestamp": "2026-07-06T16:00:56.100835"
     },
     {
       "question_idx": 1,
@@ -143,20 +143,20 @@
       "speaker_display": "Iván Cepeda",
       "turn_type": "rebuttal",
       "turn_order": 4,
-      "text": "Es preocupante que mi rival no tenga una respuesta clara sobre el bienestar social y la reducción de la pobreza, temas cruciales para el futuro de Colombia. La falta de propuestas concretas y evidencia que respalde su enfoque es alarmante, especialmente cuando enfrentamos índices de pobreza que afectan a más del 39% de la población, según el DANE.\n\nEn contraste, mi enfoque se basa en experiencias exitosas internacionales, como el modelo de bienestar escandinavo, que demuestra que la inversión en educación, salud y servicios sociales no solo reduce la pobreza sino que también promueve el crecimiento económico sostenible. Implementaremos un sistema de salud universal y una educación pública gratuita, financiados a través de una reforma tributaria progresiva. Mediremos el éxito mediante indicadores claros: disminución de la pobreza extrema al 20%, aumento del acceso a servicios básicos y reducción de la desigualdad.\n\nNo podemos permitirnos seguir sin un plan concreto y basado en evidencias. Necesitamos acciones decididas y probadas para transformar la vida de millones de colombianos.  \n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Es preocupante que mi rival no haya presentado una propuesta clara sobre bienestar social y reducción de pobreza. Esto refleja una falta de visión y compromiso con los sectores más vulnerables de nuestra sociedad. Sin un plan concreto, es difícil evaluar cómo pretenden abordar las profundas desigualdades en Colombia.\n\nEn contraste, mi programa se basa en experiencias exitosas a nivel internacional y nacional. Países como Noruega y Suecia muestran que un estado de bienestar robusto y la reducción de la desigualdad son pilares para el desarrollo social. En Colombia, los programas de transferencias condicionadas han reducido la pobreza extrema en un 5% y mejorar nuestra propuesta ampliará este impacto.\n\nMi enfoque integra la universalización de servicios esenciales: salud, educación y trabajo digno. Mediremos el éxito a través de indicadores claros: reducción de la pobreza a un 20% y desigualdad medida por el coeficiente de Gini por debajo de 0.45. Esto se logrará con una economía más equitativa y justa que priorice a los ciudadanos sobre las ganancias empresariales. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1005,
+      "tokens": 982,
       "artifacts": [
         {
           "type": "statistic",
-          "title": "Reducción de la pobreza en Colombia a través de políticas de bienestar social",
-          "content": "Un informe del Departamento Administrativo Nacional de Estadística (DANE) indica que la tasa de pobreza multidimensional en Colombia se redujo del 19.6% en 2018 al 18.1% en 2022, evidenciando el impacto positivo de las políticas de bienestar social implementadas durante este período.",
-          "source": "Departamento Administrativo Nacional de Estadística (DANE), Informe de Pobreza Multidimensional 2022"
+          "title": "Reducción de la pobreza en Colombia a través de programas sociales",
+          "content": "Desde la implementación de programas de transferencias condicionadas como 'Familias en Acción', la tasa de pobreza en Colombia se redujo del 37.2% en 2010 al 27.0% en 2020.",
+          "source": "DANE, Informe de Pobreza Monetaria, 2021"
         }
       ],
       "error": null,
-      "timestamp": "2026-07-06T06:51:03.444781"
+      "timestamp": "2026-07-06T16:01:02.860291"
     },
     {
       "question_idx": 2,
@@ -164,20 +164,20 @@
       "speaker_display": "Iván Cepeda",
       "turn_type": "position",
       "turn_order": 1,
-      "text": "En nuestro gobierno, el bienestar social y la reducción de la pobreza serán pilares fundamentales. La propuesta está diseñada para beneficiar principalmente a los sectores más vulnerables de la sociedad colombiana, como las comunidades rurales, los pueblos indígenas, las comunidades afrodescendientes, las familias de bajos ingresos y los trabajadores informales.\n\nImplementaremos una reforma tributaria progresiva que redistribuya la carga fiscal, enfocándonos en gravar grandes patrimonios, dividendos y rentas financieras. Estos recursos se destinarán a financiar programas de educación pública gratuita, salud universal y desarrollo del campo, garantizando así una mejora en la calidad de vida de quienes más lo necesitan.\n\nPara llegar a territorios olvidados, nos enfocaremos en fortalecer la red hospitalaria pública y expandir el acceso a la educación mediante la construcción de nuevas instituciones educativas en regiones remotas. Además, implementaremos proyectos de infraestructura que mejoren la conectividad y el acceso a servicios básicos.\n\nCon estas medidas, buscamos no solo reducir la pobreza, sino también construir un país más justo e igualitario, priorizando siempre el bienestar de quienes históricamente han sido marginados. \n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Mi propuesta de bienestar social y reducción de la pobreza está diseñada para beneficiar principalmente a las comunidades más vulnerables de Colombia, incluidas aquellas en territorios olvidados y marginados. Con la universalización de la educación pública y gratuita y la gratuidad total en universidades públicas, garantizamos que todos los jóvenes, independientemente de su origen socioeconómico, tengan acceso a oportunidades educativas. Esto es crucial para romper el ciclo de la pobreza.\n\nLos costos de estas iniciativas serán asumidos principalmente por aquellos con mayores capacidades económicas a través de una reforma tributaria progresiva. Incrementaremos los impuestos a grandes patrimonios, dividendos y rentas financieras para financiar estos programas, siguiendo el principio de que quienes más tienen deben contribuir más al bienestar colectivo.\n\nEn territorios alejados, implementaremos un sistema de clínicas y hospitales del Estado, garantizando acceso a salud como derecho fundamental. Proyectos de inversión en infraestructuras básicas y desarrollo rural permitirán que la economía popular prospere, formalizando trabajadores informales y dotándolos de beneficios sociales. De esta manera, buscamos cerrar las brechas de desigualdad y asegurar que el progreso llegue a todos los rincones del país.\n\n[SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 1053,
+      "tokens": 1021,
       "artifacts": [
         {
           "type": "analysis",
-          "title": "Impacto de las políticas sociales en la reducción de la pobreza en América Latina",
-          "content": "El análisis de las políticas sociales implementadas en América Latina durante las últimas dos décadas muestra que los países que han adoptado programas integrales de bienestar social han logrado reducir significativamente sus tasas de pobreza. Por ejemplo, países como Brasil y Uruguay, que han implementado políticas de transferencias condicionadas de efectivo y han fortalecido sus sistemas de protección social, han experimentado una disminución notable en los índices de pobreza extrema y desigualdad. Estos resultados sugieren que un enfoque comprensivo que combine asistencia directa con el fortalecimiento de servicios públicos esenciales, como la educación y la salud, es efectivo para mejorar el bienestar social y reducir la pobreza de manera sostenible.",
-          "source": "Comisión Económica para América Latina y el Caribe (CEPAL), Informe 2022"
+          "title": "Comparative Analysis of Poverty Reduction Strategies in Latin America",
+          "content": "In recent years, countries in Latin America that have implemented comprehensive social welfare programs have shown more significant reductions in poverty levels compared to those relying solely on economic growth. For instance, countries like Uruguay and Chile, which have invested in robust social safety nets, exhibit lower poverty rates and reduced income inequality. These programs often include conditional cash transfers, universal healthcare, and free education, which not only alleviate poverty in the short term but also promote long-term socio-economic mobility.",
+          "source": "Economic Commission for Latin America and the Caribbean (ECLAC), 2022 Report on Poverty and Inequality in Latin America."
         }
       ],
       "error": null,
-      "timestamp": "2026-07-06T06:51:08.589255"
+      "timestamp": "2026-07-06T16:01:09.430655"
     },
     {
       "question_idx": 2,
@@ -191,7 +191,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-07-06T06:51:11.331822"
+      "timestamp": "2026-07-06T16:01:12.074211"
     },
     {
       "question_idx": 2,
@@ -205,7 +205,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-07-06T06:51:13.955494"
+      "timestamp": "2026-07-06T16:01:14.700156"
     },
     {
       "question_idx": 2,
@@ -213,28 +213,28 @@
       "speaker_display": "Iván Cepeda",
       "turn_type": "rebuttal",
       "turn_order": 4,
-      "text": "Lamentablemente, mi rival no ha proporcionado una respuesta concreta sobre su enfoque para el bienestar social y la reducción de la pobreza. Esto evidencia una falta de claridad y compromiso hacia las poblaciones más vulnerables de nuestro país.\n\nEn contraste, mi propuesta está claramente diseñada para beneficiar a las comunidades más necesitadas. La universalización de la educación pública y gratuita, así como el acceso a salud sin intermediación de EPS, son medidas que impactarán positivamente a millones de colombianos. Estas políticas se financian mediante una reforma tributaria progresiva que asegura que quienes tienen más, contribuyan más al bienestar común.\n\nAdemás, nuestra reforma agraria integral y la economía popular buscan empoderar a los trabajadores informales y distribuir tierras improductivas, llevando desarrollo a territorios olvidados. Cabe resaltar que el Banco Mundial ha señalado que la formalización laboral y la redistribución de la tierra son claves para reducir la pobreza en América Latina.\n\nCon estas acciones, aseguramos no solo una reducción de la pobreza, sino también una sociedad más equitativa y justa. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
+      "text": "Lamentablemente, mi rival no ha ofrecido una respuesta concreta sobre cómo planea abordar el bienestar social y la reducción de la pobreza. Esto es preocupante, dado que son temas fundamentales para el desarrollo del país. Sin claridad en su propuesta, difícilmente podemos evaluar quiénes se beneficiarían o qué costos implicarían sus planes.\n\nEn contraste, mi programa beneficia a las comunidades más vulnerables mediante la universalización de la educación y el acceso a la salud como derecho fundamental. Con la reforma tributaria progresiva, las grandes fortunas y rentas financieras contribuirán al financiamiento de estos servicios, aliviando la carga sobre la clase media y baja. Según el DANE, más del 40% de la población colombiana vive en pobreza; mi plan se enfoca en estas personas.\n\nPara los territorios olvidados, propongo ampliar la infraestructura pública en salud y educación, garantizando la presencia del Estado donde históricamente ha estado ausente. Al fortalecer la economía popular y reconocer el trabajo del cuidado, promovemos la inclusión socioeconómica, especialmente en zonas rurales.\n\nMi enfoque es claro, concreto y basado en la equidad social y la inclusión. [SIMULACIÓN ACADÉMICA — no representa posiciones reales de los candidatos]",
       "mode": "ai",
       "model": "gpt-4o",
-      "tokens": 987,
+      "tokens": 1078,
       "artifacts": [
         {
-          "type": "statistic",
-          "title": "Reducción de la pobreza extrema en Colombia",
-          "content": "Entre 2010 y 2020, la tasa de pobreza extrema en Colombia se redujo del 12.3% al 8.6%, gracias a la implementación de programas sociales focalizados y el aumento de la inversión pública en sectores clave como educación y salud.",
-          "source": "Departamento Administrativo Nacional de Estadística (DANE)"
+          "type": "analysis",
+          "title": "Impacto de las políticas de bienestar social en la reducción de la pobreza en América Latina",
+          "content": "Diversos estudios han demostrado que las políticas de bienestar social, como transferencias condicionadas de efectivo y subsidios a servicios básicos, han tenido un efecto positivo en la reducción de la pobreza en países de América Latina. Por ejemplo, programas como 'Bolsa Familia' en Brasil y 'Prospera' en México han mejorado significativamente los índices de pobreza extrema y han promovido una mayor equidad social. Estas políticas proporcionan una red de seguridad que aumenta el acceso a la educación y la salud, factores críticos para romper el ciclo de la pobreza intergeneracional.",
+          "source": "CEPAL, 'Panorama Social de América Latina', 2022"
         }
       ],
       "error": null,
-      "timestamp": "2026-07-06T06:51:19.593746"
+      "timestamp": "2026-07-06T16:01:23.032950"
     }
   ],
   "analytics": {
     "summary": "[Sin análisis]",
     "raw": true
   },
-  "total_tokens": 6044,
-  "started_at": "2026-07-06T06:50:22.524876",
-  "completed_at": "2026-07-06T06:51:21.032322",
+  "total_tokens": 6056,
+  "started_at": "2026-07-06T16:00:21.393597",
+  "completed_at": "2026-07-06T16:01:24.378560",
   "error": null
 }
