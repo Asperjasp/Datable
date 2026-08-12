@@ -30,7 +30,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-08-12T04:20:11.422655"
+      "timestamp": "2026-08-12T13:57:18.761161"
     },
     {
       "question_idx": 0,
@@ -44,7 +44,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
-      "timestamp": "2026-08-12T04:20:16.680731"
+      "timestamp": "2026-08-12T13:57:24.252035"
     },
     {
       "question_idx": 0,
@@ -58,7 +58,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
-      "timestamp": "2026-08-12T04:20:20.682813"
+      "timestamp": "2026-08-12T13:57:28.011208"
     },
     {
       "question_idx": 0,
@@ -72,7 +72,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-08-12T04:20:23.504571"
+      "timestamp": "2026-08-12T13:57:30.827879"
     },
     {
       "question_idx": 1,
@@ -86,7 +86,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-08-12T04:20:26.430980"
+      "timestamp": "2026-08-12T13:57:33.677487"
     },
     {
       "question_idx": 1,
@@ -100,7 +100,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
-      "timestamp": "2026-08-12T04:20:29.778810"
+      "timestamp": "2026-08-12T13:57:37.078139"
     },
     {
       "question_idx": 1,
@@ -114,7 +114,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
-      "timestamp": "2026-08-12T04:20:32.748639"
+      "timestamp": "2026-08-12T13:57:39.909968"
     },
     {
       "question_idx": 1,
@@ -128,7 +128,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-08-12T04:20:35.599551"
+      "timestamp": "2026-08-12T13:57:42.797295"
     },
     {
       "question_idx": 2,
@@ -142,7 +142,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-08-12T04:20:38.596532"
+      "timestamp": "2026-08-12T13:57:45.465524"
     },
     {
       "question_idx": 2,
@@ -156,7 +156,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
-      "timestamp": "2026-08-12T04:20:41.613557"
+      "timestamp": "2026-08-12T13:57:48.692819"
     },
     {
       "question_idx": 2,
@@ -170,7 +170,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
-      "timestamp": "2026-08-12T04:20:45.124966"
+      "timestamp": "2026-08-12T13:57:51.709559"
     },
     {
       "question_idx": 2,
@@ -184,7 +184,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-08-12T04:20:47.986192"
+      "timestamp": "2026-08-12T13:57:54.499380"
     }
   ],
   "analytics": {
@@ -192,7 +192,7 @@
     "raw": true
   },
   "total_tokens": 0,
-  "started_at": "2026-08-12T04:20:05.853980",
-  "completed_at": "2026-08-12T04:20:49.435431",
+  "started_at": "2026-08-12T13:57:14.038905",
+  "completed_at": "2026-08-12T13:57:55.911424",
   "error": null
 }
