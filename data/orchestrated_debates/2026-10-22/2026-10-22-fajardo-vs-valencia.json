@@ -30,7 +30,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:04.650704"
+      "timestamp": "2026-10-22T17:29:07.379305"
     },
     {
       "question_idx": 0,
@@ -44,7 +44,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:07.476620"
+      "timestamp": "2026-10-22T17:29:10.330853"
     },
     {
       "question_idx": 0,
@@ -58,7 +58,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:10.129065"
+      "timestamp": "2026-10-22T17:29:12.895624"
     },
     {
       "question_idx": 0,
@@ -72,7 +72,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:13.091624"
+      "timestamp": "2026-10-22T17:29:15.542812"
     },
     {
       "question_idx": 1,
@@ -86,7 +86,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:15.998977"
+      "timestamp": "2026-10-22T17:29:18.272780"
     },
     {
       "question_idx": 1,
@@ -100,7 +100,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:18.926481"
+      "timestamp": "2026-10-22T17:29:21.074570"
     },
     {
       "question_idx": 1,
@@ -114,7 +114,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:21.872560"
+      "timestamp": "2026-10-22T17:29:23.891329"
     },
     {
       "question_idx": 1,
@@ -128,7 +128,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:24.657567"
+      "timestamp": "2026-10-22T17:29:26.637789"
     },
     {
       "question_idx": 2,
@@ -142,7 +142,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:27.550815"
+      "timestamp": "2026-10-22T17:29:29.141149"
     },
     {
       "question_idx": 2,
@@ -156,7 +156,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:30.218270"
+      "timestamp": "2026-10-22T17:29:31.959367"
     },
     {
       "question_idx": 2,
@@ -170,7 +170,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:32.896601"
+      "timestamp": "2026-10-22T17:29:34.875830"
     },
     {
       "question_idx": 2,
@@ -184,7 +184,7 @@
       "tokens": 0,
       "artifacts": [],
       "error": "Connection error.",
-      "timestamp": "2026-10-22T07:47:35.674683"
+      "timestamp": "2026-10-22T17:29:37.664990"
     }
   ],
   "analytics": {
@@ -192,7 +192,7 @@
     "raw": true
   },
   "total_tokens": 0,
-  "started_at": "2026-10-22T07:46:59.628437",
-  "completed_at": "2026-10-22T07:47:37.033860",
+  "started_at": "2026-10-22T17:29:02.119938",
+  "completed_at": "2026-10-22T17:29:39.130227",
   "error": null
 }
